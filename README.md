@@ -160,7 +160,7 @@ The repository is pre-configured for static deployment on **GitHub Pages**:
 ---
 
 <p align="center">
-  <img src="html-dev/github-baners/Logo-Rock-Star-Agency.png" alt="Rock Stars Agency Logo" width="220">
+  <img src="html-dev/github-baners/Logo-Rock-Star-Agency_01.png" alt="Rock Stars Agency Logo" width="220">
 </p>
 
 <p align="center">
