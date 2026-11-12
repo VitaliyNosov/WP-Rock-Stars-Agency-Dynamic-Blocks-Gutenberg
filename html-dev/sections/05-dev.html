@@ -1,0 +1,269 @@
+<!-- Section 05: Development & Plugins (Matches design 5.png) -->
+    <section id="development" class="dev-section relative overflow-hidden bg-[#000000]">
+
+      <!-- Section 05 Index Indicator with Double Dashed Border (from design 5.png) -->
+      <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+        <div class="badge-inner flex flex-col items-center justify-center">
+          <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">05</span>
+          <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">DEV</span>
+        </div>
+      </div>
+
+      <div class="dev-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+
+          <!-- Left Column: Realistic macOS-style Code Editor Window with Signature Double Dashed Border -->
+          <div class="dev-ide-col lg:col-span-7 w-full flex justify-center">
+            <div class="ide-window-outer">
+              <div class="ide-window-inner">
+
+                <!-- Window Titlebar -->
+                <div class="ide-titlebar">
+                  <div class="ide-dots">
+                    <span class="ide-dot"></span>
+                    <span class="ide-dot"></span>
+                    <span class="ide-dot"></span>
+                  </div>
+                  <span class="ide-title" id="ide-filename">plugin / booking.php</span>
+                  <div class="w-[52px]"></div>
+                </div>
+
+                <!-- Window Body: File Tree Sidebar + Code Editor -->
+                <div class="ide-body">
+
+                  <!-- File Tree Sidebar -->
+                  <div class="ide-sidebar">
+                    <!-- Folder plugin/ -->
+                    <div class="ide-tree-item text-[#A0A0A0]" data-tree-item="folder-plugin">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>plugin/</span>
+                      </div>
+                    </div>
+
+                    <!-- Active File booking.php -->
+                    <div class="ide-tree-item active" id="tab-booking" role="button" tabindex="0"
+                      aria-label="Open booking.php">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        <span>booking.php</span>
+                      </div>
+                    </div>
+
+                    <!-- File api.php with Notification Dot -->
+                    <div class="ide-tree-item" id="tab-api" role="button" tabindex="0" aria-label="Open api.php">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        <span>api.php</span>
+                      </div>
+                      <span class="tree-indicator-dot" title="Modified / Active endpoint"></span>
+                    </div>
+
+                    <!-- Folder admin/ -->
+                    <div class="ide-tree-item text-[#A0A0A0]" data-tree-item="folder-admin">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>admin/</span>
+                      </div>
+                    </div>
+
+                    <!-- Folder assets/ -->
+                    <div class="ide-tree-item text-[#A0A0A0]" data-tree-item="folder-assets">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>assets/</span>
+                      </div>
+                    </div>
+
+                    <!-- Folder theme/ -->
+                    <div class="ide-tree-item text-[#A0A0A0]" data-tree-item="folder-theme">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>theme/</span>
+                      </div>
+                    </div>
+
+                    <!-- Folder components/ -->
+                    <div class="ide-tree-item text-[#A0A0A0]" data-tree-item="folder-components">
+                      <div class="tree-left">
+                        <svg class="tree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>components/</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Code Editor Content -->
+                  <div class="ide-editor" id="ide-editor-container">
+                    <div class="ide-code-line"><span class="ide-line-num">1</span><span class="ide-line-code"><span
+                          class="code-tag">&lt;?php</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">2</span><span class="ide-line-code"><span
+                          class="code-kw">namespace</span> <span class="code-cls">Plugin\Booking</span><span
+                          class="code-punct">;</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">3</span><span
+                        class="ide-line-code">&nbsp;</span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">4</span><span class="ide-line-code"><span
+                          class="code-kw">class</span> <span class="code-cls">BookingController</span> <span
+                          class="code-punct">{</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">5</span><span class="ide-line-code">    <span
+                          class="code-kw">public function</span> <span class="code-fn">create</span><span
+                          class="code-punct">(</span><span class="code-var">$req</span><span class="code-punct">)</span>
+                        <span class="code-punct">{</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">6</span><span class="ide-line-code">        <span
+                          class="code-var">$slot</span> <span class="code-op">=</span> <span
+                          class="code-cls">Slots</span><span class="code-scope">::</span><span
+                          class="code-fn">find</span><span class="code-punct">(</span><span
+                          class="code-var">$req</span><span class="code-op">-&gt;</span><span
+                          class="code-prop">slot_id</span><span class="code-punct">);</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">7</span><span
+                        class="ide-line-code">&nbsp;</span></div>
+                    <div class="ide-code-line active"><span class="ide-line-num">8</span><span class="ide-line-code">
+                        <span class="code-kw">if</span> <span class="code-punct">(</span><span
+                          class="code-op">!</span><span class="code-var">$slot</span><span
+                          class="code-op">-&gt;</span><span class="code-fn">isFree</span><span
+                          class="code-punct">())</span> <span class="code-punct">{</span><span
+                          class="code-cursor"></span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">9</span><span class="ide-line-code">            <span
+                          class="code-kw">return</span> <span class="code-cls">Response</span><span
+                          class="code-scope">::</span><span class="code-fn">error</span><span
+                          class="code-punct">(</span><span class="code-num">409</span><span
+                          class="code-punct">);</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">10</span><span class="ide-line-code">        <span
+                          class="code-punct">}</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">11</span><span
+                        class="ide-line-code">&nbsp;</span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">12</span><span class="ide-line-code">        <span
+                          class="code-var">$b</span> <span class="code-op">=</span> <span
+                          class="code-cls">Booking</span><span class="code-scope">::</span><span
+                          class="code-fn">create</span><span class="code-punct">(</span><span
+                          class="code-var">$req</span><span class="code-op">-&gt;</span><span
+                          class="code-fn">all</span><span class="code-punct">());</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">13</span><span class="ide-line-code">        <span
+                          class="code-cls">Notify</span><span class="code-scope">::</span><span
+                          class="code-fn">patient</span><span class="code-punct">(</span><span
+                          class="code-var">$b</span><span class="code-punct">);</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">14</span><span class="ide-line-code">        <span
+                          class="code-kw">return</span> <span class="code-cls">Response</span><span
+                          class="code-scope">::</span><span class="code-fn">json</span><span
+                          class="code-punct">(</span><span class="code-var">$b</span><span
+                          class="code-punct">);</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">15</span><span class="ide-line-code">    <span
+                          class="code-punct">}</span></span></div>
+                    <div class="ide-code-line"><span class="ide-line-num">16</span><span class="ide-line-code"><span
+                          class="code-punct">}</span></span></div>
+                  </div>
+
+                </div>
+
+                <!-- Window Statusbar -->
+                <div class="ide-statusbar">
+                  <div class="ide-status-left">
+                    <div class="ide-status-pulse">
+                      <span class="ide-status-pulse-ring"></span>
+                      <span class="ide-status-pulse-dot"></span>
+                    </div>
+                    <span id="ide-test-status">24 tests passing</span>
+                  </div>
+                  <div class="ide-status-right">
+                    <span id="ide-caret-status">Ln 8, Col 13</span> &nbsp; PHP 8.2 &nbsp; UTF-8
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Development & Plugins Content -->
+          <div class="dev-content lg:col-span-5 w-full">
+
+            <!-- Eyebrow Tag -->
+            <div class="dev-tag">
+              DEVELOPMENT &amp; PLUGINS
+            </div>
+
+            <!-- Title -->
+            <h2 class="dev-title">
+              Custom features,<br>built to last.
+            </h2>
+
+            <!-- Description -->
+            <p class="dev-desc">
+              We write clean, tested code that<br class="hidden sm:inline"> your team can keep using for years.
+            </p>
+
+            <!-- Checklist -->
+            <div class="dev-checklist">
+              <div class="dev-check-item">
+                <div class="dev-check-circle">
+                  <svg class="dev-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3.5 8.5 6.5 11.5 12.5 5.5"></polyline>
+                  </svg>
+                </div>
+                <span class="dev-check-text">Custom plugins, modules and web apps</span>
+              </div>
+
+              <div class="dev-check-item">
+                <div class="dev-check-circle">
+                  <svg class="dev-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3.5 8.5 6.5 11.5 12.5 5.5"></polyline>
+                  </svg>
+                </div>
+                <span class="dev-check-text">REST API and third-party integrations</span>
+              </div>
+
+              <div class="dev-check-item">
+                <div class="dev-check-circle">
+                  <svg class="dev-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3.5 8.5 6.5 11.5 12.5 5.5"></polyline>
+                  </svg>
+                </div>
+                <span class="dev-check-text">Performance-safe, reviewed code</span>
+              </div>
+
+              <div class="dev-check-item">
+                <div class="dev-check-circle">
+                  <svg class="dev-check-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3.5 8.5 6.5 11.5 12.5 5.5"></polyline>
+                  </svg>
+                </div>
+                <span class="dev-check-text">Full documentation and handover</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#contact" class="btn-discuss" id="dev-cta-btn">
+              Discuss a project
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>

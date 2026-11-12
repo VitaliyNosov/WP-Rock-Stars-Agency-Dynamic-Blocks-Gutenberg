@@ -1,0 +1,533 @@
+/* ==========================================================================
+   Section 08: GEO (Generative Engine Optimization) Styles
+   Signature double-border system & aligned layout matching Section 07 and 10
+   ========================================================================== */
+
+/* Badge Position for Section 08 (Matches Section 07 & 10 exactly) */
+#geo .section-badge-indicator {
+  position: absolute;
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+  z-index: 50;
+}
+
+/* Base Section Layout */
+.geo-section {
+  position: relative;
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  color: var(--text-primary);
+  width: 100%;
+  overflow: clip;
+}
+
+/* Container (Matches .seo-container and .growth-container max-width 1240px) */
+.geo-container {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Section Header (Centered, matching Section 07 and Section 10 typography) */
+.geo-header {
+  text-align: center;
+  max-width: 896px; /* max-w-4xl */
+  margin: 0 auto clamp(40px, 6vh, 64px);
+  position: relative;
+  z-index: 20;
+}
+
+.geo-tag {
+  margin-bottom: 10px;
+}
+
+.geo-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+.geo-desc {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+/* Pinned Stacking Cards Stage */
+.geo-pinned-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Stacking Frames Container (Takes up viewport height with small margins top & bottom) */
+.geo-frames-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .geo-frames-container {
+    height: calc(100vh - 48px);
+    height: calc(100dvh - 48px);
+    max-height: 720px;
+    min-height: 480px;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 660px) {
+  .geo-frames-container {
+    height: calc(100vh - 28px);
+    height: calc(100dvh - 28px);
+    min-height: 440px;
+  }
+}
+
+/* ==========================================================================
+   DOUBLE DASHED BORDER SYSTEM (Signature Landing Design)
+   ========================================================================== */
+
+/* Frame Outer Card */
+.geo-frame {
+  width: 100%;
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 24px;
+  padding: 6px; /* Signature double border gap matching all other sections */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  will-change: transform, opacity, filter;
+  transform-origin: top center;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .geo-frame {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .geo-frame {
+    margin-bottom: 24px;
+    border-radius: 20px;
+    padding: 5px;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Frame Inner Card (Matches Section 13 Results & Section 14 Formats standard padding: 32px-40px) */
+.geo-frame-inner {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+  padding: clamp(28px, 3.5vw, 40px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+/* Frame Top Bar (Counter & Dots) */
+.geo-frame-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px dashed var(--line);
+  flex-shrink: 0;
+}
+
+.geo-frame-counter {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.geo-frame-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.geo-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--line);
+  transition: all 0.25s ease;
+}
+
+.geo-dot.active {
+  background-color: var(--text-primary);
+  box-shadow: 0 0 8px rgba(240, 240, 240, 0.7);
+  transform: scale(1.25);
+}
+
+/* Frame Inner Body (2-Column Grid) */
+.geo-frame-body {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 0;
+}
+
+/* ==========================================================================
+   SUB-CARDS WITH DOUBLE DASHED BORDER (Grey shade only for inner blocks)
+   ========================================================================== */
+
+/* Outer Sub-card */
+.geo-card-outer {
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+/* Inner Sub-card */
+.geo-card-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: clamp(18px, 2.2vw, 26px);
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Variant: Before Card (Double Dashed Border) */
+.geo-before-outer {
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.geo-before-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+/* Variant: After Card (Double Dashed Border) */
+.geo-after-outer {
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.geo-after-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+/* Variant: Code Card with Double Dashed Border */
+.geo-code-outer {
+  background: #000000;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.geo-code-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.geo-code-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px dashed var(--line);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.geo-code-content {
+  padding: 12px 16px;
+  color: var(--text-primary);
+  overflow-x: auto;
+}
+
+.geo-code-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px dashed var(--line);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.geo-code-content {
+  padding: 8px 12px;
+  color: var(--text-primary);
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   PHOTOGRAPHS: ABSOLUTELY NO BORDER (Wider & Balanced)
+   ========================================================================== */
+.geo-photo-wrapper {
+  position: relative;
+  width: 100%;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.geo-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Base Photo Heights: Rich, wide & balanced */
+.geo-photo-f1 {
+  height: 185px;
+}
+.geo-photo-f1 img {
+  object-position: center 30%;
+}
+
+.geo-photo-f4 {
+  height: 140px;
+}
+.geo-photo-f4 img {
+  object-position: center 25%;
+}
+
+.geo-photo-f7 {
+  height: 135px;
+}
+.geo-photo-f7 img {
+  object-position: center 30%;
+}
+
+/* Prompt Bubble overlay */
+.geo-prompt-bubble {
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px dashed var(--line);
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* Feature List Items with numbered circular pills */
+.geo-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.geo-feature-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 10.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Toggle Switch UI */
+.geo-toggle-track {
+  width: 32px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--text-primary);
+  position: relative;
+  cursor: default;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.geo-toggle-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #000000;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  transition: transform 0.2s ease;
+}
+
+/* Entity Consistency Table */
+.geo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.geo-table th {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 5px 6px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.geo-table td {
+  padding: 5px 6px;
+  font-size: 11px;
+  border-bottom: 1px dashed var(--line);
+  color: var(--text-primary);
+}
+
+.geo-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Progress bar for AI engines */
+.geo-engine-bar-bg {
+  width: 100%;
+  height: 5px;
+  background: var(--line);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.geo-engine-bar-fill {
+  height: 100%;
+  background: var(--text-primary);
+  border-radius: 9999px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADAPTATION FOR INNER FRAME CONTENTS ON SHORT SCREENS
+   (Preserves generous standard padding matching Sections 13 & 14)
+   ========================================================================== */
+
+@media (min-width: 1024px) and (max-height: 760px) {
+  .geo-frame-topbar {
+    padding-bottom: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .geo-heading-title {
+    font-size: 26px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.15 !important;
+  }
+
+  .geo-heading-desc {
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Balanced photo heights on short screens */
+  .geo-photo-f1 {
+    height: 165px !important;
+  }
+
+  .geo-photo-f4 {
+    height: 125px !important;
+  }
+
+  .geo-photo-f7 {
+    height: 120px !important;
+  }
+
+  .geo-code-content pre {
+    font-size: 10.5px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Compact scaling for inner frame content (Viewport height <= 660px) */
+@media (min-width: 1024px) and (max-height: 660px) {
+  .geo-frame-inner {
+    padding: 24px 28px !important;
+  }
+
+  .geo-frame-topbar {
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .geo-heading-title {
+    font-size: 22px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .geo-heading-desc {
+    font-size: 12px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.3 !important;
+  }
+
+  .geo-photo-f1 {
+    height: 140px !important;
+  }
+
+  .geo-photo-f4 {
+    height: 110px !important;
+  }
+
+  .geo-photo-f7 {
+    height: 105px !important;
+  }
+}

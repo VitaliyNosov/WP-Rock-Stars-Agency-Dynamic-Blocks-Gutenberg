@@ -1,0 +1,14 @@
+{
+  "name": "docs-dev-landing",
+  "version": "1.0.0",
+  "description": "Healthcare Website Growth Landing Page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+

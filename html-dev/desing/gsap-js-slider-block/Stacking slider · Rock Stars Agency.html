@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stacking slider · Rock Stars Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--surface:#111;--line:#2A2A2A;--text:#F0F0F0;--muted:#A0A0A0;--pad:clamp(20px,6vw,116px);--font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/24px var(--font);-webkit-font-smoothing:antialiased}
+h2,h3,p{margin:0}
+h2{font:600 36px/44px var(--font);letter-spacing:-.01em}
+.eyebrow{font:600 12px/16px var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* surrounding blocks (so the pin-in / pin-out is visible) */
+.block{margin:24px 4vw;padding:clamp(32px,6vw,96px);border:1px dashed var(--line);outline:1px dashed var(--line);outline-offset:4px;border-radius:24px}
+.intro{min-height:70vh;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta p{color:var(--muted);margin-top:8px}
+.btn{display:inline-flex;align-items:center;height:48px;padding:0 24px;border-radius:10px;background:var(--text);color:#000;text-decoration:none}
+
+/* slider: base = swipe list (mobile, reduced motion) */
+.slider{position:relative;padding:64px 0}
+.head{padding:0 var(--pad) 32px}
+.head h2{margin-top:8px}
+.track{display:flex;gap:16px;padding:0 var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad);scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.card{position:relative;flex:0 0 min(82vw,380px);scroll-snap-align:start;display:flex;flex-direction:column;gap:48px;padding:32px;background:var(--bg);border:1px dashed var(--line);border-radius:12px;transform-origin:0 50%}
+.card::before{content:"";position:absolute;inset:0;border-radius:11px;background:#000;opacity:var(--dim,0);pointer-events:none}
+.card::after{content:"";position:absolute;inset:3px;border:1px dashed var(--line);border-radius:8px;pointer-events:none}
+.card{justify-content:space-between;cursor:pointer}
+.face{display:grid;margin-top:auto}
+.card h3{font:600 20px/28px var(--font)}
+.card p{margin:0;color:var(--muted)}
+.more{display:flex;flex-direction:column;gap:16px;margin-top:12px}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.meta{color:var(--muted);font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 20px;border-radius:10px;background:var(--text);color:#000;text-decoration:none;white-space:nowrap}
+.btn::after{content:"";position:absolute;inset:0;border-radius:12px}
+/* mouse: title first, detail + button on hover or keyboard focus. Touch: everything visible */
+@media (hover:hover){
+  .face{align-items:end}
+  .face>h3,.face>.more{grid-area:1/1;align-self:end;transition:opacity .25s ease,transform .25s ease}
+  .face>h3{font:600 clamp(24px,1.9vw,36px)/1.22 var(--font);letter-spacing:-.01em}
+  .more{margin-top:0;opacity:0;transform:translateY(10px);transition-delay:.05s}
+  .card:hover>.face>h3,.card:focus-within>.face>h3{opacity:0;transform:translateY(-10px)}
+  .card:hover .more,.card:focus-within .more{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.face>h3,.face>.more{transition:none}}
+.hint{margin:16px var(--pad) 0;color:var(--muted);font-size:14px}
+.is-pinned .hint{display:none}
+.controls{display:none}
+.progress{display:flex;align-items:center;gap:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.progress b{color:var(--text);font-weight:400}
+.ring{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke:var(--line);stroke-width:2}
+.ring .bar{stroke:var(--text);stroke-linecap:round;stroke-dasharray:50.27;stroke-dashoffset:50.27}
+.round{width:48px;height:48px;margin-left:8px;border:0;border-radius:50%;background:var(--surface);color:var(--text);font:400 20px/1 var(--font);cursor:pointer}
+.round.next{background:var(--text);color:#000}
+.round:disabled{opacity:.35;cursor:default}
+.round:focus-visible,.card a:focus-visible,.btn:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+
+/* slider: pinned stacking mode (class added by JS, desktop only) */
+.slider.is-pinned{height:100vh;padding:0;overflow:hidden}
+.is-pinned .head{position:absolute;left:0;top:clamp(32px,9vh,96px);z-index:2}
+.is-pinned .track{position:absolute;inset:0;display:grid;align-items:stretch;align-content:center;padding:0;overflow:visible;scroll-snap-type:none}
+.is-pinned .card{grid-area:1/1;justify-self:start;flex:none;width:clamp(300px,32.4vw,800px);aspect-ratio:622/482;margin-left:var(--pad);will-change:transform,opacity}
+.is-pinned .controls{display:flex;position:absolute;z-index:2;left:var(--pad);right:var(--pad);bottom:clamp(32px,9vh,96px);align-items:center;justify-content:space-between}
+@media (min-width:1024px) and (max-width:1439px){.is-pinned .card{padding:24px;gap:24px}.is-pinned .card p{font-size:14px;line-height:20px}}
+</style>
+</head>
+<body>
+
+<section class="block intro">
+  <p class="eyebrow">Scroll down</p>
+  <h2>[Previous block]</h2>
+</section>
+
+<section class="slider" aria-label="Articles slider">
+  <div class="head">
+    <p class="eyebrow">Articles</p>
+    <h2>Insights for growing brands</h2>
+  </div>
+
+  <div class="track">
+    <article class="card">
+      <p class="eyebrow">01 · Branding</p>
+      <div class="face">
+        <h3>Why a brand identity pays off faster than ads</h3>
+        <div class="more"><p>A clear identity makes every later channel cheaper. We break down where the savings come from, with three before and after examples from our own projects.</p><div class="foot"><span class="meta">6 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">02 · Web design</p>
+      <div class="face">
+        <h3>Design systems: launch new pages in days</h3>
+        <div class="more"><p>Shared components and tokens remove repeated work and keep every page consistent, so a small team can ship a landing page without another design round.</p><div class="foot"><span class="meta">5 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">03 · Development</p>
+      <div class="face">
+        <h3>A fast site is a sales tool</h3>
+        <div class="more"><p>What really slows a landing page down, which fixes give the biggest gain, and how to keep speed under control after every release.</p><div class="foot"><span class="meta">7 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">04 · SEO and GEO</p>
+      <div class="face">
+        <h3>How AI chooses who to recommend</h3>
+        <div class="more"><p>Answer engines build replies from sources they can crawl, understand and trust. These are the four steps we audit and fix first.</p><div class="foot"><span class="meta">8 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">05 · Analytics</p>
+      <div class="face">
+        <h3>Metrics that matter after launch</h3>
+        <div class="more"><p>Ten dashboards will not help. We show the five numbers worth checking every week and what to do when one of them moves.</p><div class="foot"><span class="meta">5 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">06 · Content</p>
+      <div class="face">
+        <h3>Content that answers real questions</h3>
+        <div class="more"><p>How to turn the questions customers ask into articles and case studies that rank, get quoted and bring qualified leads.</p><div class="foot"><span class="meta">6 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">07 · Advertising</p>
+      <div class="face">
+        <h3>Test creatives before you scale</h3>
+        <div class="more"><p>A simple weekly testing routine for search and social ads: what to change, how long to wait and when to stop a variant.</p><div class="foot"><span class="meta">4 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">08 · Strategy</p>
+      <div class="face">
+        <h3>How to write a brief an agency can use</h3>
+        <div class="more"><p>A one-page template with the questions that save two weeks of back and forth and lead to a fixed quote in three days.</p><div class="foot"><span class="meta">4 min read</span><a class="btn" href="#">Read article <span aria-hidden="true">→</span></a></div></div>
+      </div>
+    </article>
+  </div>
+  <p class="hint">← Swipe with your finger →</p>
+
+  <div class="controls">
+    <div class="progress" aria-live="polite">
+      <svg class="ring" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle class="bar" cx="10" cy="10" r="8"/></svg>
+      <span><b class="count">02</b> / <span class="tot">08</span></span>
+    </div>
+    <div class="nav">
+      <button class="round prev" type="button" aria-label="Previous slide">←</button>
+      <button class="round next" type="button" aria-label="Next slide">→</button>
+    </div>
+  </div>
+</section>
+
+<section class="block cta">
+  <div>
+    <h2>[Call to action]</h2>
+    <p>[One line about the next step]</p>
+  </div>
+  <a class="btn" href="#">Discuss a project</a>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const sec = document.querySelector('.slider');
+const cards = [...sec.querySelectorAll('.card')];
+const N = cards.length;
+const bar = sec.querySelector('.bar');
+const count = sec.querySelector('.count');
+const prev = sec.querySelector('.prev');
+const next = sec.querySelector('.next');
+const C = 2 * Math.PI * 8;
+const M = Math.max(1, N - 2);   // scroll steps: the last two cards end fully visible
+sec.querySelector('.tot').textContent = String(N).padStart(2, '0');
+
+// Pinned stacking runs only on desktop without reduced motion.
+// Otherwise the section stays a plain horizontal swipe list (CSS base).
+gsap.matchMedia().add('(min-width:1024px) and (prefers-reduced-motion:no-preference)', () => {
+  sec.classList.add('is-pinned');
+
+  const STACK_SHIFT = [14, 24];  // px offset per stacked card (min, max)
+  const GAP = 0.057;             // gap between cards, share of viewport width
+  let step = 0, off = 0, idx = -1;
+
+  const measure = () => {
+    step = cards[0].offsetWidth + innerWidth * GAP;
+    off = gsap.utils.clamp(STACK_SHIFT[0], STACK_SHIFT[1], innerWidth * 0.0125);
+  };
+
+  // p = 0..N-1 is the scroll position in cards
+  const render = p => {
+    cards.forEach((c, j) => {
+      const d = p - j;
+      let x, s = 1, dim = 0, o = 1;
+      if (d <= 0) {                          // still on the belt, sliding in from the right
+        x = -d * step;
+      } else {                               // landed, now receding into the stack
+        const k = Math.min(d, 3);
+        x = -k * off;
+        s = 1 - 0.06 * k;
+        dim = Math.min(0.7, 0.5 * k);
+        o = Math.min(1, Math.max(0, 4 - d)); // only 3 edges stay visible
+      }
+      c.style.transform = `translate3d(${x}px,0,0) scale(${s})`;
+      c.style.opacity = o;
+      c.style.setProperty('--dim', dim);
+    });
+    bar.style.strokeDashoffset = C * (1 - Math.min(1, (p + 2) / N));
+    const i = Math.round(p);
+    if (i !== idx) {
+      idx = i;
+      count.textContent = String(Math.min(N, i + 2)).padStart(2, '0');
+      prev.disabled = i === 0;
+      next.disabled = i === M;
+      cards.forEach((c, j) => { c.inert = j < i; });
+    }
+  };
+
+  const state = { p: 0 };
+  const tween = gsap.to(state, {
+    p: M,
+    ease: 'none',
+    onUpdate: () => render(state.p),
+    scrollTrigger: {
+      trigger: sec,
+      start: 'top top',
+      end: () => '+=' + M * innerHeight,   // 100vh per transition
+      pin: true,
+      anticipatePin: 1,
+      scrub: 0.6,
+      snap: { snapTo: 1 / M, duration: { min: 0.25, max: 0.6 }, ease: 'power1.inOut' },
+      onRefresh: () => { measure(); render(state.p); }
+    }
+  });
+
+  const go = i => {
+    const st = tween.scrollTrigger;
+    scrollTo({ top: st.start + (i / M) * (st.end - st.start), behavior: 'smooth' });
+  };
+  prev.onclick = () => go(Math.max(0, idx - 1));
+  next.onclick = () => go(Math.min(M, idx + 1));
+
+  measure();
+  render(0);
+
+  return () => {
+    sec.classList.remove('is-pinned');
+    cards.forEach(c => { c.style.cssText = ''; c.inert = false; });
+  };
+});
+
+document.fonts.ready.then(() => ScrollTrigger.refresh());
+</script>
+</body>
+</html>

@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 08: GEO Optimization &mdash; Preview</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The team behind your healthcare website growth. Plugins, integrations, SEO, redesign, ads and support. One team instead of five freelancers.">
+  <title>Docs Dev Landing — Healthcare Website Growth</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', -apple - system, BlinkMacSystemFont, 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              base: '#000000',
+              surface: '#111111',
+              line: '#2A2A2A',
+              primary: '#F0F0F0',
+              secondary: '#A0A0A0',
+              muted: '#A0A0A0',
+              dim: '#A0A0A0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Core Variables & Base Styles -->
+  <link rel="stylesheet" href="../css/variables.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/base.css?v=20261112_01">
+
+  <!-- Section Stylesheets -->
+  <link rel="stylesheet" href="../css/hero-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/trust-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/problem-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/services-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/dev-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/integrations-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/seo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/geo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/growth-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/process-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/results-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/formats-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/faq-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/articles-slider.css?v=20261112_01">
+
+</head>
+<body class="bg-[#000000] text-[#F0F0F0] selection:bg-[#F0F0F0] selection:text-black">
+  
+    <!-- Standalone Section Preview Toolbar -->
+    <div style="position: sticky; top: 0; z-index: 999999; background: #111111; border-bottom: 1px dashed #2A2A2A; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'Inter', -apple-system, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px; font-weight: 500; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#F0F0F0'" onmouseout="this.style.borderColor='#2A2A2A'">
+          ← All Sections (index.html)
+        </a>
+        <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #000000; border: 1px dashed #2A2A2A; border-radius: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: #A0A0A0; text-transform: uppercase;">
+          PREVIEW MODE &bull; SEC 08
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="07-seo.html" style="padding: 6px 12px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px;" title="Previous: SEO & Core Vitals">← Prev</a>
+        
+        <select onchange="window.location.href=this.value" style="background: #000000; color: #F0F0F0; border: 1px solid #2A2A2A; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-family: inherit; outline: none; cursor: pointer;">
+          <option value="01-hero.html">Section 01: Hero</option><option value="02-trust.html">Section 02: Trust & Proof</option><option value="03-problem.html">Section 03: Problem</option><option value="04-services.html">Section 04: Services</option><option value="05-dev.html">Section 05: Development & Plugins</option><option value="06-integrations.html">Section 06: Integrations</option><option value="07-seo.html">Section 07: SEO & Core Vitals</option><option value="08-geo.html" selected>Section 08: GEO Optimization</option><option value="10-growth.html">Section 10: Growth & Ads</option><option value="12-process.html">Section 12: Process</option><option value="13-results.html">Section 13: Results</option><option value="14-formats.html">Section 14: Formats & Pricing</option><option value="15-faq.html">Section 15: FAQ</option><option value="16-articles.html">Section 16: Articles Slider</option>
+        </select>
+
+        <a href="10-growth.html" style="padding: 6px 12px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px;" title="Next: Growth & Ads">Next →</a>
+      </div>
+    </div>
+    
+  <main>
+    <!-- Section 08: GEO (Generative Engine Optimization) - Pinned Stacking Scroll -->
+    <section id="geo" class="geo-section relative bg-[#000000]">
+
+      <!-- Section 08 Index Indicator with Double Dashed Border (from design) -->
+      <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+        <div class="badge-inner flex flex-col items-center justify-center">
+          <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">08</span>
+          <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">GEO</span>
+        </div>
+      </div>
+
+      <div class="geo-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+
+        <!-- Section Header (Centered, matching Section 07 and Section 10 typography) -->
+        <div class="geo-header text-center max-w-4xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+          <div class="geo-tag mb-2.5">
+            <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-bold tracking-[0.18em] uppercase">
+              GEO &middot; GENERATIVE ENGINE OPTIMIZATION
+            </span>
+          </div>
+          <h2
+            class="geo-title text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.15] mb-3">
+            Be the answer AI gives.
+          </h2>
+          <p class="geo-desc text-[#A0A0A0] text-sm sm:text-base font-normal">
+            Optimization for ChatGPT, Perplexity, Gemini and Google AI Overviews.
+          </p>
+        </div>
+
+        <!-- Pinned Stacking Frames Stage -->
+        <div class="geo-pinned-stage w-full">
+          <div class="geo-frames-container">
+
+            <!-- ==========================================
+               FRAME 01 / 07: Patients now ask AI
+               ========================================== -->
+            <article class="geo-frame z-[10]" data-frame-index="0">
+              <div class="geo-frame-inner">
+                <!-- Topbar -->
+                <div class="geo-frame-topbar">
+                  <span class="geo-frame-counter">FRAME 01 / 07</span>
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Headline & Bullets -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Patients now ask AI, not Google.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        Searches increasingly end inside ChatGPT, Perplexity and Google AI Overviews. The patient gets
+                        one written recommendation, not a list of links. If AI does not cite your clinic, the patient
+                        never sees it.
+                      </p>
+                      <div class="space-y-2 sm:space-y-2.5">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">One answer replaces ten links
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">AI names two to four
+                              clinics per question and links the sources it used.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Ranking #1 is not enough</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">AI picks clinics it can
+                              read, verify and quote, regardless of Google position.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Citations drive the visit</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Patients who read a
+                              recommendation arrive ready to book.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Visual Card (Photo + AI Answer with double border) -->
+                    <div class="lg:col-span-6 flex flex-col justify-center w-full">
+                      <div class="w-full">
+                        <!-- Photo: NO BORDER (Wider & Balanced) -->
+                        <div class="geo-photo-wrapper geo-photo-f1 mb-2.5 sm:mb-3">
+                          <img src="../img/geo/patient-asking-ai.png" alt="Patient asking AI for dentist recommendations">
+                          <div class="geo-prompt-bubble absolute top-3 right-3 sm:top-3.5 sm:right-3.5">
+                            <svg class="w-3.5 h-3.5 text-[#F0F0F0] shrink-0" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            <span>Best family dentist near me?</span>
+                          </div>
+                        </div>
+                        <!-- AI Answer Card: DOUBLE BORDER -->
+                        <div class="geo-card-outer">
+                          <div class="geo-card-inner">
+                            <div
+                              class="text-[9.5px] sm:text-[10px] font-bold text-[#A0A0A0] tracking-[0.14em] uppercase mb-1.5">
+                              AI ANSWER &middot; CHATGPT
+                            </div>
+                            <p class="text-[#A0A0A0] text-[11px] sm:text-xs leading-relaxed mb-2">
+                              For families in your area, <strong class="text-[#F0F0F0] font-semibold">Your
+                                Clinic</strong> is most often recommended: pediatric-friendly care, same-week
+                              appointments, online booking and consistent 4.9&#9733; reviews across 600+ patients. [1]
+                              Two other clinics offer evening hours but have fewer verified reviews. [2]
+                            </p>
+                            <div>
+                              <div class="text-[8.5px] font-bold text-[#A0A0A0] tracking-wider uppercase mb-1">SOURCES
+                                USED</div>
+                              <div class="flex items-center gap-1.5 flex-wrap">
+                                <span
+                                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10.5px] font-medium bg-[#111111] border border-[#2A2A2A] text-[#F0F0F0]">
+                                  yourclinic.com <span class="text-[#F0F0F0]">&#10003; cited</span>
+                                </span>
+                                <span
+                                  class="px-2 py-0.5 rounded-full text-[10.5px] font-medium bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">
+                                  healthgrades
+                                </span>
+                                <span
+                                  class="px-2 py-0.5 rounded-full text-[10.5px] font-medium bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">
+                                  yelp
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-[#A0A0A0] text-[10.5px] font-medium text-center mt-1.5">
+                          Cited, or invisible.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 02 / 07: How AI chooses who to recommend
+               ========================================== -->
+            <article class="geo-frame z-[20]" data-frame-index="1">
+              <div class="geo-frame-inner">
+                <!-- Topbar (Reversed) -->
+                <div class="geo-frame-topbar">
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                  <span class="geo-frame-counter">FRAME 02 / 07</span>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: 4 Step Cards with Double Borders -->
+                    <div class="lg:col-span-6 flex flex-col gap-2 w-full">
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-1.5 px-3">
+                          <div class="flex items-center gap-2 mb-0.5">
+                            <span class="geo-feature-num">1</span>
+                            <span class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Crawl</span>
+                          </div>
+                          <p class="text-[#A0A0A0] text-[11px] mb-1.5">AI bots must be able to reach and read every
+                            important page.</p>
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">robots.txt</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">sitemap</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">page
+                              speed</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-1.5 px-3">
+                          <div class="flex items-center gap-2 mb-0.5">
+                            <span class="geo-feature-num">2</span>
+                            <span class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Understand</span>
+                          </div>
+                          <p class="text-[#A0A0A0] text-[11px] mb-1.5">Services, doctors and locations must be
+                            unambiguous to a machine.</p>
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">schema
+                              markup</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">service
+                              pages</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">name
+                              &middot; address &middot; phone</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-1.5 px-3">
+                          <div class="flex items-center gap-2 mb-0.5">
+                            <span class="geo-feature-num">3</span>
+                            <span class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Trust</span>
+                          </div>
+                          <p class="text-[#A0A0A0] text-[11px] mb-1.5">The same facts must be confirmed by independent
+                            sources.</p>
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">reviews</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">credentials</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">directories</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-1.5 px-3">
+                          <div class="flex items-center gap-2 mb-0.5">
+                            <span class="geo-feature-num">4</span>
+                            <span class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Cite</span>
+                          </div>
+                          <p class="text-[#A0A0A0] text-[11px] mb-1.5">Your clinic is named in the answer, with a link
+                            to your site.</p>
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">Q&amp;A
+                              content</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] font-mono bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">quotable
+                              facts</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Text & Checkmarks -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        How AI chooses who to recommend.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        Answer engines do not rank pages, they assemble an answer from sources they can crawl,
+                        understand and trust. A clinic can lose the recommendation at any one of four steps, so we audit
+                        and fix the whole chain.
+                      </p>
+                      <div class="space-y-2.5 sm:space-y-3">
+                        <div class="geo-reveal-item flex items-start gap-2.5">
+                          <span class="text-[#F0F0F0] mt-0.5 text-xs sm:text-sm">&#10003;</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">The weakest step decides</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Great reviews do not help
+                              if bots are blocked. Fast pages do not help if the data is unclear.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item flex items-start gap-2.5">
+                          <span class="text-[#F0F0F0] mt-0.5 text-xs sm:text-sm">&#10003;</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">We start with an audit</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">You get a score for each
+                              step and a prioritized list of fixes.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item flex items-start gap-2.5">
+                          <span class="text-[#F0F0F0] mt-0.5 text-xs sm:text-sm">&#10003;</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Works with your current site
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">No rebuild needed, on any
+                              platform.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 03 / 07: Structured data AI can read
+               ========================================== -->
+            <article class="geo-frame z-[30]" data-frame-index="2">
+              <div class="geo-frame-inner">
+                <!-- Topbar -->
+                <div class="geo-frame-topbar">
+                  <span class="geo-frame-counter">FRAME 03 / 07</span>
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Text -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Structured data AI can read.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        Schema markup is a hidden layer of code that tells machines who you are, what you treat and
+                        where you practice. Instead of guessing from page text, AI reads your facts directly, so it can
+                        repeat them correctly.
+                      </p>
+                      <div class="space-y-2 sm:space-y-2.5">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Clinic, doctors, services</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Every location, specialty
+                              and procedure described in the standard schema.org format.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Hours, prices, insurance</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">The details patients ask
+                              about, in a form AI can quote without errors.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Validated on every release
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Tested with Google's Rich
+                              Results test and re-checked monthly.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Code Card & Schema Grid (Both with Double Borders) -->
+                    <div class="lg:col-span-6 flex flex-col gap-2.5 justify-center w-full">
+                      <!-- JSON-LD Card with Double Border -->
+                      <div class="geo-code-outer">
+                        <div class="geo-code-inner">
+                          <div class="geo-code-topbar">
+                            <span class="text-[#A0A0A0]">JSON-LD &middot; HOMEPAGE</span>
+                            <span
+                              class="px-2 py-0.5 rounded text-[9.5px] bg-[#111111] border border-[#2A2A2A] text-[#F0F0F0] font-medium">valid
+                              &#10003;</span>
+                          </div>
+                          <div class="geo-code-content">
+                            <pre class="font-mono text-[10px] sm:text-[11px] leading-relaxed text-[#A0A0A0]">
+{
+  <span class="text-[#F0F0F0]">"@type"</span>: <span class="text-[#F0F0F0]">"MedicalBusiness"</span>,
+  <span class="text-[#F0F0F0]">"name"</span>: <span class="text-[#F0F0F0]">"Your Clinic"</span>,
+  <span class="text-[#F0F0F0]">"medicalSpecialty"</span>: [<span class="text-[#F0F0F0]">"Pediatric"</span>, <span class="text-[#F0F0F0]">"Dentistry"</span>],
+  <span class="text-[#F0F0F0]">"address"</span>: { <span class="text-[#F0F0F0]">"addressLocality"</span>: <span class="text-[#F0F0F0]">"[city]"</span> },
+  <span class="text-[#F0F0F0]">"openingHours"</span>: <span class="text-[#F0F0F0]">"Mo-Fr 08:00-18:00"</span>,
+  <span class="text-[#F0F0F0]">"employee"</span>: [ { <span class="text-[#F0F0F0]">"@type"</span>: <span class="text-[#F0F0F0]">"Physician"</span> } ]
+}</pre>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 2x2 Schema cards grid with Double Borders -->
+                      <div class="grid grid-cols-2 gap-2">
+                        <div class="geo-card-outer">
+                          <div class="geo-card-inner py-1.5 px-2.5">
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[12.5px] mb-0.5">MedicalBusiness</div>
+                            <div class="text-[#A0A0A0] text-[10px] sm:text-[10.5px]">Clinic, address, hours, services
+                            </div>
+                          </div>
+                        </div>
+                        <div class="geo-card-outer">
+                          <div class="geo-card-inner py-1.5 px-2.5">
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[12.5px] mb-0.5">Physician</div>
+                            <div class="text-[#A0A0A0] text-[10px] sm:text-[10.5px]">Doctors, specialties, credentials
+                            </div>
+                          </div>
+                        </div>
+                        <div class="geo-card-outer">
+                          <div class="geo-card-inner py-1.5 px-2.5">
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[12.5px] mb-0.5">FAQPage</div>
+                            <div class="text-[#A0A0A0] text-[10px] sm:text-[10.5px]">Questions with direct answers</div>
+                          </div>
+                        </div>
+                        <div class="geo-card-outer">
+                          <div class="geo-card-inner py-1.5 px-2.5">
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[12.5px] mb-0.5">Review</div>
+                            <div class="text-[#A0A0A0] text-[10px] sm:text-[10.5px]">Ratings and patient feedback</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 04 / 07: Content written to be quoted
+               ========================================== -->
+            <article class="geo-frame z-[40]" data-frame-index="3">
+              <div class="geo-frame-inner">
+                <!-- Topbar (Reversed) -->
+                <div class="geo-frame-topbar">
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                  <span class="geo-frame-counter">FRAME 04 / 07</span>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Doctor Card & Before/After Comparison -->
+                    <div class="lg:col-span-6 flex flex-col gap-2.5 w-full">
+                      <!-- Photo: NO BORDER (Wider & Balanced) -->
+                      <div class="geo-photo-wrapper geo-photo-f4">
+                        <img src="../img/geo/doctor-reviewed-by.png" alt="Dr. A. Morgan, DDS">
+                        <div
+                          class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent p-3 sm:p-4 flex flex-col justify-end">
+                          <span class="text-[9px] font-bold text-[#A0A0A0] tracking-wider uppercase mb-0.5">REVIEWED BY
+                            &middot; CLINICAL LEAD</span>
+                          <div class="text-[#F0F0F0] font-extrabold text-sm sm:text-base leading-tight">Dr. A. Morgan,
+                            DDS</div>
+                          <div class="text-[#A0A0A0] text-[10.5px]">Board-certified &middot; Updated Mar 2026</div>
+                        </div>
+                      </div>
+
+                      <!-- Before / After Grid with Double Borders -->
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <!-- Before: Double Border -->
+                        <div class="geo-before-outer">
+                          <div class="geo-before-inner">
+                            <div class="flex items-center justify-between mb-1">
+                              <span class="text-[#A0A0A0] text-[9.5px] font-bold uppercase tracking-wider">BEFORE</span>
+                              <span
+                                class="text-[#A0A0A0] text-[8.5px] border border-[#2A2A2A] px-1 py-0.5 rounded font-mono">not
+                                quotable</span>
+                            </div>
+                            <div class="text-[#F0F0F0] font-semibold text-xs mb-0.5">Our services</div>
+                            <p class="text-[#A0A0A0] text-[10.5px] leading-snug mb-1.5">
+                              We offer a wide range of dental services for the whole family. Our modern clinic uses
+                              advanced equipment and a caring approach to every patient.
+                            </p>
+                            <p class="text-[#A0A0A0] text-[9.5px] leading-tight font-medium">
+                              No price. No duration. No author. Nothing for AI to lift into an answer.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- After: Double Border -->
+                        <div class="geo-after-outer">
+                          <div class="geo-after-inner">
+                            <div class="flex items-center justify-between mb-1">
+                              <span class="text-[#A0A0A0] text-[9.5px] font-bold uppercase tracking-wider">AFTER</span>
+                              <span
+                                class="text-[#F0F0F0] text-[8.5px] border border-[#2A2A2A] px-1 py-0.5 rounded font-mono">quotable
+                                &#10003;</span>
+                            </div>
+                            <div class="text-[#F0F0F0] font-semibold text-xs mb-0.5">How much is a cleaning?</div>
+                            <p class="text-[#A0A0A0] text-[10.5px] leading-snug mb-1.5">
+                              <strong class="text-[#F0F0F0] font-semibold">A routine cleaning costs $95-$140</strong>
+                              and takes about 45 minutes. Most insurance plans cover two per year.
+                            </p>
+                            <div class="space-y-0.5 text-[9.5px] text-[#A0A0A0]">
+                              <div>&#10003; Price range, updated Mar 2026</div>
+                              <div>&#10003; Insurance: Delta, Cigna, Aetna</div>
+                              <div>&#10003; Sources linked to clinical guidelines</div>
+                              <div>&#10003; Book online in 2 minutes</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Text -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Content written to be quoted.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        AI lifts short, factual, self-contained answers. We rewrite your key pages around the real
+                        questions patients ask, so your text becomes the answer instead of a page nobody quotes.
+                      </p>
+                      <div class="space-y-2.5 sm:space-y-3">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Question as the heading</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Pages mirror how patients
+                              phrase prompts: cost, pain, insurance, wait time.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Answer in the first two
+                              sentences</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">The fact comes first, the
+                              explanation follows.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Verified by a named expert
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Doctor author, review date
+                              and sources build trust.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 05 / 07: Build your clinic’s entity
+               ========================================== -->
+            <article class="geo-frame z-[50]" data-frame-index="4">
+              <div class="geo-frame-inner">
+                <!-- Topbar -->
+                <div class="geo-frame-topbar">
+                  <span class="geo-frame-counter">FRAME 05 / 07</span>
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Text -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Build your clinic’s entity.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        An entity is how AI recognizes your clinic as one real, verifiable thing. When the name,
+                        address, phone and doctors match everywhere on the web, AI trusts you. When they conflict, it
+                        skips you.
+                      </p>
+                      <div class="space-y-2.5 sm:space-y-3">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Audit every mention</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Google profile,
+                              directories, social, press and doctor listings.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Fix conflicts at the source
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Old phone numbers,
+                              previous addresses and duplicate profiles.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Grow trusted signals</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Fresh reviews, doctor bios
+                              and press mentions on reputable sites.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Consistency Table & Stats (Double Border Card) -->
+                    <div class="lg:col-span-6 flex flex-col justify-center w-full">
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner">
+                          <!-- Card Top -->
+                          <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-[#2A2A2A]">
+                            <div
+                              class="text-[9.5px] sm:text-[10.5px] font-bold text-[#A0A0A0] tracking-[0.14em] uppercase">
+                              ENTITY CONSISTENCY &middot; YOUR CLINIC
+                            </div>
+                            <div class="text-[#F0F0F0] font-extrabold text-xl sm:text-2xl tracking-tight">96%</div>
+                          </div>
+
+                          <!-- Table -->
+                          <div class="overflow-x-auto">
+                            <table class="geo-table text-left">
+                              <thead>
+                                <tr>
+                                  <th>SOURCE</th>
+                                  <th class="text-center">NAME</th>
+                                  <th class="text-center">ADDRESS</th>
+                                  <th class="text-center">PHONE</th>
+                                  <th class="text-right">STATUS</th>
+                                </tr>
+                              </thead>
+                              <tbody class="text-[#F0F0F0]">
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Google Profile</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-right text-[#F0F0F0] font-semibold text-[10.5px]">Verified</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Healthgrades</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-right text-[#F0F0F0] font-semibold text-[10.5px]">Verified</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Yelp</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#A0A0A0]">&#10005;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-right text-[#A0A0A0] font-semibold text-[10.5px]">Fixing</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Doctor profiles (4)</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-right text-[#F0F0F0] font-semibold text-[10.5px]">Verified</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Social</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#A0A0A0]">&#10005;</td>
+                                  <td class="text-right text-[#A0A0A0] font-semibold text-[10.5px]">Fixing</td>
+                                </tr>
+                                <tr>
+                                  <td class="font-medium text-[#F0F0F0]">Press mentions</td>
+                                  <td class="text-center text-[#F0F0F0]">&#10003;</td>
+                                  <td class="text-center text-[#A0A0A0]">&mdash;</td>
+                                  <td class="text-center text-[#A0A0A0]">&mdash;</td>
+                                  <td class="text-right text-[#F0F0F0] font-semibold text-[10.5px]">Growing</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <!-- Bottom 3 Stats -->
+                          <div class="grid grid-cols-3 gap-2 pt-2 mt-2 border-t border-[#2A2A2A] text-center">
+                            <div>
+                              <div class="text-[#F0F0F0] font-extrabold text-sm sm:text-base">34</div>
+                              <div class="text-[#A0A0A0] text-[9.5px]">profiles audited</div>
+                            </div>
+                            <div>
+                              <div class="text-[#F0F0F0] font-extrabold text-sm sm:text-base">9</div>
+                              <div class="text-[#A0A0A0] text-[9.5px]">conflicts fixed</div>
+                            </div>
+                            <div>
+                              <div class="text-[#F0F0F0] font-extrabold text-sm sm:text-base">+112</div>
+                              <div class="text-[#A0A0A0] text-[9.5px]">new reviews</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 06 / 07: Technical access for AI crawlers
+               ========================================== -->
+            <article class="geo-frame z-[60]" data-frame-index="5">
+              <div class="geo-frame-inner">
+                <!-- Topbar (Reversed) -->
+                <div class="geo-frame-topbar">
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                    <span class="geo-dot"></span>
+                  </div>
+                  <span class="geo-frame-counter">FRAME 06 / 07</span>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Toggles & Robots.txt with Double Borders -->
+                    <div class="lg:col-span-6 flex flex-col gap-2 w-full">
+                      <!-- Toggles Card: Double Border -->
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-2 px-3">
+                          <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-xs">
+                              <span class="text-[#F0F0F0] font-medium text-[11px] sm:text-xs">robots.txt allows AI
+                                crawlers</span>
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="text-[9.5px] px-1.5 py-0.5 rounded bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">4
+                                  bots</span>
+                                <div class="geo-toggle-track">
+                                  <div class="geo-toggle-thumb"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                              <span class="text-[#F0F0F0] font-medium text-[11px] sm:text-xs">llms.txt published</span>
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="text-[9.5px] px-1.5 py-0.5 rounded bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">live</span>
+                                <div class="geo-toggle-track">
+                                  <div class="geo-toggle-thumb"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                              <span class="text-[#F0F0F0] font-medium text-[11px] sm:text-xs">Clean, fast HTML</span>
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="text-[9.5px] px-1.5 py-0.5 rounded bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">LCP
+                                  1.6s</span>
+                                <div class="geo-toggle-track">
+                                  <div class="geo-toggle-thumb"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                              <span class="text-[#F0F0F0] font-medium text-[11px] sm:text-xs">XML sitemap and
+                                canonicals</span>
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="text-[9.5px] px-1.5 py-0.5 rounded bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">412
+                                  URLs</span>
+                                <div class="geo-toggle-track">
+                                  <div class="geo-toggle-thumb"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                              <span class="text-[#F0F0F0] font-medium text-[11px] sm:text-xs">Schema validated</span>
+                              <div class="flex items-center gap-1.5">
+                                <span
+                                  class="text-[9.5px] px-1.5 py-0.5 rounded bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">0
+                                  errors</span>
+                                <div class="geo-toggle-track">
+                                  <div class="geo-toggle-thumb"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Robots.txt Snippet Card: Double Border -->
+                      <div class="geo-code-outer">
+                        <div class="geo-code-inner">
+                          <div class="geo-code-topbar">
+                            <span class="text-[#A0A0A0]">ROBOTS.TXT</span>
+                            <span
+                              class="px-1.5 py-0.5 rounded text-[9.5px] bg-[#111111] border border-[#2A2A2A] text-[#A0A0A0]">example</span>
+                          </div>
+                          <div class="geo-code-content">
+                            <pre class="font-mono text-[10px] sm:text-[11px] leading-relaxed text-[#A0A0A0]">
+<span class="text-[#F0F0F0]">User-agent:</span> GPTBot          <span class="text-[#F0F0F0]">Allow: /</span>
+<span class="text-[#F0F0F0]">User-agent:</span> PerplexityBot   <span class="text-[#F0F0F0]">Allow: /</span>
+<span class="text-[#F0F0F0]">User-agent:</span> Google-Extended <span class="text-[#F0F0F0]">Allow: /</span>
+<span class="text-[#F0F0F0]">User-agent:</span> *               <span class="text-[#A0A0A0]">Disallow: /patient-portal/</span></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Text -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Technical access for AI crawlers.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        The best content does nothing if AI bots cannot reach it. We open the door for the crawlers that
+                        matter, keep private areas closed and make every page fast and simple to parse.
+                      </p>
+                      <div class="space-y-2.5 sm:space-y-3">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Right bots in, private pages
+                              out</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">AI crawlers allowed on
+                              public pages, the patient portal and forms stay blocked.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">llms.txt summary file</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">A plain-text overview of
+                              your clinic written for language models.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Checked after every update
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Monthly crawl test catches
+                              blocks before they cost you citations.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ==========================================
+               FRAME 07 / 07: Measure your AI visibility
+               ========================================== -->
+            <article class="geo-frame z-[70]" data-frame-index="6">
+              <div class="geo-frame-inner">
+                <!-- Topbar -->
+                <div class="geo-frame-topbar">
+                  <span class="geo-frame-counter">FRAME 07 / 07</span>
+                  <div class="geo-frame-dots">
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot"></span>
+                    <span class="geo-dot active"></span>
+                  </div>
+                </div>
+
+                <!-- Body Grid -->
+                <div class="geo-frame-body">
+                  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center w-full">
+                    <!-- Left: Text & CTA Buttons -->
+                    <div class="lg:col-span-6 flex flex-col justify-center">
+                      <h3
+                        class="geo-reveal-item geo-heading-title text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.18] mb-2 sm:mb-3">
+                        Measure your AI visibility.
+                      </h3>
+                      <p
+                        class="geo-reveal-item geo-heading-desc text-[#A0A0A0] text-xs sm:text-[13px] leading-relaxed mb-3 sm:mb-4 max-w-lg">
+                        We run a fixed set of real patient questions through each AI engine every month and record
+                        whether your clinic is mentioned, linked and where it appears. You see progress in numbers, not
+                        guesses.
+                      </p>
+                      <div class="space-y-2 sm:space-y-2.5 mb-4 sm:mb-5">
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">1</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">50+ patient prompts tracked
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Treatments, prices,
+                              urgency and location, in your language and city.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">2</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Compared with competitors</div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">See who AI recommends
+                              instead of you and why.</div>
+                          </div>
+                        </div>
+                        <div class="geo-reveal-item geo-feature-item">
+                          <span class="geo-feature-num">3</span>
+                          <div>
+                            <div class="text-[#F0F0F0] font-bold text-xs sm:text-[13px]">Monthly report with next steps
+                            </div>
+                            <div class="text-[#A0A0A0] text-[11px] sm:text-xs leading-normal">Plain-language summary and
+                              the three actions that move the score.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Buttons -->
+                      <div class="geo-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                        <a href="#audit"
+                          class="btn-primary inline-flex items-center justify-center px-5 py-2 sm:py-2.5 rounded-[10px] text-xs sm:text-sm font-semibold tracking-tight bg-[#F0F0F0] text-[#000000] hover:bg-[#ffffff]">
+                          Get a GEO audit
+                        </a>
+                        <a href="#results"
+                          class="btn-secondary inline-flex items-center justify-center px-5 py-2 sm:py-2.5 rounded-[10px] text-xs sm:text-sm font-semibold tracking-tight bg-[#111111] border border-[#2A2A2A] text-[#F0F0F0] hover:bg-[#181818]">
+                          See a sample report
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Right: Doctor Photo + Dashboard Card (Double Border) -->
+                    <div class="lg:col-span-6 flex flex-col gap-2.5 w-full">
+                      <!-- Photo: NO BORDER (Wider & Balanced) -->
+                      <div class="geo-photo-wrapper geo-photo-f7">
+                        <img src="../img/geo/clinic-report-team.png" alt="Clinical team review">
+                        <div
+                          class="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 bg-black/90 backdrop-blur-md border border-[#2A2A2A] rounded-xl py-1.5 px-3 text-right shadow-lg">
+                          <div class="flex items-center gap-1.5 justify-end">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#F0F0F0]"></span>
+                            <span class="text-[8.5px] font-bold text-[#A0A0A0] uppercase tracking-wider">MONTHLY
+                              REPORT</span>
+                          </div>
+                          <div class="text-[#F0F0F0] font-extrabold text-xs sm:text-sm leading-tight mt-0.5">1st of
+                            every month</div>
+                          <div class="text-[#A0A0A0] text-[9.5px]">PDF + 15-min walkthrough</div>
+                        </div>
+                      </div>
+
+                      <!-- AI Visibility Dashboard Card: DOUBLE BORDER -->
+                      <div class="geo-card-outer">
+                        <div class="geo-card-inner py-2 px-3">
+                          <div class="flex items-start justify-between mb-1.5">
+                            <div>
+                              <div
+                                class="text-[8.5px] sm:text-[9.5px] font-bold text-[#A0A0A0] tracking-[0.14em] uppercase mb-0.5">
+                                AI VISIBILITY SCORE
+                              </div>
+                              <div class="flex items-baseline gap-2">
+                                <span id="geo-score-counter" data-target="72"
+                                  class="text-2xl sm:text-3xl font-extrabold text-[#F0F0F0] tracking-tight">72</span>
+                                <span class="text-[#A0A0A0] text-[10.5px] font-semibold">&#9650; 18 this quarter</span>
+                              </div>
+                            </div>
+                            <!-- Sparkline curve -->
+                            <div class="w-[85px] h-[28px]">
+                              <svg class="w-full h-full" viewBox="0 0 100 36" fill="none">
+                                <path d="M 0 30 Q 25 28 45 22 T 80 12 L 100 4" stroke="#F0F0F0" stroke-width="2"
+                                  stroke-linecap="round" />
+                                <circle cx="100" cy="4" r="3" fill="#F0F0F0" />
+                              </svg>
+                            </div>
+                          </div>
+
+                          <!-- Engines bars -->
+                          <div class="space-y-1 mb-1.5 text-xs">
+                            <div>
+                              <div class="flex justify-between text-[10px] text-[#A0A0A0] mb-0.5">
+                                <span>ChatGPT</span>
+                                <span class="font-medium text-[#F0F0F0]">74%</span>
+                              </div>
+                              <div class="geo-engine-bar-bg">
+                                <div class="geo-engine-bar-fill" data-width="74%" style="width: 74%;"></div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="flex justify-between text-[10px] text-[#A0A0A0] mb-0.5">
+                                <span>Perplexity</span>
+                                <span class="font-medium text-[#F0F0F0]">68%</span>
+                              </div>
+                              <div class="geo-engine-bar-bg">
+                                <div class="geo-engine-bar-fill" data-width="68%" style="width: 68%;"></div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="flex justify-between text-[10px] text-[#A0A0A0] mb-0.5">
+                                <span>Gemini</span>
+                                <span class="font-medium text-[#F0F0F0]">61%</span>
+                              </div>
+                              <div class="geo-engine-bar-bg">
+                                <div class="geo-engine-bar-fill" data-width="61%" style="width: 61%;"></div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="flex justify-between text-[10px] text-[#A0A0A0] mb-0.5">
+                                <span>AI Overviews</span>
+                                <span class="font-medium text-[#F0F0F0]">55%</span>
+                              </div>
+                              <div class="geo-engine-bar-bg">
+                                <div class="geo-engine-bar-fill" data-width="55%" style="width: 55%;"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Table of prompts -->
+                          <div class="pt-1.5 border-t border-[#2A2A2A] text-left">
+                            <div
+                              class="grid grid-cols-12 text-[8.5px] font-bold text-[#A0A0A0] uppercase tracking-wider pb-0.5">
+                              <div class="col-span-7">PATIENT PROMPT</div>
+                              <div class="col-span-2 text-center">CITED</div>
+                              <div class="col-span-3 text-right">POSITION</div>
+                            </div>
+                            <div class="space-y-0.5 text-[10px]">
+                              <div class="grid grid-cols-12 text-[#F0F0F0]">
+                                <div class="col-span-7 truncate text-[#F0F0F0]">best family dentist in [city]</div>
+                                <div class="col-span-2 text-center text-[#F0F0F0]">&#10003;</div>
+                                <div class="col-span-3 text-right font-semibold text-[#F0F0F0]">#1</div>
+                              </div>
+                              <div class="grid grid-cols-12 text-[#F0F0F0]">
+                                <div class="col-span-7 truncate text-[#F0F0F0]">how much is a teeth cleaning</div>
+                                <div class="col-span-2 text-center text-[#F0F0F0]">&#10003;</div>
+                                <div class="col-span-3 text-right font-semibold text-[#F0F0F0]">#2</div>
+                              </div>
+                              <div class="grid grid-cols-12 text-[#A0A0A0]">
+                                <div class="col-span-7 truncate text-[#A0A0A0]">emergency dentist open today</div>
+                                <div class="col-span-2 text-center text-[#A0A0A0]">&mdash;</div>
+                                <div class="col-span-3 text-right text-[#A0A0A0]">not yet</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/trust-section.js"></script>
+  <script src="../js/problem-section.js?v=20261024_02"></script>
+  <script src="../js/services-section.js?v=20261024_01"></script>
+  <script src="../js/dev-section.js?v=20261105_23"></script>
+  <script src="../js/integrations-section.js?v=20261024_01"></script>
+  <script src="../js/seo-section.js?v=20261024_01"></script>
+  <script src="../js/geo-section.js?v=20261031_04"></script>
+  <script src="../js/growth-section.js?v=20261024_01"></script>
+  <script src="../js/process-section.js?v=20261025_01"></script>
+  <script src="../js/results-section.js?v=20261105_17"></script>
+  <script src="../js/formats-section.js?v=20261105_18"></script>
+  <script src="../js/faq-section.js?v=20261105_19"></script>
+  <script src="../js/articles-slider.js?v=20261108_04"></script>
+
+</body>
+</html>

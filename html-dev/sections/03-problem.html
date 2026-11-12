@@ -1,0 +1,284 @@
+<!-- Section 03: Problem (Matches design 3.png) -->
+    <section id="problem" class="problem-section relative overflow-hidden bg-[#000000]">
+
+      <!-- Section 03 Index Indicator with Double Dashed Border (from design 3.png) -->
+      <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+        <div class="badge-inner flex flex-col items-center justify-center">
+          <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">03</span>
+          <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">PROBLEM</span>
+        </div>
+      </div>
+
+      <div class="problem-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-14 items-center">
+
+          <!-- Left Column: Problem Copy & Pain Points -->
+          <div class="lg:col-span-6 xl:col-span-6 flex flex-col items-start z-10">
+
+            <!-- Category Tag -->
+            <div class="problem-tag mb-2 sm:mb-2.5">
+              <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-bold tracking-[0.15em] uppercase">
+                THE PROBLEM
+              </span>
+            </div>
+
+            <!-- Headline -->
+            <h2
+              class="problem-title text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-bold text-[#F0F0F0] tracking-tight leading-[1.12] mb-3 sm:mb-4">
+              Your website<br>belongs to no one.
+            </h2>
+
+            <!-- Paragraph -->
+            <p
+              class="problem-desc text-[#A0A0A0] text-sm sm:text-[15px] lg:text-base leading-relaxed max-w-md mb-5 sm:mb-6 font-normal">
+              A developer here, an SEO freelancer there, a designer who left. Nobody sees the whole picture, and nobody
+              owns the results.
+            </p>
+
+            <!-- 3 Problem Cards with Double Dashed Border (from design 3.png) -->
+            <div class="problem-cards-list flex flex-col gap-2.5 sm:gap-3 w-full max-w-[400px]">
+
+              <!-- Card 1 -->
+              <div class="problem-card problem-card-outer group cursor-pointer" data-highlight="developer,seo"
+                tabindex="0" role="button" aria-label="Problem: Developer doesn’t talk to SEO">
+                <div class="problem-card-inner">
+                  <span class="problem-card-cross">✕</span>
+                  <span
+                    class="problem-card-text text-[#F0F0F0] group-hover:text-white transition-colors text-sm sm:text-[14.5px] font-medium tracking-tight">
+                    Developer doesn’t talk to SEO
+                  </span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="problem-card problem-card-outer group cursor-pointer" data-highlight="ads" tabindex="0"
+                role="button" aria-label="Problem: Nobody measures bookings">
+                <div class="problem-card-inner">
+                  <span class="problem-card-cross">✕</span>
+                  <span
+                    class="problem-card-text text-[#F0F0F0] group-hover:text-white transition-colors text-sm sm:text-[14.5px] font-medium tracking-tight">
+                    Nobody measures bookings
+                  </span>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="problem-card problem-card-outer group cursor-pointer" data-highlight="hosting,developer"
+                tabindex="0" role="button" aria-label="Problem: Updates break things">
+                <div class="problem-card-inner">
+                  <span class="problem-card-cross">✕</span>
+                  <span
+                    class="problem-card-text text-[#F0F0F0] group-hover:text-white transition-colors text-sm sm:text-[14.5px] font-medium tracking-tight">
+                    Updates break things
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Disconnected Diagram -->
+          <div class="lg:col-span-6 xl:col-span-6 flex justify-center items-center relative w-full">
+            <div class="problem-diagram-wrap relative w-full max-w-[560px] mx-auto select-none">
+
+              <svg id="problem-diagram-svg" viewBox="0 0 620 440" class="w-full h-auto overflow-visible"
+                aria-label="Illustration showing disconnected website ecosystem: Developer, SEO freelancer, Designer, Ads agency, and Hosting with broken links to the central site">
+                <defs>
+                  <!-- Glow filter for nodes and highlights -->
+                  <filter id="nodeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+
+                  <!-- Subtle card shadow -->
+                  <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
+                  </filter>
+                </defs>
+
+                <!-- Connection Lines Group (Dashed lines connecting each satellite node to Your site) -->
+                <g class="diagram-connections">
+                  <!-- Line 1: Developer -> Site -->
+                  <line id="line-developer" class="diagram-line" x1="262" y1="84" x2="292" y2="156" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- Line 2: SEO freelancer -> Site -->
+                  <line id="line-seo" class="diagram-line" x1="480" y1="84" x2="388" y2="156" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- Line 3: Designer -> Site -->
+                  <line id="line-designer" class="diagram-line" x1="182" y1="234" x2="251" y2="225" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- Line 4: Ads agency -> Site -->
+                  <line id="line-ads" class="diagram-line" x1="429" y1="225" x2="500" y2="234" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- Line 5: Hosting -> Site -->
+                  <line id="line-hosting" class="diagram-line" x1="340" y1="295" x2="340" y2="354" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+                </g>
+
+                <!-- Disconnection Crosses Group (Centered on each line, breaking the connection) -->
+                <g class="diagram-crosses">
+                  <!-- Cross 1: Developer connection -->
+                  <g transform="translate(277, 120)">
+                    <g id="cross-developer" class="diagram-cross">
+                      <circle cx="0" cy="0" r="11" fill="#000000" />
+                      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" fill="#A0A0A0" font-size="13"
+                        font-weight="600">✕</text>
+                    </g>
+                  </g>
+
+                  <!-- Cross 2: SEO connection -->
+                  <g transform="translate(434, 120)">
+                    <g id="cross-seo" class="diagram-cross">
+                      <circle cx="0" cy="0" r="11" fill="#000000" />
+                      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" fill="#A0A0A0" font-size="13"
+                        font-weight="600">✕</text>
+                    </g>
+                  </g>
+
+                  <!-- Cross 3: Designer connection -->
+                  <g transform="translate(215, 229)">
+                    <g id="cross-designer" class="diagram-cross">
+                      <circle cx="0" cy="0" r="11" fill="#000000" />
+                      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" fill="#A0A0A0" font-size="13"
+                        font-weight="600">✕</text>
+                    </g>
+                  </g>
+
+                  <!-- Cross 4: Ads agency connection -->
+                  <g transform="translate(465, 229)">
+                    <g id="cross-ads" class="diagram-cross">
+                      <circle cx="0" cy="0" r="11" fill="#000000" />
+                      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" fill="#A0A0A0" font-size="13"
+                        font-weight="600">✕</text>
+                    </g>
+                  </g>
+
+                  <!-- Cross 5: Hosting connection -->
+                  <g transform="translate(340, 326)">
+                    <g id="cross-hosting" class="diagram-cross">
+                      <circle cx="0" cy="0" r="11" fill="#000000" />
+                      <text x="0" y="0" text-anchor="middle" dominant-baseline="central" fill="#A0A0A0" font-size="13"
+                        font-weight="600">✕</text>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Center Monitor: "Your site" with Double Dashed Border, Stand, and Dots (from design 3.png) -->
+                <g id="diagram-center-site" class="diagram-center-site" filter="url(#cardShadow)">
+                  <!-- Stand Neck -->
+                  <rect x="336" y="274" width="8" height="15" rx="1.5" fill="#2A2A2A" />
+
+                  <!-- Stand Base -->
+                  <rect x="312" y="289" width="56" height="5" rx="2.5" fill="#2A2A2A" />
+
+                  <!-- Monitor Outer Frame (Double Dashed Border) -->
+                  <rect x="251" y="156" width="178" height="118" rx="16" fill="#000000" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- Monitor Inner Frame -->
+                  <rect x="255" y="160" width="170" height="110" rx="12" fill="#111111" stroke="#2A2A2A"
+                    stroke-width="1.5" stroke-dasharray="4 4" />
+
+                  <!-- 3 Browser Dots in top-left corner -->
+                  <circle cx="274" cy="177" r="2.5" fill="#2A2A2A" />
+                  <circle cx="282" cy="177" r="2.5" fill="#2A2A2A" />
+                  <circle cx="290" cy="177" r="2.5" fill="#2A2A2A" />
+
+                  <!-- "Your site" Text inside Monitor -->
+                  <text x="340" y="222" text-anchor="middle" dominant-baseline="central" fill="#F0F0F0"
+                    font-family="'Inter', sans-serif" font-size="20" font-weight="700" letter-spacing="-0.02em">
+                    Your site
+                  </text>
+                </g>
+
+                <!-- Satellite Nodes Group with Double Dashed Border (Capsule pills from design 3.png) -->
+                <g class="diagram-nodes">
+
+                  <!-- Node 1: Developer -->
+                  <g id="node-developer" class="diagram-node cursor-pointer" data-target="developer">
+                    <!-- Outer pill border -->
+                    <rect class="diagram-node-outer" x="199" y="37" width="124" height="48" rx="24" fill="#000000"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <!-- Inner pill border -->
+                    <rect class="diagram-node-inner" x="204" y="42" width="114" height="38" rx="19" fill="#111111"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <text class="diagram-node-text" x="261" y="61" text-anchor="middle" dominant-baseline="central"
+                      fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+                      Developer
+                    </text>
+                  </g>
+
+                  <!-- Node 2: SEO freelancer -->
+                  <g id="node-seo" class="diagram-node cursor-pointer" data-target="seo">
+                    <!-- Outer pill border -->
+                    <rect class="diagram-node-outer" x="423" y="37" width="152" height="48" rx="24" fill="#000000"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <!-- Inner pill border -->
+                    <rect class="diagram-node-inner" x="428" y="42" width="142" height="38" rx="19" fill="#111111"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <text class="diagram-node-text" x="499" y="61" text-anchor="middle" dominant-baseline="central"
+                      fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+                      SEO freelancer
+                    </text>
+                  </g>
+
+                  <!-- Node 3: Designer -->
+                  <g id="node-designer" class="diagram-node cursor-pointer" data-target="designer">
+                    <!-- Outer pill border -->
+                    <rect class="diagram-node-outer" x="67" y="210" width="116" height="48" rx="24" fill="#000000"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <!-- Inner pill border -->
+                    <rect class="diagram-node-inner" x="72" y="215" width="106" height="38" rx="19" fill="#111111"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <text class="diagram-node-text" x="125" y="234" text-anchor="middle" dominant-baseline="central"
+                      fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+                      Designer
+                    </text>
+                  </g>
+
+                  <!-- Node 4: Ads agency -->
+                  <g id="node-ads" class="diagram-node cursor-pointer" data-target="ads">
+                    <!-- Outer pill border -->
+                    <rect class="diagram-node-outer" x="499" y="210" width="126" height="48" rx="24" fill="#000000"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <!-- Inner pill border -->
+                    <rect class="diagram-node-inner" x="504" y="215" width="116" height="38" rx="19" fill="#111111"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <text class="diagram-node-text" x="562" y="234" text-anchor="middle" dominant-baseline="central"
+                      fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+                      Ads agency
+                    </text>
+                  </g>
+
+                  <!-- Node 5: Hosting -->
+                  <g id="node-hosting" class="diagram-node cursor-pointer" data-target="hosting">
+                    <!-- Outer pill border -->
+                    <rect class="diagram-node-outer" x="277" y="353" width="126" height="48" rx="24" fill="#000000"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <!-- Inner pill border -->
+                    <rect class="diagram-node-inner" x="282" y="358" width="116" height="38" rx="19" fill="#111111"
+                      stroke="#2A2A2A" stroke-width="1" stroke-dasharray="3 3" />
+                    <text class="diagram-node-text" x="340" y="377" text-anchor="middle" dominant-baseline="central"
+                      fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="13.5" font-weight="500">
+                      Hosting
+                    </text>
+                  </g>
+
+                </g>
+
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>

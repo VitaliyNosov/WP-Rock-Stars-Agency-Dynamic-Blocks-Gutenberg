@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Docs Dev Landing - Style System
+   Based on Section 01 Design & dock-dev-landing.md specifications
+   ========================================================================== */
+
+:root {
+  /* Rock Stars Agency Design System Tokens */
+  --bg-base: #000000;
+  --surface: #111111;
+  --line: #2A2A2A;
+  --text-primary: #F0F0F0;
+  --text-secondary: #A0A0A0;
+
+  /* Primary & Brand Colors */
+  --color-primary: #F0F0F0;
+  --color-primary-hover: #ffffff;
+  --color-accent: #F0F0F0;
+  --color-accent-glow: rgba(240, 240, 240, 0.15);
+
+  /* Backgrounds */
+  --color-background: #000000;
+  --color-card-outer: #000000;
+  --color-card-inner: #000000;
+  --color-card-outer-border: #2A2A2A;
+  --color-card-inner-border: #2A2A2A;
+
+  /* Text Colors */
+  --color-text: #F0F0F0;
+  --color-text-muted: #A0A0A0;
+  --color-text-dim: #A0A0A0;
+  --color-text-subtle: #707070;
+
+  /* UI Tokens */
+  --color-pill-bg: #111111;
+  --color-pill-border: #2A2A2A;
+  --color-btn-outline-bg: #111111;
+  --color-btn-outline-border: #2A2A2A;
+
+  /* Metrics & Graphs */
+  --chart-line-color: #F0F0F0;
+  --chart-glow-color: rgba(240, 240, 240, 0.25);
+  --chart-grid-line: #2A2A2A;
+
+  /* Dimensions & Spacing */
+  --border-radius-outer-card: 16px;
+  --border-radius-inner-card: 12px;
+  --border-radius-button: 10px;
+
+  /* Font */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

@@ -1,0 +1,509 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 05: Development & Plugins
+   Matches design 5.png
+   ========================================================================== */
+
+.dev-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+}
+
+#development .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.dev-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* IDE Window with Double Dashed Border (Rock Stars Design System) */
+.ide-window-outer {
+  background: var(--bg-base);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 5px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  width: 100%;
+  max-width: 630px;
+}
+
+.ide-window-outer:hover {
+  border-color: #3f3f3f;
+  transform: translateY(-2px);
+}
+
+.ide-window-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.ide-window-outer:hover .ide-window-inner {
+  border-color: #3f3f3f;
+}
+
+/* Titlebar */
+.ide-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  padding: 0 16px;
+  background: #0d0d0d;
+  border-bottom: 1px solid var(--line);
+  user-select: none;
+}
+
+.ide-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 52px;
+}
+
+.ide-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ide-dot:nth-child(1) { background: #ff5f56; border: 1px solid #e0443e; }
+.ide-dot:nth-child(2) { background: #ffbd2e; border: 1px solid #dea123; }
+.ide-dot:nth-child(3) { background: #27c93f; border: 1px solid #1aab29; }
+
+.ide-window-outer:hover .ide-dot {
+  transform: scale(1.05);
+}
+
+.ide-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
+/* IDE Body (Sidebar + Code Editor) */
+.ide-body {
+  display: flex;
+  min-height: 380px;
+}
+
+/* File Tree Sidebar */
+.ide-sidebar {
+  width: 146px;
+  flex-shrink: 0;
+  background: #0d0d0d;
+  border-right: 1px solid var(--line);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  user-select: none;
+}
+
+.ide-tree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ide-tree-item:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ide-tree-item.active {
+  background: rgba(86, 211, 100, 0.08);
+  border-color: rgba(86, 211, 100, 0.25);
+  color: #56d364;
+}
+
+.ide-tree-item.active .tree-icon {
+  color: #56d364;
+}
+
+.tree-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tree-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: color 0.18s ease;
+}
+
+.tree-indicator-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #56d364;
+  box-shadow: 0 0 6px rgba(86, 211, 100, 0.7);
+  flex-shrink: 0;
+}
+
+/* Code Editor Area */
+.ide-editor {
+  flex: 1;
+  background: var(--surface);
+  padding: 14px 0;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12.5px;
+  line-height: 1.68;
+}
+
+.ide-code-line {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 0;
+  min-height: 21px;
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.ide-line-num {
+  width: 44px;
+  padding-right: 18px;
+  text-align: right;
+  color: #555555;
+  user-select: none;
+  font-size: 11.5px;
+  flex-shrink: 0;
+}
+
+.ide-line-code {
+  flex: 1;
+  white-space: pre;
+  color: var(--text-primary);
+}
+
+/* Active Line (Line 8 in mockup) */
+.ide-code-line.active {
+  background: rgba(88, 166, 255, 0.08);
+}
+
+.ide-code-line.active .ide-line-num {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.ide-code-line.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #58a6ff;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
+}
+
+/* Syntax Highlighting (Inspired by VS Code Islands Dark from user reference) */
+.code-kw {
+  color: #ff7b72; /* Warm coral / control keywords */
+  font-weight: 600;
+}
+
+.code-fn {
+  color: #58a6ff; /* Vibrant sky-blue / function & method calls */
+  font-weight: 500;
+}
+
+.code-var {
+  color: #79c0ff; /* Soft cyan-blue / variables */
+}
+
+.code-prop {
+  color: #d2a8ff; /* Soft lavender / properties */
+}
+
+.code-cls {
+  color: #f0c674; /* Warm golden amber / class names & types */
+  font-weight: 600;
+}
+
+.code-str {
+  color: #7ee787; /* Fresh emerald green / string literals */
+}
+
+.code-num {
+  color: #d19a66; /* Warm orange / numeric literals */
+  font-weight: 600;
+}
+
+.code-tag {
+  color: #8b949e; /* Muted slate / php tags */
+  font-style: italic;
+}
+
+.code-op {
+  color: #ff7b72; /* Coral operators */
+}
+
+.code-scope {
+  color: #ff7b72; /* Scope resolution operator */
+}
+
+.code-punct {
+  color: #abb2bf; /* Clean neutral silver brackets & semicolons */
+}
+
+.code-txt {
+  color: #e6edf3;
+}
+
+.code-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background: #58a6ff;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: blink-cursor 1s infinite steps(2, start);
+}
+
+@keyframes blink-cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Status Bar */
+.ide-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
+  padding: 0 16px;
+  background: #0d0d0d;
+  border-top: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  user-select: none;
+}
+
+.ide-status-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.ide-status-pulse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7px;
+  height: 7px;
+}
+
+.ide-status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-primary);
+}
+
+.ide-status-pulse-ring {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--text-primary);
+  opacity: 0.7;
+  animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.ide-status-right {
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* Right Content Column */
+.dev-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-tag {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.dev-title {
+  font-family: var(--font-sans);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.dev-desc {
+  color: var(--text-secondary);
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.dev-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 34px;
+}
+
+.dev-check-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dev-check-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.dev-check-item:hover .dev-check-circle {
+  border-color: #404040;
+  background: #181818;
+  transform: scale(1.08);
+}
+
+.dev-check-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--text-primary);
+  stroke-width: 2.5;
+}
+
+.dev-check-text {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.dev-check-item:hover .dev-check-text {
+  color: #ffffff;
+}
+
+/* CTA Discuss Button */
+.btn-discuss {
+  align-self: flex-start;
+  background: var(--text-primary);
+  color: #000000;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 28px;
+  border-radius: var(--border-radius-button);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-discuss:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(240, 240, 240, 0.15);
+}
+
+.btn-discuss:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .ide-sidebar {
+    width: 110px;
+    padding: 10px 6px;
+  }
+  .ide-tree-item {
+    font-size: 10.5px;
+    padding: 4px 6px;
+  }
+  .ide-editor {
+    font-size: 11px;
+    padding: 10px 0;
+  }
+  .ide-line-num {
+    width: 32px;
+    padding-right: 10px;
+  }
+  .ide-statusbar {
+    font-size: 9.5px;
+    padding: 0 10px;
+  }
+}

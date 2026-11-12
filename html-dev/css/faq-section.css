@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 15: FAQ
+   Matches design 15.png
+   ========================================================================== */
+
+.faq-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: block;
+  padding-top: clamp(80px, 10vh, 120px);
+  padding-bottom: clamp(80px, 10vh, 120px);
+  background-color: var(--bg-base, #000000);
+  border-top: 1px dashed var(--line, #2A2A2A);
+}
+
+#faq .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+#articles .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.faq-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.faq-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--text-primary, #F0F0F0);
+}
+
+.faq-desc {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary, #A0A0A0);
+}
+
+/* Specialist Card with Signature Double Dashed Border */
+.faq-specialist-outer {
+  background: var(--bg-base, #000000);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  width: 100%;
+  max-width: 380px;
+}
+
+.faq-specialist-outer:hover {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+.faq-specialist-inner {
+  background: var(--surface, #111111);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Specialist Button (Solid Light, No Borders, 10px radius Rock Stars Agency Design System) */
+.faq-call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--text-primary, #F0F0F0);
+  color: var(--bg-base, #000000);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.faq-call-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.faq-call-btn-outer {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.faq-call-btn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--text-primary, #F0F0F0);
+  color: var(--bg-base, #000000);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  transition: all 0.25s ease;
+}
+
+.faq-call-btn-outer:hover .faq-call-btn-inner {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* FAQ Accordion Items with Signature Double Dashed Border (Passive State) */
+.faq-item-outer {
+  position: relative;
+  background: var(--bg-base, #000000);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 18px;
+  padding: 4px;
+  box-shadow: none;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.faq-item-outer:hover:not(.active) {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+/* Smooth Solid White Border Overlay for Active FAQ Item */
+.faq-item-outer::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--text-primary, #F0F0F0);
+  border-radius: 18px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.faq-item-outer.active::after {
+  opacity: 1;
+}
+
+.faq-item-outer.active:hover::after {
+  border-color: #FFFFFF;
+}
+
+.faq-item-inner {
+  background: var(--surface, #111111);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 14px;
+  padding: 18px 24px;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item-outer:hover:not(.active) .faq-item-inner {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+/* Active / Expanded FAQ Item: Single Solid Border with #111111 surface */
+.faq-item-outer.active {
+  background: var(--surface, #111111);
+  border-color: transparent; /* Smoothly crossfade dashed border underneath */
+  box-shadow: none;
+}
+
+.faq-item-outer.active .faq-item-inner {
+  background: transparent;
+  border-color: transparent; /* Zero layout shift: retains 1px width, color smoothly fades to transparent */
+}
+
+/* Smooth CSS Grid Accordion Content Transition (Zero Jitter) */
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item-outer.active .faq-answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+  overflow: hidden;
+}
+
+/* Accordion Icon (+ / -) */
+.faq-icon {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-primary, #F0F0F0);
+  font-weight: 300;
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+  width: 18px;
+  text-align: center;
+}

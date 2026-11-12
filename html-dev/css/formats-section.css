@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 14: Formats (Ways to Work Together)
+   Matches design 14.png
+   ========================================================================== */
+
+.formats-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  background-color: var(--bg-base, #000000);
+  border-top: 1px dashed var(--line, #2A2A2A);
+}
+
+#formats .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.formats-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.formats-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--text-primary, #F0F0F0);
+}
+
+.formats-desc {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary, #A0A0A0);
+}
+
+/* Cards with Signature Double Dashed Border (Default / Unselected) */
+.format-card-outer {
+  position: relative;
+  background: var(--bg-base, #000000);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
+.format-card-outer:hover:not(.featured) {
+  border-color: var(--text-secondary, #A0A0A0);
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+/* Smooth Solid White Border Overlay for Active Card */
+.format-card-outer::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--text-primary, #F0F0F0);
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.format-card-outer.featured::after {
+  opacity: 1;
+}
+
+.format-card-outer.featured:hover::after {
+  border-color: #FFFFFF;
+}
+
+.format-card-inner {
+  background: var(--surface, #111111);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 16px;
+  overflow: visible;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.format-card-outer:hover:not(.featured) .format-card-inner {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+/* Featured / Selected Card (Single Solid Border, Rock Stars Agency Design System) */
+.format-card-outer.featured {
+  background: var(--surface, #111111);
+  border-color: transparent; /* Smoothly crossfade dashed border underneath */
+  box-shadow: none;
+  transform: translateY(-4px);
+}
+
+.format-card-outer.featured:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+.format-card-outer.featured .format-card-inner {
+  background: transparent;
+  border-color: transparent; /* Zero layout shift: retains 1px width, color smoothly fades to transparent */
+}
+
+/* Featured Pill Badge */
+.format-badge-featured {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--text-primary, #F0F0F0);
+  color: var(--bg-base, #000000);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: 9999px;
+  box-shadow: none;
+  z-index: 10;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.format-card-outer.featured .format-badge-featured {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Checkmark Badges */
+.format-check-badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: var(--surface, #111111);
+  border: 1px solid var(--line, #2A2A2A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.format-card-outer:hover .format-check-badge {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+/* Buttons (10px radius Rock Stars Agency Design System) */
+.format-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+.format-btn-ghost {
+  color: var(--text-secondary, #A0A0A0);
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--line, #2A2A2A);
+}
+
+.format-btn-ghost:hover {
+  background: var(--surface, #111111);
+  border-color: var(--text-secondary, #A0A0A0);
+  color: var(--text-primary, #F0F0F0);
+}
+
+.format-btn-solid {
+  color: var(--bg-base, #000000);
+  font-weight: 700;
+  background: var(--text-primary, #F0F0F0);
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.format-btn-solid:hover {
+  background: #FFFFFF;
+  box-shadow: none;
+  transform: translateY(-1px);
+}

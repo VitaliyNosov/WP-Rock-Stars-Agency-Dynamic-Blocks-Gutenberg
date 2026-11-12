@@ -1,0 +1,161 @@
+<!-- Section 15: FAQ (Matches design 15.png) -->
+      <section id="faq" class="faq-section relative overflow-hidden bg-[#000000]">
+
+        <!-- Section 15 Index Indicator with Double Border (from design 15.png) -->
+        <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+          <div class="badge-inner flex flex-col items-center justify-center">
+            <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">15</span>
+            <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">FAQ</span>
+          </div>
+        </div>
+
+        <div class="faq-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+            <!-- Left Column: Header & Specialist Card (Anchored with lg:sticky) -->
+            <div class="lg:col-span-5 w-full lg:sticky lg:top-28 self-start">
+              <div class="faq-header mb-8 sm:mb-10">
+                <div class="faq-tag mb-3">
+                  <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-bold tracking-[0.18em] uppercase">
+                    FAQ
+                  </span>
+                </div>
+                <h2
+                  class="faq-title text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight leading-[1.15] mb-4">
+                  Questions before you book?
+                </h2>
+                <p class="faq-desc text-[#A0A0A0] text-sm sm:text-base font-normal leading-relaxed">
+                  Can't find your answer?<br class="hidden sm:inline" />
+                  Talk to a specialist.
+                </p>
+              </div>
+
+              <!-- Specialist Card with Double Border -->
+              <div class="faq-specialist-outer">
+                <div class="faq-specialist-inner">
+                  <div class="flex items-center gap-3.5">
+                    <img src="img/alex-morgan.png" alt="Alex Morgan"
+                      class="w-12 h-12 rounded-full object-cover flex-shrink-0" />
+                    <div>
+                      <h4 class="text-[#F0F0F0] font-extrabold text-base tracking-tight leading-snug">Alex Morgan</h4>
+                      <p class="text-[#A0A0A0] text-xs sm:text-[13px] font-medium mt-0.5">Healthcare web strategist</p>
+                    </div>
+                  </div>
+
+                  <!-- Book Call Button (Solid Light, Borderless, 10px radius) -->
+                  <a href="#contact" class="faq-call-btn" aria-label="Book a 15-minute call with Alex Morgan">
+                    Book a 15-min call
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Accordion Items (Signature Double Border) -->
+            <div class="lg:col-span-7 w-full flex flex-col gap-3.5 sm:gap-4">
+
+              <!-- Item 1 (Active by default, matching 15.png) -->
+              <div class="faq-item-outer active" role="button" tabindex="0" aria-expanded="true">
+                <div class="faq-item-inner">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-[#F0F0F0] font-bold text-base sm:text-lg tracking-tight select-none">
+                      Do we need to rebuild our site?
+                    </h3>
+                    <span class="faq-icon">&minus;</span>
+                  </div>
+                  <div class="faq-answer-wrapper">
+                    <div class="faq-answer-content">
+                      <p class="text-[#A0A0A0] text-sm sm:text-[15px] font-normal leading-relaxed pt-3">
+                        No. We improve what you already have, on any platform.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="faq-item-outer" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item-inner">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-[#F0F0F0] font-bold text-base sm:text-lg tracking-tight select-none">
+                      Will you work on a staging copy?
+                    </h3>
+                    <span class="faq-icon">&plus;</span>
+                  </div>
+                  <div class="faq-answer-wrapper">
+                    <div class="faq-answer-content">
+                      <p class="text-[#A0A0A0] text-sm sm:text-[15px] font-normal leading-relaxed pt-3">
+                        Yes. We clone your site to a secure staging environment, test all improvements thoroughly, and
+                        only deploy during off-peak hours after your sign-off.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="faq-item-outer" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item-inner">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-[#F0F0F0] font-bold text-base sm:text-lg tracking-tight select-none">
+                      Do you handle patient data?
+                    </h3>
+                    <span class="faq-icon">&plus;</span>
+                  </div>
+                  <div class="faq-answer-wrapper">
+                    <div class="faq-answer-content">
+                      <p class="text-[#A0A0A0] text-sm sm:text-[15px] font-normal leading-relaxed pt-3">
+                        No. We never access, store, or process Protected Health Information (PHI). We work exclusively
+                        on front-end code, infrastructure, and search visibility.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="faq-item-outer" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item-inner">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-[#F0F0F0] font-bold text-base sm:text-lg tracking-tight select-none">
+                      How fast can you start?
+                    </h3>
+                    <span class="faq-icon">&plus;</span>
+                  </div>
+                  <div class="faq-answer-wrapper">
+                    <div class="faq-answer-content">
+                      <p class="text-[#A0A0A0] text-sm sm:text-[15px] font-normal leading-relaxed pt-3">
+                        Typically within 3 to 5 business days after your initial audit and onboarding call.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="faq-item-outer" role="button" tabindex="0" aria-expanded="false">
+                <div class="faq-item-inner">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-[#F0F0F0] font-bold text-base sm:text-lg tracking-tight select-none">
+                      Who owns the code?
+                    </h3>
+                    <span class="faq-icon">&plus;</span>
+                  </div>
+                  <div class="faq-answer-wrapper">
+                    <div class="faq-answer-content">
+                      <p class="text-[#A0A0A0] text-sm sm:text-[15px] font-normal leading-relaxed pt-3">
+                        You do. You retain 100% full ownership of all custom code, assets, configurations, and accounts.
+                        There is zero vendor lock-in.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>

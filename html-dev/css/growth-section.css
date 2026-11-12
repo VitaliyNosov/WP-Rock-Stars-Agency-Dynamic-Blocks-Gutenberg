@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 10: Ads, Email & Reports (Growth)
+   Matches design 10.png
+   ========================================================================== */
+
+.growth-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+}
+
+#geo .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+#growth .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.growth-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.growth-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.growth-desc {
+  letter-spacing: -0.01em;
+}
+
+/* Funnel Styles - Double Dashed (Rock Stars Design System) */
+.funnel-stage-group {
+  cursor: pointer;
+}
+
+.funnel-stage-outer {
+  fill: var(--bg-base);
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.funnel-stage-inner {
+  fill: var(--surface);
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.funnel-stage-group:hover .funnel-stage-outer {
+  stroke: var(--text-primary);
+  filter: drop-shadow(0 0 10px rgba(240, 240, 240, 0.12));
+}
+
+.funnel-stage-group:hover .funnel-stage-inner {
+  fill: #161616;
+  stroke: var(--text-primary);
+}
+
+.funnel-stage-num {
+  fill: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.funnel-stage-group:hover .funnel-stage-num {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+.funnel-stage-label {
+  fill: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: fill 0.3s ease;
+}
+
+.funnel-stage-group:hover .funnel-stage-label {
+  fill: var(--text-primary);
+}
+
+/* Reports Card with Signature Double Dashed Border */
+.reports-card-outer {
+  background: var(--bg-base);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reports-card-outer:hover {
+  border-color: rgba(240, 240, 240, 0.32);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.reports-card-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.reports-card-outer:hover .reports-card-inner {
+  border-color: rgba(240, 240, 240, 0.22);
+}
+
+/* Reports Chart Bars */
+.reports-bar-rect {
+  rx: 4px;
+  transform-origin: bottom;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reports-bar-rect.bar-muted {
+  fill: var(--line);
+}
+
+.reports-bar-rect.bar-muted:hover {
+  fill: #3a3a3a;
+}
+
+.reports-bar-rect.bar-active {
+  fill: var(--text-primary);
+  filter: drop-shadow(0 0 8px rgba(240, 240, 240, 0.35));
+}
+
+.reports-bar-rect.bar-active:hover {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.6));
+}

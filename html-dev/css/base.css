@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Typography & Utilities
+   ========================================================================== */
+
+/* Section Tag Indicator in the top left with Double Dashed Border */
+.section-badge-indicator {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 20;
+  background: var(--bg-base);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 4px;
+  user-select: none;
+}
+
+.section-badge-indicator .badge-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 6px 14px;
+}
+
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

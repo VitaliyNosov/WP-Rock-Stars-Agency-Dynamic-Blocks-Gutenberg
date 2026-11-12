@@ -1,0 +1,455 @@
+/**
+ * Section 16: Articles Stacking Slider (Pinned Scroll)
+ * Specification & Reference: html-dev/desing/gsap-js-slider-block/
+ * 5 Colors: #000000, #111111, #2A2A2A, #F0F0F0, #A0A0A0
+ */
+
+#articles {
+  --bg: #000000;
+  --surface: #111111;
+  --line: #2A2A2A;
+  --text: #F0F0F0;
+  --muted: #A0A0A0;
+  --pad: clamp(20px, 6vw, 116px);
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+  background-color: var(--bg);
+  border-top: 1px dashed var(--line);
+  padding: clamp(84px, 11vh, 120px) 0 64px;
+  width: 100%;
+  color: var(--text);
+  font: 400 16px/24px var(--font);
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+#articles *,
+#articles *::before,
+#articles *::after {
+  box-sizing: inherit;
+}
+
+/* Section 16 Index Badge Indicator */
+#articles .section-badge-indicator {
+  position: absolute;
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+  z-index: 20;
+}
+
+/* Header */
+#articles .head {
+  padding: 0 var(--pad) 32px;
+  position: relative;
+  z-index: 2;
+}
+
+#articles .eyebrow {
+  font: 600 12px/16px var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+#articles .head h2 {
+  margin: 8px 0 0;
+  font: 600 clamp(28px, 2.8vw, 36px)/1.15 var(--font);
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* Track: Base swipe list (Mobile / Tablet / Reduced Motion) */
+#articles .track {
+  display: flex;
+  gap: 16px;
+  padding: 0 var(--pad);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--pad);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#articles .track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   Card: Double Dashed Border (Matches Section 14 Formats Architecture)
+   Outer: #000000 background, 1px dashed #2A2A2A, 4px gap
+   Inner: #111111 background, 1px dashed #2A2A2A
+   ========================================================================== */
+
+/* Outer Card Container */
+#articles .card {
+  position: relative;
+  flex: 0 0 min(82vw, 380px);
+  scroll-snap-align: start;
+  background: var(--bg); /* #000000 */
+  border: 1px dashed var(--line); /* 1px dashed #2A2A2A */
+  border-radius: 20px;
+  padding: 4px; /* The signature 4px black gap between outer and inner borders */
+  transform-origin: 0 50%;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth Solid White Border Overlay for Hovered Slide */
+#articles .card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--text-primary, #F0F0F0);
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+#articles .card:hover::after,
+#articles .card:focus-within::after {
+  opacity: 1;
+}
+
+#articles .card:hover::after {
+  border-color: #FFFFFF;
+}
+
+/* Active Hover State: Single solid border with #111111 body */
+#articles .card:hover,
+#articles .card:focus-within {
+  background-color: var(--surface); /* Smoothly floods the outer card */
+  border-color: transparent; /* Smoothly crossfades dashed border underneath */
+}
+
+/* Inner Card Container (Matches .format-card-inner in Section 14) */
+#articles .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 32px;
+  background: var(--surface); /* #111111 */
+  border: 1px dashed var(--line); /* 1px dashed #2A2A2A */
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#articles .card:hover .card-inner,
+#articles .card:focus-within .card-inner {
+  background: transparent;
+  border-color: transparent; /* Zero layout shift: retains 1px width, color smoothly fades to transparent */
+}
+
+/* Stacking dim overlay applied inside the card */
+#articles .card-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background: #000000;
+  opacity: var(--dim, 0);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+#articles .card-inner .eyebrow {
+  position: relative;
+  z-index: 3;
+}
+
+/* Card Face & Typography */
+#articles .face {
+  display: grid;
+  margin-top: auto;
+  position: relative;
+  z-index: 3;
+}
+
+#articles .card h3 {
+  font: 600 20px/28px var(--font);
+  color: var(--text);
+  margin: 0;
+}
+
+#articles .card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+#articles .more {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+#articles .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+#articles .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#articles .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background: var(--text);
+  color: #000000;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 600;
+  position: relative;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#articles .btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+#articles .btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+}
+
+/* Hover swap: title first, detail + button on hover or keyboard focus */
+@media (hover: hover) {
+  #articles .face {
+    align-items: end;
+  }
+
+  #articles .face > h3,
+  #articles .face > .more {
+    grid-area: 1 / 1;
+    align-self: end;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  #articles .face > h3 {
+    font: 600 clamp(24px, 1.9vw, 36px)/1.22 var(--font);
+    letter-spacing: -0.01em;
+  }
+
+  #articles .more {
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition-delay: 0.05s;
+    pointer-events: none;
+  }
+
+  #articles .card:hover .face > h3,
+  #articles .card:focus-within .face > h3 {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  #articles .card:hover .more,
+  #articles .card:focus-within .more {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #articles .face > h3,
+  #articles .face > .more {
+    transition: none;
+  }
+}
+
+/* Mobile swipe hint */
+#articles .hint {
+  margin: 16px var(--pad) 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#articles.is-pinned .hint {
+  display: none;
+}
+
+/* Controls: Hidden on mobile swipe, shown when pinned */
+#articles .controls {
+  display: none;
+}
+
+#articles .progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  outline: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none; /* Non-interactive indicator: eliminates focus rings on click */
+}
+
+#articles .progress *,
+#articles .ring,
+#articles .ring * {
+  outline: none !important;
+  outline-style: none !important;
+  box-shadow: none !important;
+}
+
+#articles .progress b {
+  color: var(--text);
+  font-weight: 400;
+}
+
+#articles .ring {
+  transform: rotate(-90deg);
+  display: block;
+  outline: none !important;
+  border: none !important;
+}
+
+#articles .ring:focus,
+#articles .ring:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#articles .ring circle {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+#articles .ring .bar {
+  stroke: var(--text);
+  stroke-linecap: round;
+  stroke-dasharray: 50.27;
+  stroke-dashoffset: 50.27;
+  transition: stroke-dashoffset 0.15s ease-out;
+}
+
+#articles .nav {
+  display: flex;
+  align-items: center;
+}
+
+#articles .round {
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font: 400 20px/1 var(--font);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#articles .round.next {
+  background: var(--text);
+  color: #000000;
+}
+
+#articles .round:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+#articles .round:focus-visible,
+#articles .card:focus-visible,
+#articles .btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   PINNED STACKING MODE (Desktop >= 1024px)
+   ========================================================================== */
+#articles.is-pinned {
+  height: 100vh;
+  height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+}
+
+#articles.is-pinned .head {
+  position: absolute;
+  left: 0;
+  top: clamp(84px, 11vh, 120px);
+  z-index: 2;
+}
+
+#articles.is-pinned .track {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: stretch;
+  align-content: center;
+  padding: 0;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+
+#articles.is-pinned .card {
+  grid-area: 1 / 1;
+  justify-self: start;
+  flex: none;
+  width: clamp(300px, 32.4vw, 800px);
+  aspect-ratio: 622 / 482;
+  margin-left: var(--pad);
+  will-change: transform, opacity;
+}
+
+#articles.is-pinned .controls {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  left: var(--pad);
+  right: var(--pad);
+  bottom: clamp(32px, 9vh, 96px);
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  #articles.is-pinned .card-inner {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  #articles.is-pinned .card p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

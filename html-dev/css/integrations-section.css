@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 06: Integrations & Automation
+   Matches design 6.png
+   ========================================================================== */
+
+.integrations-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+}
+
+#integrations .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.integrations-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.integrations-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+.integrations-desc {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+/* Diagram Wrap */
+.integrations-diagram-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.integrations-diagram-svg {
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.6));
+}
+
+/* Card Interaction Styles with Signature Double Dashed Border */
+.integr-card {
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.integr-card-outer {
+  stroke-dasharray: 3 3;
+  transition: stroke 0.25s ease, filter 0.25s ease;
+}
+
+.integr-card-inner {
+  stroke-dasharray: 3 3;
+  transition: stroke 0.25s ease, fill 0.25s ease;
+}
+
+.integr-card-text {
+  transition: fill 0.25s ease;
+  user-select: none;
+}
+
+.integr-card:hover,
+.integr-card.card-active {
+  transform: translateY(-2px);
+}
+
+.integr-card:hover .integr-card-outer,
+.integr-card.card-active .integr-card-outer {
+  stroke: #404040;
+}
+
+.integr-card:hover .integr-card-inner,
+.integr-card.card-active .integr-card-inner {
+  stroke: var(--text-primary);
+  fill: #181818;
+}
+
+.integr-card:hover .integr-card-text,
+.integr-card.card-active .integr-card-text {
+  fill: var(--text-primary);
+}
+
+/* Central Monitor Styles with Double Dashed Border */
+.integr-mon {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.integr-mon-outer {
+  stroke-dasharray: 4 4;
+  transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.integr-mon-inner {
+  stroke-dasharray: 4 4;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.integr-mon:hover,
+.integr-mon.mon-active {
+  transform: translateY(-2px);
+}
+
+.integr-mon:hover .integr-mon-outer,
+.integr-mon.mon-active .integr-mon-outer {
+  stroke: #404040;
+}
+
+.integr-mon:hover .integr-mon-inner,
+.integr-mon.mon-active .integr-mon-inner {
+  fill: #181818;
+  stroke: var(--text-primary);
+  filter: drop-shadow(0 0 14px rgba(240, 240, 240, 0.15));
+}
+
+/* Dotted Connection Lines */
+.integr-line {
+  stroke: var(--line);
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+}
+
+.integr-line.line-active {
+  stroke: var(--text-primary);
+  stroke-width: 2;
+}
+
+/* Footnote Note */
+.integrations-footnote {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+/* Mobile & Desktop diagram visibility */
+.integrations-diagram-wrap {
+  overflow: visible;
+  width: 100%;
+}
+
+.integrations-diagram-svg-mobile {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .integrations-diagram-svg-mobile {
+    display: none !important;
+  }
+  .integrations-diagram-svg-desktop {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .integrations-diagram-svg-mobile {
+    display: block !important;
+  }
+  .integrations-diagram-svg-desktop {
+    display: none !important;
+  }
+}

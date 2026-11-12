@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 04: Services / What We Do
+   Matches design 4.png
+   ========================================================================== */
+
+.services-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(60px, 8vh, 100px);
+  padding-bottom: clamp(60px, 8vh, 100px);
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+}
+
+#services .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.services-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.services-desc {
+  letter-spacing: -0.01em;
+}
+
+.services-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+  transform-origin: left center;
+}
+
+.service-item {
+  position: relative;
+  border-top: 1px dashed var(--line);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.service-item:hover {
+  border-top-color: #3f3f3f;
+}
+
+/* Hollow/Outlined Display Number (Authentic Design 4.png Assets) */
+.service-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(56px, 4.5vw, 72px);
+  height: clamp(40px, 3.2vw, 50px);
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.service-number-img {
+  width: auto;
+  height: 100%;
+  max-height: 48px;
+  object-fit: contain;
+  opacity: 0.35;
+  filter: brightness(0.9);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
+}
+
+.service-item:hover .service-number-img {
+  opacity: 0.95;
+  filter: brightness(1.15) drop-shadow(0 0 10px rgba(240, 240, 240, 0.3));
+  transform: translateY(-2px) scale(1.03);
+}
+
+.service-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease;
+}
+
+.service-desc {
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.service-item:hover .service-desc {
+  color: var(--text-primary);
+}
+
+.service-arrow {
+  color: var(--text-secondary);
+  stroke: var(--text-secondary);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.25s ease, color 0.25s ease;
+}
+
+.service-item:hover .service-arrow {
+  color: var(--text-primary);
+  stroke: var(--text-primary);
+  transform: translateX(6px);
+}

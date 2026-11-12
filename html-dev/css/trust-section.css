@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 02: Trust & Proof (Marquee Slider & Stats Counter)
+   Matches design 2.png
+   ========================================================================== */
+
+.trust-section {
+  position: relative;
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+  padding-top: clamp(48px, 6vw, 84px);
+  padding-bottom: clamp(52px, 6.5vw, 90px);
+  overflow: hidden;
+}
+
+.trust-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+/* Marquee Outer Container with Gradient Mask */
+.trust-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0 16px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Fallback edge fades for older browsers */
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(40px, 10vw, 140px);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #000000 15%, rgba(0, 0, 0, 0));
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #000000 15%, rgba(0, 0, 0, 0));
+}
+
+/* Marquee Moving Track */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 20px;
+  animation: marqueeLoop 28s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Individual Logo Pill Cards with Double Dashed Border (Rock Stars Design System) */
+.logo-pill-outer {
+  width: 220px;
+  height: 70px;
+  flex: 0 0 220px;
+  box-sizing: border-box;
+  background: var(--bg-base);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.logo-pill-inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-logo-img {
+  width: auto;
+  height: 54px;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  opacity: 1;
+  filter: brightness(1.05);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-pill-outer:hover {
+  border-color: #3f3f3f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.logo-pill-outer:hover .logo-pill-inner {
+  border-color: #3f3f3f;
+  background: #181818;
+}
+
+.logo-pill-outer:hover .trust-logo-img {
+  filter: brightness(1.25) drop-shadow(0 2px 10px rgba(255, 255, 255, 0.2));
+  transform: scale(1.04);
+}
+
+@media (max-width: 640px) {
+  .logo-pill-outer {
+    width: 180px;
+    height: 60px;
+    flex: 0 0 180px;
+    border-radius: 16px;
+    padding: 3px;
+  }
+
+  .logo-pill-inner {
+    border-radius: 12px;
+    padding: 0 16px;
+  }
+
+  .trust-logo-img {
+    max-width: 130px;
+    max-height: 32px;
+  }
+
+  .marquee-track {
+    gap: 12px;
+  }
+}
+
+/* Stats Section */
+.stats-grid-container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-col {
+  transition: transform 0.3s ease;
+}
+
+.stat-col:hover {
+  transform: translateY(-2px);
+}
+
+.stat-number-wrap {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+}
+
+.stat-counter {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-suffix {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  letter-spacing: -0.01em;
+}
+
+#trust .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.stat-divider {
+  position: absolute;
+  width: 1px;
+  height: 72px;
+  background: var(--line);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  .stat-col:nth-child(1),
+  .stat-col:nth-child(3) {
+    border-right: 1px solid var(--line);
+  }
+}

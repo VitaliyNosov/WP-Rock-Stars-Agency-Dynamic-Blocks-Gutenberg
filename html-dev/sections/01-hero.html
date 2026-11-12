@@ -1,0 +1,224 @@
+<section id="hero" class="hero-wrapper bg-[#000000]">
+
+      <!-- Section 01 Index Indicator (from design) -->
+      <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+        <div class="badge-inner flex flex-col items-center justify-center">
+          <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">01</span>
+          <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">HERO</span>
+        </div>
+      </div>
+
+      <!-- Background Clinic Image & Gradient Overlays (left dark to right light) -->
+      <div class="hero-bg-layer" aria-hidden="true"></div>
+      <div class="hero-overlay-layer" aria-hidden="true"></div>
+
+      <!-- Hero Content Container: Balanced layout with natural desktop proportions -->
+      <div
+        class="hero-content-container relative z-10 w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
+
+        <!-- Left Column: Value Proposition & Call to Actions -->
+        <div class="hero-text-col flex flex-col items-start">
+
+          <!-- Pill Badge -->
+          <div id="hero-badge"
+            class="hero-badge inline-flex items-center gap-2 px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-5 cursor-default">
+            <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-semibold tracking-[0.14em] uppercase">
+              WEBSITE DEVELOPMENT &amp; GROWTH
+            </span>
+          </div>
+
+          <!-- Main Headline (Enlarged and bold, matching design 1.png) -->
+          <h1 id="hero-title"
+            class="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[60px] text-[#F0F0F0] font-bold mb-3 sm:mb-5 whitespace-normal">
+            The team behind<br class="hidden sm:inline"> your healthcare<br class="hidden sm:inline"> website growth.
+          </h1>
+
+          <!-- Subtitle / Value Props -->
+          <p id="hero-subtitle"
+            class="text-[#A0A0A0] sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed mb-4 sm:mb-6 max-w-lg">
+            Plugins, integrations, SEO, redesign, ads and support.<br class="hidden sm:inline">
+            One team instead of five freelancers.
+          </p>
+
+          <!-- Action Buttons -->
+          <div id="hero-actions"
+            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-4 sm:mb-6">
+            <a href="#audit" id="btn-audit"
+              class="btn-primary inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-[10px] text-sm sm:text-base tracking-tight">
+              Get a Free Site Audit
+            </a>
+            <a href="#how-we-work" id="btn-how-we-work"
+              class="btn-secondary inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-[10px] text-sm sm:text-base tracking-tight">
+              See How We Work
+            </a>
+          </div>
+
+          <!-- Trust / Social Proof -->
+          <div id="hero-trust" class="flex items-center gap-3">
+            <div class="flex text-[#F0F0F0] text-sm tracking-wider" aria-label="5 stars rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <span class="text-[#A0A0A0] text-sm font-medium">
+              Trusted by 120+ clinics
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Growth Overview Analytics Card with Double Border -->
+        <div class="hero-card-col flex justify-center lg:justify-end">
+          <div id="hero-card" class="growth-card-outer">
+            <div class="growth-card-inner">
+
+              <!-- Card Header -->
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[#F0F0F0] font-semibold text-sm sm:text-base tracking-tight">Growth overview</span>
+                <div class="flex items-center gap-2">
+                  <!-- Radio-style active dot -->
+                  <div
+                    class="w-3.5 h-3.5 rounded-full border border-[#2A2A2A] bg-[#111111] flex items-center justify-center">
+                    <span class="pulse-dot"></span>
+                  </div>
+                  <span class="text-[#A0A0A0] text-xs font-medium">Last 90 days</span>
+                </div>
+              </div>
+
+              <!-- Central Highlight Metric -->
+              <div class="pt-2 sm:pt-2.5 pb-1 text-center">
+                <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-medium tracking-wide">Organic
+                  appointments</span>
+                <div
+                  class="text-[#F0F0F0] font-extrabold text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] tracking-tight mt-1 flex items-center justify-center">
+                  <span>+</span><span id="counter-metric">68</span><span>%</span>
+                </div>
+              </div>
+
+              <!-- SVG Smooth Growth Chart with 3 horizontal guides -->
+              <div class="chart-svg-container py-1 sm:py-2">
+                <svg viewBox="0 0 420 145" class="w-full h-auto overflow-visible"
+                  aria-label="Appointments growth graph over 90 days">
+                  <defs>
+                    <!-- Gradient under the curve -->
+                    <linearGradient id="chartGlowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#F0F0F0" stop-opacity="0.16" />
+                      <stop offset="60%" stop-color="#F0F0F0" stop-opacity="0.04" />
+                      <stop offset="100%" stop-color="#F0F0F0" stop-opacity="0.0" />
+                    </linearGradient>
+
+                    <!-- Filter for the glowing end dot -->
+                    <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <!-- 3 Horizontal Guide Lines (matching design top_card_zoom.png) -->
+                  <line x1="0" y1="42" x2="415" y2="42" stroke="#2A2A2A" stroke-width="1" />
+                  <line x1="0" y1="74" x2="415" y2="74" stroke="#2A2A2A" stroke-width="1" />
+                  <line x1="0" y1="106" x2="415" y2="106" stroke="#2A2A2A" stroke-dasharray="4 4" stroke-width="1" />
+
+                  <!-- Filled Area under the curve -->
+                  <path id="chart-area" class="chart-gradient-area" d="M 5,108 
+                       C 40,103 80,97 120,99 
+                       C 145,101 170,106 195,107 
+                       C 230,107 265,96 300,78 
+                       C 335,60 370,36 405,24 
+                       L 405,108 Z" fill="url(#chartGlowGradient)" opacity="0.9" />
+
+                  <!-- Dynamic Line Curve -->
+                  <path id="chart-line" class="chart-curve" d="M 5,108 
+                       C 40,103 80,97 120,99 
+                       C 145,101 170,106 195,107 
+                       C 230,107 265,96 300,78 
+                       C 335,60 370,36 405,24" />
+
+                  <!-- Endpoint Dot on Day 90 with aura -->
+                  <g id="chart-endpoint" transform="translate(405, 24)">
+                    <circle cx="0" cy="0" r="10" fill="rgba(240,240,240,0.15)" class="chart-endpoint-pulse" />
+                    <circle cx="0" cy="0" r="5" fill="#F0F0F0" filter="url(#dotGlow)" />
+                  </g>
+                </svg>
+
+                <!-- X-Axis Labels -->
+                <div
+                  class="flex justify-between items-center text-[#A0A0A0] text-[11px] sm:text-xs font-medium pt-1 px-1">
+                  <span>Day 1</span>
+                  <span>Day 30</span>
+                  <span>Day 60</span>
+                  <span>Day 90</span>
+                </div>
+              </div>
+
+              <!-- Card Bottom Metrics Grid with Vertical Dividers -->
+              <div class="pt-4 sm:pt-4 mt-2.5 sm:mt-3 border-t border-[#2A2A2A] grid grid-cols-3 items-end text-center">
+
+                <!-- Metric 1: PageSpeed with Circular Progress Ring -->
+                <div class="metric-item flex flex-col items-center px-1">
+                  <div
+                    class="relative w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center mx-auto mb-1 sm:mb-1.5">
+                    <svg class="w-full h-full -rotate-90" viewBox="0 0 44 44">
+                      <!-- Background circle track -->
+                      <circle cx="22" cy="22" r="17.5" fill="none" stroke="#2A2A2A" stroke-width="3.5" />
+                      <!-- 94% progress ring (circumference = 110, offset = 6.6) -->
+                      <circle id="pagespeed-ring" cx="22" cy="22" r="17.5" fill="none" stroke="#F0F0F0"
+                        stroke-width="3.5" stroke-dasharray="110" stroke-dashoffset="6.6" stroke-linecap="round" />
+                    </svg>
+                    <span id="counter-pagespeed" class="absolute text-[#F0F0F0] font-bold text-xs sm:text-sm">94</span>
+                  </div>
+                  <span class="text-[#F0F0F0] font-bold text-xs sm:text-sm tracking-tight">PageSpeed</span>
+                  <span class="text-[#A0A0A0] text-[10px] sm:text-[11px] mt-0.5 whitespace-nowrap">LCP 4.8s →
+                    1.6s</span>
+                </div>
+
+                <!-- Metric 2: AI visibility with Divider Line -->
+                <div class="metric-item flex flex-col items-center px-1 border-l border-[#2A2A2A]">
+                  <div class="flex items-baseline justify-center mb-0.5">
+                    <span id="counter-ai"
+                      class="text-[#F0F0F0] font-extrabold text-xl sm:text-2xl tracking-tight">72</span>
+                    <span class="text-[#A0A0A0] text-xs sm:text-sm font-medium ml-0.5">/100</span>
+                  </div>
+                  <!-- Progress bar track & fill -->
+                  <div
+                    class="w-full max-w-[70px] sm:max-w-[76px] h-[5px] bg-[#2A2A2A] rounded-full overflow-hidden mb-1.5 sm:mb-2">
+                    <div id="ai-progress-bar" class="h-full bg-[#F0F0F0] rounded-full transition-all duration-1000"
+                      style="width: 72%;"></div>
+                  </div>
+                  <span class="text-[#F0F0F0] font-bold text-xs sm:text-sm tracking-tight">AI visibility</span>
+                  <span class="text-[#A0A0A0] text-[10px] sm:text-[11px] mt-0.5 whitespace-nowrap">Cited in AI
+                    answers</span>
+                </div>
+
+                <!-- Metric 3: Booking rate with Divider Line and 6 Bars -->
+                <div class="metric-item flex flex-col items-center px-1 border-l border-[#2A2A2A]">
+                  <div class="flex items-baseline justify-center mb-0.5">
+                    <span id="counter-booking"
+                      class="text-[#F0F0F0] font-extrabold text-xl sm:text-2xl tracking-tight">38</span>
+                    <span class="text-[#F0F0F0] font-extrabold text-base sm:text-lg">%</span>
+                  </div>
+                  <!-- Exact 6-bar mini indicator (5 grey, 6th tallest white) -->
+                  <div class="flex items-end justify-center gap-[3px] h-[14px] sm:h-[15px] mb-1 sm:mb-1.5"
+                    aria-hidden="true">
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[4px] bg-[#2A2A2A] rounded-[1px]"></span>
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[6px] bg-[#2A2A2A] rounded-[1px]"></span>
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[8px] bg-[#2A2A2A] rounded-[1px]"></span>
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[10px] bg-[#2A2A2A] rounded-[1px]"></span>
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[12px] bg-[#2A2A2A] rounded-[1px]"></span>
+                    <span class="mini-bar w-[3.5px] sm:w-[4px] h-[15px] bg-[#F0F0F0] rounded-[1px]"></span>
+                  </div>
+                  <span class="text-[#F0F0F0] font-bold text-xs sm:text-sm tracking-tight">Booking rate</span>
+                  <span class="text-[#A0A0A0] text-[10px] sm:text-[11px] mt-0.5 whitespace-nowrap">Inquiry →
+                    visit</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>

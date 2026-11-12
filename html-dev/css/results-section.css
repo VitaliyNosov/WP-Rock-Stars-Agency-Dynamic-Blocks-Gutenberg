@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+Section 13: Results & Case Studies
+   Matches design 13.png
+   ========================================================================== */
+
+.results-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(64px, 8vh, 104px);
+  padding-bottom: clamp(64px, 8vh, 104px);
+  background-color: var(--bg-base, #000000);
+  border-top: 1px dashed var(--line, #2A2A2A);
+}
+
+#results .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.results-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.results-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--text-primary, #F0F0F0);
+}
+
+.results-desc {
+  letter-spacing: -0.01em;
+  color: var(--text-secondary, #A0A0A0);
+}
+
+/* Case Study Card with Signature Double Border */
+.results-case-card-outer {
+  position: relative;
+  background: var(--bg-base, #000000);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 26px;
+  padding: 6px;
+  box-shadow: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.results-case-card-outer:hover {
+  border-color: var(--text-primary, #F0F0F0);
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.results-case-card-inner {
+  background: var(--surface, #111111);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 20px;
+  padding: clamp(20px, 3.2vw, 40px);
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.results-case-card-outer:hover .results-case-card-inner {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+.case-main-metric {
+  font-family: var(--font-sans);
+  letter-spacing: -0.04em;
+  color: var(--text-primary, #F0F0F0);
+  text-shadow: none;
+}
+
+.sub-metric-value {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  color: var(--text-primary, #F0F0F0);
+}
+
+/* Testimonial Slider Card with Signature Double Border */
+.testimonial-card-outer {
+  position: relative;
+  background: var(--bg-base, #000000);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 26px;
+  padding: 6px;
+  box-shadow: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card-outer:hover {
+  border-color: var(--text-primary, #F0F0F0);
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.testimonial-card-inner {
+  background: var(--surface, #111111);
+  border: 1px dashed var(--line, #2A2A2A);
+  border-radius: 20px;
+  padding: clamp(20px, 2.5vw, 36px) clamp(22px, 3.2vw, 44px);
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.testimonial-card-outer:hover .testimonial-card-inner {
+  border-color: var(--text-secondary, #A0A0A0);
+}
+
+.testimonial-slide {
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-slide.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-slide.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.testimonial-quote-link:hover blockquote {
+  color: var(--text-primary, #F0F0F0);
+}
+
+.testimonial-dots .t-dot {
+  background-color: var(--line, #2A2A2A);
+  transition: all 0.3s ease;
+}
+
+.testimonial-dots .t-dot.active {
+  background-color: var(--text-primary, #F0F0F0);
+  width: 14px;
+  border-radius: 6px;
+  box-shadow: none;
+}

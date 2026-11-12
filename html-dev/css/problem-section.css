@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 03: The Problem
+   Matches design 3.png
+   ========================================================================== */
+
+.problem-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(60px, 8vh, 96px);
+  padding-bottom: clamp(60px, 8vh, 96px);
+  background-color: var(--color-background);
+  border-top: 1px dashed var(--line);
+}
+
+#problem .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.problem-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.problem-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.problem-desc {
+  letter-spacing: -0.01em;
+}
+
+/* Problem Cards with Double Dashed Border (Rock Stars Design System) */
+.problem-card-outer {
+  background: var(--bg-base);
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  padding: 3px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  cursor: pointer;
+}
+
+.problem-card-inner {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.problem-card-outer:hover,
+.problem-card-outer.problem-card-highlighted {
+  border-color: #3f3f3f;
+  transform: translateX(4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.problem-card-outer:hover .problem-card-inner,
+.problem-card-outer.problem-card-highlighted .problem-card-inner {
+  background: #181818;
+  border-color: #3f3f3f;
+}
+
+.problem-card-cross {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.problem-card-outer:hover .problem-card-cross,
+.problem-card-outer.problem-card-highlighted .problem-card-cross {
+  color: var(--text-primary);
+  transform: scale(1.15);
+}
+
+.problem-card-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.problem-card-outer:hover .problem-card-text,
+.problem-card-outer.problem-card-highlighted .problem-card-text {
+  color: #ffffff;
+}
+
+/* Diagram Styles */
+.problem-diagram-wrap {
+  perspective: 1000px;
+}
+
+.diagram-center-site {
+  transition: transform 0.3s ease;
+}
+
+.diagram-node {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diagram-node-outer,
+.diagram-node-inner {
+  transition: stroke 0.3s ease, fill 0.3s ease, filter 0.3s ease;
+}
+
+.diagram-node-text {
+  transition: fill 0.3s ease;
+  user-select: none;
+}
+
+.diagram-node:hover .diagram-node-outer,
+.diagram-node.node-active .diagram-node-outer {
+  stroke: #404040;
+}
+
+.diagram-node:hover .diagram-node-inner,
+.diagram-node.node-active .diagram-node-inner {
+  stroke: var(--text-primary);
+  fill: #181818;
+  filter: drop-shadow(0 0 10px rgba(240, 240, 240, 0.15));
+}
+
+.diagram-node:hover .diagram-node-text,
+.diagram-node.node-active .diagram-node-text {
+  fill: var(--text-primary);
+}
+
+.diagram-line {
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+}
+
+.diagram-line.line-active {
+  stroke: var(--text-primary);
+  stroke-width: 2;
+}
+
+.diagram-cross {
+  transform-origin: 0 0;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.diagram-cross.cross-active {
+  transform: scale(1.25);
+}
+
+.diagram-cross.cross-active text {
+  fill: var(--text-primary);
+}
+
+/* Responsive adjustments for diagram */
+@media (max-width: 640px) {
+  .problem-diagram-wrap {
+    max-width: 100%;
+    overflow: visible;
+  }
+}
