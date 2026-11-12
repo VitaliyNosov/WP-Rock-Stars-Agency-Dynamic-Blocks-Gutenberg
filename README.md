@@ -160,7 +160,11 @@ The repository is pre-configured for static deployment on **GitHub Pages**:
 ---
 
 <p align="center">
+  <img src="html-dev/github-baners/Logo-Rock-Star-Agency.png" alt="Rock Stars Agency Logo" width="220">
+</p>
+
+<p align="center">
   <b>Built for Rock Stars Agency</b><br>
-  Website Development & Growth for Healthcare Platforms
+  <sub>Website Development & Growth for Healthcare Platforms</sub>
 </p>
 
