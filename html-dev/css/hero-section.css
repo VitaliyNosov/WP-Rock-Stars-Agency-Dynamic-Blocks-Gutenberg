@@ -1,36 +1,13 @@
 @charset "UTF-8";
 
-.hero-heading {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
-  text-wrap: balance;
-}
-
-.hero-badge {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  color: var(--text-secondary);
-  border-radius: 9999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-badge:hover {
-  background: #181818;
-  border-color: #383838;
-}
-
 /* ==========================================================================
-   Hero Section: Fullscreen 100vh & Balanced Fluid Layout
-   Matches design 1.png: Text and Card are prominent and balanced
+   Hero Section: Dynamic Iris Reveal Transition Slider
+   Strict adherence to Rock Stars Agency Design System & Boards 1, 2, 3
    ========================================================================== */
 
 .hero-wrapper {
   position: relative;
-  background-color: var(--color-background);
+  background-color: var(--color-bg-base, #000000);
   isolation: isolate;
   min-height: 100vh;
   min-height: 100dvh;
@@ -41,330 +18,527 @@
   overflow: hidden;
 }
 
-/* Desktop 100vh Layout - Shifted 10% inward from left and right edges */
+/* ==========================================================================
+   Background Photo Layers (Pre-mounted for zero GPU decode stutter)
+   ========================================================================== */
+
+.hero-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, clip-path, opacity;
+}
+
+.hero-bg-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-bg-slide.incoming {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Scrim / Contrast Gradient Overlay (z-index: 3) */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.88) 32%,
+    rgba(0, 0, 0, 0.65) 58%,
+    rgba(0, 0, 0, 0.35) 82%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+
+@media (max-width: 1023px) {
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.82) 45%,
+      rgba(0, 0, 0, 0.96) 80%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+/* ==========================================================================
+   Content Layout Containers (Desktop Grid & Mobile Flex)
+   ========================================================================== */
+
+.hero-content-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Desktop Layout (min-width: 1024px) */
 @media (min-width: 1024px) {
   .hero-wrapper {
     height: 100vh;
     height: 100dvh;
-    padding-left: clamp(48px, 9vw, 140px);
-    padding-right: clamp(42px, 8vw, 126px);
+    padding-left: clamp(40px, 7vw, 110px);
+    padding-right: clamp(40px, 7vw, 110px);
     padding-top: 0;
     padding-bottom: 0;
   }
 
   .hero-content-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    grid-template-rows: auto auto;
+    column-gap: clamp(32px, 4.5vw, 76px);
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: clamp(24px, 4vw, 70px);
-    transition: transform 0.25s ease-out;
   }
 
   .hero-text-col {
-    flex: 1 1 auto;
-    max-width: 580px;
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 610px;
+    min-width: 0;
   }
 
   .hero-card-col {
-    flex: 0 0 auto;
-    width: clamp(400px, 31vw, 460px);
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 440px;
+    min-width: 440px;
+    max-width: 440px;
+    flex-shrink: 0;
+  }
+
+  .hero-controls {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 24px;
+    justify-content: flex-start;
+  }
+
+  /* Fixed slot height on desktop to ensure zero CLS during text animations */
+  .hero-copy-slot {
+    min-height: 250px;
   }
 }
 
-/* Compact adaptation for shorter desktop heights (e.g. 1366x768 with browser chrome) */
+/* Compact screens (e.g. 1366x768 or high zoom) */
 @media (min-width: 1024px) and (max-height: 720px) {
-  .hero-wrapper {
-    padding-left: clamp(40px, 8vw, 115px);
-    padding-right: clamp(36px, 7.5vw, 105px);
-  }
-
-  .hero-content-container {
-    max-width: 1100px;
-    gap: clamp(20px, 3.5vw, 50px);
+  .hero-copy-slot {
+    min-height: 220px;
   }
 
   .hero-heading {
     font-size: clamp(30px, 3.2vw, 42px) !important;
-    margin-bottom: 10px !important;
-  }
-  
-  #hero-badge {
     margin-bottom: 8px !important;
-    padding: 3px 12px !important;
-  }
-  
-  #hero-subtitle {
-    margin-bottom: 14px !important;
-    font-size: 15px !important;
-    line-height: 1.4 !important;
   }
 
-  #hero-actions {
-    margin-bottom: 12px !important;
-    gap: 12px !important;
+  .hero-eyebrow {
+    margin-bottom: 8px !important;
   }
 
-  .btn-primary, .btn-secondary {
-    padding: 8px 20px !important;
+  .hero-sub {
     font-size: 14px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-actions {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-controls {
+    margin-top: 16px !important;
+  }
+}
+
+/* Mobile Layout (< 1024px) per Board 3 rules */
+@media (max-width: 1023px) {
+  .hero-wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding: 72px 16px 48px 16px;
+    overflow: visible !important;
+  }
+
+  .hero-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text-col {
+    order: 1;
+    width: 100%;
   }
 
   .hero-card-col {
-    width: clamp(390px, 30vw, 440px) !important;
+    order: 2;
+    margin-top: 28px;
+    width: 100%;
+    max-width: 420px;
+    min-width: 0;
   }
 
-  .growth-card-outer {
-    padding: 7px !important;
-    border-radius: 16px !important;
+  .hero-controls {
+    order: 3;
+    margin-top: 24px;
+    justify-content: center;
   }
 
-  .growth-card-inner {
-    padding: 16px 20px 16px 20px !important;
-    border-radius: 12px !important;
-  }
-
-  .growth-card-inner #counter-metric {
-    font-size: 44px !important;
-  }
-
-  .chart-svg-container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .chart-svg-container svg {
-    max-height: 110px !important;
-  }
-
-  .growth-card-inner .metric-item .relative {
-    width: 38px !important;
-    height: 38px !important;
-    margin-bottom: 3px !important;
-  }
-
-  #counter-pagespeed {
-    font-size: 13px !important;
-  }
-
-  .growth-card-inner #counter-ai,
-  .growth-card-inner #counter-booking {
-    font-size: 24px !important;
-  }
-
-  .section-badge-indicator {
-    top: 16px !important;
-    left: 20px !important;
-    padding: 5px 8px !important;
-  }
-}
-
-/* Fluid scale for low height desktop screens (500px - 580px, e.g. 125% zoom) */
-@media (min-width: 1024px) and (max-height: 580px) {
-  .hero-content-container {
-    transform: scale(0.82);
-    transform-origin: center center;
-  }
-}
-
-/* Ultra-compact viewport height (420px - 480px, e.g. 1080x459) */
-@media (min-width: 1024px) and (max-height: 480px) {
-  .hero-content-container {
-    transform: scale(0.70);
-    transform-origin: center center;
-  }
-}
-
-/* Fallback for extremely squashed browser windows (< 380px height) */
-@media (max-height: 380px) {
-  .hero-wrapper {
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow-y: auto !important;
-    padding: 24px 16px !important;
-  }
-  body {
-    overflow-y: auto !important;
+  /* Fixed slot heights on mobile per Board 3 rules */
+  .hero-copy-slot {
+    min-height: 230px;
   }
 }
 
 /* ==========================================================================
-   Hero Section Background & Overlay
-   Smooth transition from dark (left) to light/photo (right)
+   Typography & Copy Slot
    ========================================================================== */
 
-.hero-bg-layer {
-  position: absolute;
-  inset: 0;
-  background-image: url('../img/hero-clinic-bg.png');
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  z-index: -2;
-  filter: brightness(0.92) contrast(1.06);
-  transform: scale(1.01);
-  transform-origin: center center;
+.hero-heading {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  text-wrap: balance;
 }
 
-.hero-overlay-layer {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, 
-      rgba(0, 0, 0, 0.98) 0%, 
-      rgba(0, 0, 0, 0.94) 25%, 
-      rgba(0, 0, 0, 0.78) 46%, 
-      rgba(0, 0, 0, 0.42) 72%, 
-      rgba(0, 0, 0, 0.15) 100%
-    ),
-    linear-gradient(180deg, 
-      rgba(0, 0, 0, 0.45) 0%, 
-      transparent 20%, 
-      transparent 76%, 
-      var(--color-background) 100%
-    );
-  z-index: -1;
+.hero-eyebrow {
+  background: var(--color-bg-surface, #111111);
+  border: 1px solid var(--color-border-line, #2A2A2A);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.2s ease;
+}
+
+.hero-eyebrow:hover {
+  border-color: #383838;
 }
 
 /* ==========================================================================
-   Double-Dashed Growth Overview Card (Rock Stars Design System)
+   Buttons & CTAs
    ========================================================================== */
 
-.growth-card-outer {
-  background: var(--bg-base);
-  border: 1px dashed var(--line);
-  border-radius: var(--border-radius-outer-card);
-  padding: 8px;
-  box-shadow: 
-    0 28px 70px -12px rgba(0, 0, 0, 0.95);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-  position: relative;
-  width: 100%;
-}
-
-.growth-card-outer:hover {
-  border-color: #3f3f3f;
-}
-
-.growth-card-inner {
-  background: var(--bg-base);
-  border: 1px dashed var(--line);
-  border-radius: var(--border-radius-inner-card);
-  padding: 22px 26px 22px 26px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Pulsing dot for status */
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  background-color: var(--text-primary);
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 8px rgba(240, 240, 240, 0.8);
-  animation: pulseLight 2.4s infinite ease-in-out;
-}
-
-@keyframes pulseLight {
-  0%, 100% {
-    opacity: 0.7;
-    transform: scale(0.9);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.15);
-  }
-}
-
-/* ==========================================================================
-   Chart SVG Styles & Animations
-   ========================================================================== */
-
-.chart-svg-container {
-  position: relative;
-  width: 100%;
-  overflow: visible;
-}
-
-.chart-curve {
-  stroke: var(--chart-line-color);
-  stroke-width: 2.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.35));
-}
-
-.chart-gradient-area {
-  transition: opacity 0.8s ease;
-}
-
-.chart-endpoint-pulse {
-  animation: endpointPulse 2s infinite ease-in-out;
-  transform-origin: center;
-}
-
-@keyframes endpointPulse {
-  0%, 100% {
-    r: 6;
-    opacity: 0.95;
-  }
-  50% {
-    r: 9;
-    opacity: 0.55;
-  }
-}
-
-/* Mini Bar Chart */
-.mini-bar {
-  border-radius: 1.5px;
-  transform-origin: bottom;
-  transition: transform 0.4s ease;
-}
-
-/* Buttons */
 .btn-primary {
-  background-color: var(--text-primary);
-  color: #000000;
+  background-color: var(--color-text-primary, #F0F0F0);
+  color: var(--color-bg-base, #000000);
   font-weight: 600;
-  border-radius: var(--border-radius-button);
-  border: 1px solid transparent;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(240, 240, 240, 0.12);
 }
 
 .btn-primary:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(240, 240, 240, 0.12);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
+  background-color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(240, 240, 240, 0.2);
 }
 
 .btn-secondary {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  color: var(--text-primary);
-  font-weight: 600;
-  border-radius: var(--border-radius-button);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--color-bg-surface, #111111);
+  border: 1px solid var(--color-border-line, #2A2A2A);
+  color: var(--color-text-primary, #F0F0F0);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn-secondary:hover {
-  background: #191919;
-  border-color: #383838;
-  color: #ffffff;
-  transform: translateY(-2px);
+  border-color: var(--color-text-primary, #F0F0F0);
+  background-color: #161616;
+  transform: translateY(-1px);
 }
 
-.btn-secondary:active {
-  transform: translateY(0);
+/* ==========================================================================
+   Analytics Growth Card: Strict Fixed Uniform Dimensions
+   Identical width & height across all 5 slides (Zero CLS, Zero resize jumps)
+   ========================================================================== */
+
+.hero-card-slot {
+  width: 440px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.growth-card-outer {
+  background: var(--color-bg-base, #000000);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 20px;
+  padding: 4px;
+  width: 440px;
+  min-width: 440px;
+  max-width: 440px;
+  height: 410px;
+  min-height: 410px;
+  max-height: 410px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.growth-card-inner {
+  background: var(--color-bg-surface, #111111);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 16px;
+  padding: 22px 24px 20px 24px;
+  width: 100%;
+  height: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.growth-card-outer:hover {
+  border-color: #383838;
+}
+
+/* Card Internal Slot Heights: strictly identical on all slides */
+.card-header-row {
+  height: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.card-metric-block {
+  height: 72px;
+  min-height: 72px;
+  max-height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.card-viz-container {
+  height: 140px;
+  min-height: 140px;
+  max-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-stats-grid {
+  height: 84px;
+  min-height: 84px;
+  max-height: 84px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  text-align: center;
+  flex-shrink: 0;
+  border-top: 1px solid var(--color-border-line, #2A2A2A);
+  padding-top: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .hero-card-slot {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .growth-card-outer {
+    width: 100%;
+    min-width: 0;
+    max-width: 420px;
+    height: 390px;
+    min-height: 390px;
+    max-height: 390px;
+  }
+
+  .growth-card-inner {
+    width: 100%;
+    height: 380px;
+    min-height: 380px;
+    max-height: 380px;
+    padding: 18px 20px 16px 20px;
+  }
+
+  .card-viz-container {
+    height: 130px;
+    min-height: 130px;
+    max-height: 130px;
+  }
+
+  .card-stats-grid {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    padding-top: 10px;
+  }
+}
+
+/* Active Radio Dot Animation */
+.pulse-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  animation: pulseGreen 2.2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Endpoint Dot Pulse on Chart */
+.chart-endpoint-pulse {
+  animation: chartDotPulse 2.4s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes chartDotPulse {
+  0% { transform: scale(0.85); opacity: 0.4; }
+  50% { transform: scale(1.35); opacity: 0.9; }
+  100% { transform: scale(0.85); opacity: 0.4; }
+}
+
+/* ==========================================================================
+   Slide Controls Toolbar (Clean 2.5px Thin Segments, Counter, Pause)
+   Strictly matches Board 1 - No bulky grey capsule pills
+   ========================================================================== */
+
+.hero-controls {
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero-segments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 180px;
+}
+
+/* Transparent hit-area button: NO visible background or border */
+.hero-seg-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-seg-btn:focus-visible .hero-seg-track {
+  outline: 2px solid #F0F0F0;
+  outline-offset: 2px;
+}
+
+/* Thin 2.5px dark track */
+.hero-seg-track {
+  width: 100%;
+  height: 2.5px;
+  background-color: #2A2A2A;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.hero-seg-btn:hover .hero-seg-track {
+  background-color: #3D3D3D;
+}
+
+/* 100% height fill bar inside the 2.5px track */
+.hero-seg-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #F0F0F0;
+  border-radius: 9999px;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.hero-counter {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.hero-pause-btn {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-pause-btn:hover {
+  background-color: #1a1a1a;
+  border-color: #F0F0F0;
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-slide {
+    clip-path: none !important;
+    transform: none !important;
+    scale: 1 !important;
+  }
+
+  .pulse-dot,
+  .chart-endpoint-pulse {
+    animation: none !important;
+  }
 }

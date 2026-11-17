@@ -4,10 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap !== 'undefined') {
-    if (typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
+  // If modern hero slider is active, main.js does not need to run legacy single-hero timeline
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+  if (!document.querySelector('.hero-bg-cur')) {
     initHeroAnimations();
   }
 });
