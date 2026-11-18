@@ -23,7 +23,8 @@ const SECTIONS = [
   { file: '13-results.html', id: 'results', num: '13', title: 'Results' },
   { file: '14-formats.html', id: 'formats', num: '14', title: 'Formats & Pricing' },
   { file: '15-faq.html', id: 'faq', num: '15', title: 'FAQ' },
-  { file: '16-articles.html', id: 'articles', num: '16', title: 'Articles Slider' }
+  { file: '16-articles.html', id: 'articles', num: '16', title: 'Articles Slider' },
+  { file: '17-services-accordion.html', id: 'services-accordion', num: '17', title: 'Services Accordion' }
 ];
 
 function build() {

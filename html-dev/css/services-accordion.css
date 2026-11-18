@@ -1,0 +1,511 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 17: Services Accordion
+   Rock Stars Agency Design System: Signature Double Dashed Borders
+   - Open expanded panel: Pure BLACK (#000000)
+   - Tags (pills): Pure BLACK (#000000) with double dashed border
+   - Sub-cards (blocks with icons): Pure BLACK (#000000) with double dashed border
+   - Icons: Clean transparent background directly on black
+   - Closed strips: Solid dark grey (#111111), NO border
+   ========================================================================== */
+
+.services-acc-section {
+  position: relative;
+  background-color: var(--color-bg-base, #000000);
+  isolation: isolate;
+  padding-top: clamp(64px, 8vh, 100px);
+  padding-bottom: clamp(64px, 8vh, 100px);
+  border-top: 1px dashed var(--color-border-line, #2A2A2A);
+}
+
+#services-accordion .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.services-acc-title {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   Accordion Master Frame: Double Dashed Outer Container
+   ========================================================================== */
+
+.acc-outer-frame {
+  background: var(--color-bg-base, #000000);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 22px;
+  padding: 4px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.acc-container {
+  width: 100%;
+  box-sizing: border-box;
+  background: #000000;
+  border-radius: 18px;
+}
+
+/* ==========================================================================
+   Pill Badge: Pure Black (#000000) with Double Dashed Border
+   ========================================================================== */
+
+.acc-pill-outer {
+  display: inline-flex;
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 9999px;
+  padding: 2.5px;
+  transition: border-color 0.25s ease;
+}
+
+.acc-pill-inner {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 9999px;
+  padding: 3.5px 14px;
+  transition: border-color 0.25s ease;
+}
+
+.acc-pill-outer:hover,
+.acc-pill-outer:hover .acc-pill-inner {
+  border-color: #3f3f3f;
+}
+
+/* ==========================================================================
+   Metric Card: Double Dashed Border
+   ========================================================================== */
+
+.acc-metric-outer {
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 18px;
+  padding: 3.5px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.acc-metric-card {
+  background: #0d0d0d;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 14px;
+  padding: 16px 18px 14px 18px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.acc-metric-outer:hover,
+.acc-metric-outer:hover .acc-metric-card {
+  border-color: #383838;
+}
+
+/* ==========================================================================
+   Sub-Cards (Blocks with Icons): Pure Black (#000000) with Double Dashed Border
+   ========================================================================== */
+
+.acc-sub-outer {
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 14px;
+  padding: 2.5px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+}
+
+.acc-sub-card {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 11px;
+  padding: 14px 14px 12px 14px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.acc-sub-outer:hover {
+  transform: translateY(-2px);
+  border-color: #3f3f3f;
+}
+
+.acc-sub-outer:hover .acc-sub-card {
+  border-color: #3f3f3f;
+}
+
+/* Icon inside sub-card: Transparent, sits cleanly on pure black */
+.acc-sub-icon {
+  width: 24px;
+  height: 24px;
+  background: transparent !important;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.acc-sub-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-primary, #F0F0F0);
+}
+
+/* ==========================================================================
+   Desktop Layout (≥ 1024px)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .acc-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 520px;
+    gap: 16px;
+    overflow: hidden;
+  }
+
+  .acc-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    will-change: flex-grow, flex-basis;
+  }
+
+  /* ------------------------------------------------------------------------
+     Open Item: Pure BLACK (#000000) with Signature Double Dashed Border
+     ------------------------------------------------------------------------ */
+  .acc-item[data-state="open"] {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    background: #000000 !important;
+    border: 1px dashed var(--color-border-line, #2A2A2A);
+    padding: 4px; /* Signature gap for double dashed border */
+    transition: border-color 0.25s ease;
+  }
+
+  .acc-item[data-state="open"]:hover {
+    border-color: #383838;
+  }
+
+  .acc-item[data-state="open"] .acc-strip-btn {
+    display: none !important;
+  }
+
+  .acc-item[data-state="open"] .acc-panel-body {
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: #000000 !important;
+  }
+
+  .acc-item[data-state="open"] .acc-panel-inner {
+    background: #000000 !important;
+    border: 1px dashed var(--color-border-line, #2A2A2A);
+    border-radius: 12px;
+    padding: 24px 28px 20px 28px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+
+  .acc-item[data-state="open"]:hover .acc-panel-inner {
+    border-color: #383838;
+  }
+
+  /* ------------------------------------------------------------------------
+     Closed Item (88px Strip): Solid Dark Grey (#111111), NO BORDER
+     ------------------------------------------------------------------------ */
+  .acc-item[data-state="closed"] {
+    flex-grow: 0;
+    flex-basis: 88px;
+    width: 88px;
+    min-width: 88px;
+    max-width: 88px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-btn {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    box-sizing: border-box;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-inner {
+    background: var(--color-bg-surface, #111111);
+    border: none;
+    border-radius: 14px;
+    padding: 22px 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+  }
+
+  .acc-item[data-state="closed"]:hover .acc-strip-inner {
+    background-color: var(--color-border-line, #2A2A2A);
+  }
+
+  .acc-item[data-state="closed"]:hover .acc-strip-plus-wrap {
+    transform: rotate(90deg);
+    background-color: #333333;
+  }
+
+  .acc-item[data-state="closed"]:hover .acc-strip-icon-wrap svg {
+    color: var(--color-text-primary, #F0F0F0);
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-btn:focus-visible .acc-strip-inner {
+    outline: 2px solid #F0F0F0;
+    outline-offset: -2px;
+  }
+
+  .acc-strip-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-primary, #F0F0F0);
+    letter-spacing: -0.01em;
+  }
+
+  .acc-strip-plus-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1A1A1A;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  }
+
+  .acc-item[data-state="closed"] .acc-panel-body {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Tablet & Mobile Layout (< 1024px): Vertical Stack
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .acc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+  }
+
+  .acc-item {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  /* ------------------------------------------------------------------------
+     Closed State on Mobile/Tablet: Flat Solid #111111 Row, NO BORDER
+     ------------------------------------------------------------------------ */
+  .acc-item[data-state="closed"] {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    width: 100%;
+    padding: 0 18px;
+    background: var(--color-bg-surface, #111111);
+    border: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+
+  .acc-item[data-state="closed"]:hover .acc-strip-inner {
+    background-color: #1a1a1a;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-primary, #F0F0F0);
+    margin-left: 14px;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #161616;
+    border: none;
+    flex-shrink: 0;
+  }
+
+  .acc-item[data-state="closed"] .acc-strip-plus-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #1A1A1A;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .acc-item[data-state="closed"] .acc-panel-body {
+    display: none;
+  }
+
+  /* ------------------------------------------------------------------------
+     Open State on Mobile/Tablet: Pure BLACK (#000000) with Double Dashed Border
+     ------------------------------------------------------------------------ */
+  .acc-item[data-state="open"] {
+    background: #000000 !important;
+    border: 1px dashed var(--color-border-line, #2A2A2A);
+    border-radius: 16px;
+    padding: 3px;
+  }
+
+  .acc-item[data-state="open"] .acc-strip-btn {
+    display: none !important;
+  }
+
+  .acc-item[data-state="open"] .acc-panel-body {
+    display: block;
+    width: 100%;
+    background: #000000 !important;
+  }
+
+  .acc-item[data-state="open"] .acc-panel-inner {
+    background: #000000 !important;
+    border: 1px dashed var(--color-border-line, #2A2A2A);
+    border-radius: 12px;
+    padding: 20px 16px 18px 16px;
+    box-sizing: border-box;
+  }
+
+  .acc-item[data-state="open"] .acc-content-row {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .acc-item[data-state="open"] .acc-metric {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Navigation & Action Buttons (Strictly borderless per design)
+   ========================================================================== */
+
+.acc-nav-btn {
+  background: var(--color-bg-surface, #111111);
+  border: none !important;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acc-nav-btn:hover {
+  background-color: #1e1e1e;
+  border: none !important;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.acc-nav-btn:focus-visible {
+  outline: 2px solid #F0F0F0;
+  outline-offset: 2px;
+}
+
+.acc-actions .btn-primary {
+  background-color: var(--color-text-primary, #F0F0F0);
+  color: var(--color-bg-base, #000000);
+  border: none !important;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.acc-actions .btn-primary:hover {
+  background-color: #FFFFFF;
+  border: none !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .acc-item,
+  .acc-sub-outer,
+  .acc-metric-outer {
+    transition: none !important;
+  }
+  .acc-spark-path {
+    stroke-dashoffset: 0 !important;
+  }
+}
