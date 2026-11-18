@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 18: Process Stepper &mdash; Preview</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The team behind your healthcare website growth. Plugins, integrations, SEO, redesign, ads and support. One team instead of five freelancers.">
+  <title>Docs Dev Landing — Healthcare Website Growth</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              base: '#000000',
+              surface: '#111111',
+              line: '#2A2A2A',
+              primary: '#F0F0F0',
+              secondary: '#A0A0A0',
+              muted: '#A0A0A0',
+              dim: '#A0A0A0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Core Variables & Base Styles -->
+  <link rel="stylesheet" href="../css/variables.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/base.css?v=20261112_01">
+
+  <!-- Section Stylesheets -->
+  <link rel="stylesheet" href="../css/hero-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/trust-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/problem-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/services-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/dev-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/integrations-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/seo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/geo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/growth-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/process-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/results-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/formats-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/faq-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/articles-slider.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/services-accordion.css?v=20261118_01">
+  <link rel="stylesheet" href="../css/process-stepper.css?v=20261118_01">
+
+</head>
+<body class="bg-[#000000] text-[#F0F0F0] selection:bg-[#F0F0F0] selection:text-black">
+  
+    <!-- Standalone Section Preview Toolbar -->
+    <div style="position: sticky; top: 0; z-index: 999999; background: #111111; border-bottom: 1px dashed #2A2A2A; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'Inter', -apple-system, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px; font-weight: 500; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#F0F0F0'" onmouseout="this.style.borderColor='#2A2A2A'">
+          ← All Sections (index.html)
+        </a>
+        <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #000000; border: 1px dashed #2A2A2A; border-radius: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: #A0A0A0; text-transform: uppercase;">
+          PREVIEW MODE &bull; SEC 18
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="17-services-accordion.html" style="padding: 6px 12px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px;" title="Previous: Services Accordion">← Prev</a>
+        
+        <select onchange="window.location.href=this.value" style="background: #000000; color: #F0F0F0; border: 1px solid #2A2A2A; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-family: inherit; outline: none; cursor: pointer;">
+          <option value="01-hero.html">Section 01: Hero</option><option value="02-trust.html">Section 02: Trust & Proof</option><option value="03-problem.html">Section 03: Problem</option><option value="04-services.html">Section 04: Services</option><option value="05-dev.html">Section 05: Development & Plugins</option><option value="06-integrations.html">Section 06: Integrations</option><option value="07-seo.html">Section 07: SEO & Core Vitals</option><option value="08-geo.html">Section 08: GEO Optimization</option><option value="10-growth.html">Section 10: Growth & Ads</option><option value="12-process.html">Section 12: Process</option><option value="13-results.html">Section 13: Results</option><option value="14-formats.html">Section 14: Formats & Pricing</option><option value="15-faq.html">Section 15: FAQ</option><option value="16-articles.html">Section 16: Articles Slider</option><option value="17-services-accordion.html">Section 17: Services Accordion</option><option value="18-process-stepper.html" selected>Section 18: Process Stepper</option>
+        </select>
+
+        <span style="padding: 6px 12px; border: 1px solid #1a1a1a; border-radius: 8px; color: #555555; font-size: 13px; cursor: not-allowed;">Next →</span>
+      </div>
+    </div>
+    
+  <main>
+    <!-- Section 18: Interactive Process Stepper (Rock Stars Agency Design System: Signature Double Dashed Borders) -->
+<section id="process-stepper" class="process-stepper-section bg-[#000000] text-[#F0F0F0]">
+
+  <!-- Section 18 Index Indicator with Double Dashed Border -->
+  <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+    <div class="badge-inner flex flex-col items-center justify-center">
+      <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">18</span>
+      <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">PROCESS</span>
+    </div>
+  </div>
+
+  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Master Frame with Signature Double Dashed Border -->
+    <div class="step-outer-frame">
+      <div class="step-inner-frame">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+          <!-- Left Column: Section Title & Interactive Project Stage Card -->
+          <div class="lg:col-span-5 flex flex-col justify-between h-full">
+
+            <!-- Title & Value Prop -->
+            <div class="mb-8 lg:mb-10">
+              <span class="text-[#A0A0A0] text-xs font-semibold tracking-[0.16em] uppercase block mb-3">PROCESS</span>
+              <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#F0F0F0] leading-[1.12] tracking-tight mb-4">
+                From first audit to steady growth
+              </h2>
+              <p class="text-[#A0A0A0] text-sm sm:text-base leading-relaxed">
+                A transparent process with one team, clear deliverables and a fixed order of work. No handoffs between freelancers.
+              </p>
+            </div>
+
+            <!-- Stage Detail Card: Pure Black with Signature Double Dashed Border -->
+            <div class="step-stage-outer">
+              <div class="step-stage-card">
+
+                <!-- Stage Head: Label & Ring Counter -->
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[#A0A0A0] text-xs sm:text-[13px] font-medium tracking-wide">Project stage</span>
+                  <div class="flex items-center gap-2">
+                    <span class="step-counter-label text-[#A0A0A0] text-xs font-mono">1/5</span>
+                    <svg class="w-4 h-4 text-[#F0F0F0] -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="14" fill="none" stroke="#2A2A2A" stroke-width="3" />
+                      <circle class="step-ring-progress" cx="18" cy="18" r="14" fill="none" stroke="#F0F0F0" stroke-width="3"
+                        stroke-dasharray="88" stroke-dashoffset="70" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Stage Metric: Typical Duration -->
+                <div class="mb-5">
+                  <span class="text-[#A0A0A0] text-xs font-medium block mb-1">Typical duration</span>
+                  <div class="step-metric-duration text-3xl sm:text-4xl font-extrabold text-[#F0F0F0] tracking-tight">
+                    2–3 days
+                  </div>
+                </div>
+
+                <!-- 5-Segment Progress Bar -->
+                <div class="step-segments-bar flex items-center gap-1.5 sm:gap-2 mb-6" aria-label="Process progress 1 of 5">
+                  <div class="step-seg-track flex-1 h-[2.5px] rounded-full overflow-hidden bg-[#2A2A2A]">
+                    <span class="step-seg-fill block h-full w-full bg-[#F0F0F0] scale-x-100 origin-left"></span>
+                  </div>
+                  <div class="step-seg-track flex-1 h-[2.5px] rounded-full overflow-hidden bg-[#2A2A2A]">
+                    <span class="step-seg-fill block h-full w-full bg-[#F0F0F0] scale-x-0 origin-left"></span>
+                  </div>
+                  <div class="step-seg-track flex-1 h-[2.5px] rounded-full overflow-hidden bg-[#2A2A2A]">
+                    <span class="step-seg-fill block h-full w-full bg-[#F0F0F0] scale-x-0 origin-left"></span>
+                  </div>
+                  <div class="step-seg-track flex-1 h-[2.5px] rounded-full overflow-hidden bg-[#2A2A2A]">
+                    <span class="step-seg-fill block h-full w-full bg-[#F0F0F0] scale-x-0 origin-left"></span>
+                  </div>
+                  <div class="step-seg-track flex-1 h-[2.5px] rounded-full overflow-hidden bg-[#2A2A2A]">
+                    <span class="step-seg-fill block h-full w-full bg-[#F0F0F0] scale-x-0 origin-left"></span>
+                  </div>
+                </div>
+
+                <!-- Deliverable Nested Card with Double Dashed Border -->
+                <div class="step-deliv-outer">
+                  <div class="step-deliv-inner">
+                    <span class="text-[#A0A0A0] text-[10px] sm:text-xs font-semibold tracking-[0.14em] uppercase block mb-1">
+                      DELIVERABLE
+                    </span>
+                    <p class="step-deliv-text text-xs sm:text-sm font-medium text-[#F0F0F0] leading-snug">
+                      Audit report with priorities
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Vertical Stepper with 5 Steps -->
+          <div class="lg:col-span-7 flex flex-col justify-between">
+
+            <!-- Stepper List with Track Line -->
+            <div class="step-list-wrapper relative">
+
+              <!-- Vertical Track Line Behind Markers -->
+              <div class="step-timeline-track" aria-hidden="true">
+                <div class="step-timeline-line-bg"></div>
+                <div class="step-timeline-line-fill"></div>
+              </div>
+
+              <!-- Step 1 (Active by default) -->
+              <div class="step-item active" data-step="0" data-duration="2–3 days" data-deliverable="Audit report with priorities">
+                <div class="step-marker-col">
+                  <div class="step-marker" aria-label="Step 1">1</div>
+                </div>
+                <div class="step-content-col">
+                  <button type="button" class="step-header-btn" aria-expanded="true">
+                    <span class="step-title">Free site audit</span>
+                    <span class="step-chevron-icon" aria-hidden="true">
+                      <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="step-body">
+                    <p class="step-description text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-4">
+                      We review your speed, SEO, accessibility and booking flow, then show you where the clinic loses patients. You get a clear list of fixes, free.
+                    </p>
+                    <div class="step-tags flex flex-wrap items-center gap-2">
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">2–3 days</span>
+                      </div>
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">Free</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="step-item" data-step="1" data-duration="3–5 days" data-deliverable="Technical specification & sprint roadmap">
+                <div class="step-marker-col">
+                  <div class="step-marker" aria-label="Step 2">2</div>
+                </div>
+                <div class="step-content-col">
+                  <button type="button" class="step-header-btn" aria-expanded="false">
+                    <span class="step-title">Strategy and roadmap</span>
+                    <span class="step-chevron-icon" aria-hidden="true">
+                      <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="step-body" style="height: 0; opacity: 0; overflow: hidden;">
+                    <p class="step-description text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-4">
+                      We prioritize quick wins and high-impact changes. You get an exact scope, fixed timeline, architecture choices and clear sprint breakdown.
+                    </p>
+                    <div class="step-tags flex flex-wrap items-center gap-2">
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">3–5 days</span>
+                      </div>
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">Fixed scope</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="step-item" data-step="2" data-duration="2–4 weeks" data-deliverable="Interactive staging prototype & approved code">
+                <div class="step-marker-col">
+                  <div class="step-marker" aria-label="Step 3">3</div>
+                </div>
+                <div class="step-content-col">
+                  <button type="button" class="step-header-btn" aria-expanded="false">
+                    <span class="step-title">Design and build</span>
+                    <span class="step-chevron-icon" aria-hidden="true">
+                      <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="step-body" style="height: 0; opacity: 0; overflow: hidden;">
+                    <p class="step-description text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-4">
+                      Custom medical UI/UX, responsive layouts, booking engines, custom WordPress Gutenberg blocks and EHR/CRM integrations tailored to your clinic.
+                    </p>
+                    <div class="step-tags flex flex-wrap items-center gap-2">
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">2–4 weeks</span>
+                      </div>
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">Weekly sprints</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="step-item" data-step="3" data-duration="3–5 days" data-deliverable="Production deployment & verified launch checklist">
+                <div class="step-marker-col">
+                  <div class="step-marker" aria-label="Step 4">4</div>
+                </div>
+                <div class="step-content-col">
+                  <button type="button" class="step-header-btn" aria-expanded="false">
+                    <span class="step-title">Launch and QA</span>
+                    <span class="step-chevron-icon" aria-hidden="true">
+                      <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="step-body" style="height: 0; opacity: 0; overflow: hidden;">
+                    <p class="step-description text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-4">
+                      Comprehensive cross-device QA, Core Web Vitals audit, 301 redirect map, analytics tracking verification, HIPAA data flow checks and zero-downtime release.
+                    </p>
+                    <div class="step-tags flex flex-wrap items-center gap-2">
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">3–5 days</span>
+                      </div>
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">Zero downtime</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="step-item" data-step="4" data-duration="Ongoing" data-deliverable="Monthly growth reports & 24/7 uptime monitoring">
+                <div class="step-marker-col">
+                  <div class="step-marker" aria-label="Step 5">5</div>
+                </div>
+                <div class="step-content-col">
+                  <button type="button" class="step-header-btn" aria-expanded="false">
+                    <span class="step-title">Growth and support</span>
+                    <span class="step-chevron-icon" aria-hidden="true">
+                      <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </button>
+                  <div class="step-body" style="height: 0; opacity: 0; overflow: hidden;">
+                    <p class="step-description text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-4">
+                      Continuous speed monitoring, conversion optimization, monthly SEO tuning, security patches and direct Slack/Telegram dev channel with 1h SLA.
+                    </p>
+                    <div class="step-tags flex flex-wrap items-center gap-2">
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">Ongoing</span>
+                      </div>
+                      <div class="step-pill-outer">
+                        <span class="step-pill-inner text-xs text-[#F0F0F0] font-medium">1h SLA</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Question Link with Arrow -->
+            <div class="step-footer-action mt-8 pt-6 border-t border-[#1C1C1C]">
+              <a href="#contact" class="step-expert-link inline-flex items-center gap-2 text-xs sm:text-sm text-[#A0A0A0] hover:text-[#F0F0F0] transition-colors group">
+                <span class="step-help-icon w-4 h-4 rounded-full border border-[#333333] flex items-center justify-center text-[10px] text-[#A0A0A0] group-hover:border-[#F0F0F0] group-hover:text-[#F0F0F0] transition-colors">?</span>
+                <span>Have a question? <span class="underline underline-offset-4 font-semibold text-[#F0F0F0]">Speak to our expert</span></span>
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+  </main>
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/hero-section.js?v=20261117_01"></script>
+  <script src="../js/trust-section.js"></script>
+  <script src="../js/problem-section.js?v=20261024_02"></script>
+  <script src="../js/services-section.js?v=20261024_01"></script>
+  <script src="../js/dev-section.js?v=20261105_23"></script>
+  <script src="../js/integrations-section.js?v=20261024_01"></script>
+  <script src="../js/seo-section.js?v=20261024_01"></script>
+  <script src="../js/geo-section.js?v=20261031_04"></script>
+  <script src="../js/growth-section.js?v=20261024_01"></script>
+  <script src="../js/process-section.js?v=20261025_01"></script>
+  <script src="../js/results-section.js?v=20261105_17"></script>
+  <script src="../js/formats-section.js?v=20261105_18"></script>
+  <script src="../js/faq-section.js?v=20261105_19"></script>
+  <script src="../js/articles-slider.js?v=20261108_04"></script>
+  <script src="../js/services-accordion.js?v=20261118_01"></script>
+  <script src="../js/process-stepper.js?v=20261118_01"></script>
+
+</body>
+</html>

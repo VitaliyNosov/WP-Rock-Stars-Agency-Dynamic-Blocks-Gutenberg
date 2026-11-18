@@ -1,0 +1,326 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 18: Interactive Process Stepper
+   Rock Stars Agency Design System: Signature Double Dashed Borders
+   - Backgrounds: Pure Deep Black (#000000)
+   - Borders: Signature Double Dashed (#2A2A2A) with 3-4px gap
+   - Buttons & Markers: Strictly Borderless per design system
+   ========================================================================== */
+
+.process-stepper-section {
+  position: relative;
+  background-color: var(--color-bg-base, #000000);
+  isolation: isolate;
+  padding-top: clamp(64px, 8vh, 100px);
+  padding-bottom: clamp(64px, 8vh, 100px);
+  border-top: 1px dashed var(--color-border-line, #2A2A2A);
+}
+
+#process-stepper .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+/* ==========================================================================
+   Master Frame: Signature Double Dashed Border
+   ========================================================================== */
+
+.step-outer-frame {
+  background: var(--color-bg-base, #000000);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 22px;
+  padding: 4px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+.step-inner-frame {
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 18px;
+  padding: clamp(24px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Left Column: Stage Metric Card (Double Dashed Border, Pure Black)
+   ========================================================================== */
+
+.step-stage-outer {
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 18px;
+  padding: 3.5px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+  width: 100%;
+}
+
+.step-stage-card {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 14px;
+  padding: clamp(20px, 2.5vw, 28px);
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.step-stage-outer:hover,
+.step-stage-outer:hover .step-stage-card {
+  border-color: #383838;
+}
+
+.step-ring-progress {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 5-Segment Progress Bar: 2.5px height per design system */
+.step-seg-track {
+  height: 2.5px;
+  border-radius: 9999px;
+  background-color: var(--color-border-line, #2A2A2A);
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.step-seg-fill {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-text-primary, #F0F0F0);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Deliverable Box: Pure Black with Double Dashed Border */
+.step-deliv-outer {
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 12px;
+  padding: 2.5px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.step-deliv-inner {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 9px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+.step-deliv-outer:hover,
+.step-deliv-outer:hover .step-deliv-inner {
+  border-color: #383838;
+}
+
+/* ==========================================================================
+   Right Column: Vertical Stepper Timeline
+   ========================================================================== */
+
+.step-list-wrapper {
+  position: relative;
+  padding-left: 0;
+}
+
+/* Vertical Timeline Track Line Behind Markers */
+.step-timeline-track {
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  bottom: 24px;
+  width: 2px;
+  z-index: 1;
+}
+
+.step-timeline-line-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-border-line, #2A2A2A);
+}
+
+.step-timeline-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--color-text-primary, #F0F0F0);
+  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Step Item Row */
+.step-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  transition: all 0.25s ease;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Step Number Marker: Strictly borderless per design */
+.step-marker-col {
+  flex-shrink: 0;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+.step-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface, #111111);
+  color: var(--color-text-secondary, #A0A0A0);
+  border: none !important;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-item.active .step-marker {
+  background-color: var(--color-text-primary, #F0F0F0);
+  color: var(--color-bg-base, #000000);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(240, 240, 240, 0.3);
+  transform: scale(1.06);
+}
+
+.step-item.completed .step-marker {
+  background-color: #222222;
+  color: #F0F0F0;
+}
+
+/* Step Content Column */
+.step-content-col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Step Header Button: Strictly borderless per design */
+.step-header-btn {
+  appearance: none;
+  background: transparent;
+  border: none !important;
+  outline: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.step-header-btn:focus-visible {
+  outline: 2px solid #F0F0F0;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-secondary, #A0A0A0);
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.step-item.active .step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary, #F0F0F0);
+}
+
+.step-item:not(.active):hover .step-title {
+  color: #FFFFFF;
+}
+
+/* Chevron Icon: Borderless */
+.step-chevron-icon {
+  flex-shrink: 0;
+  color: var(--color-text-secondary, #A0A0A0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-item.active .step-chevron-icon {
+  color: var(--color-text-primary, #F0F0F0);
+}
+
+.step-item:not(.active):hover .step-chevron-icon {
+  color: #FFFFFF;
+}
+
+/* Step Body (Collapsible) */
+.step-body {
+  overflow: hidden;
+  will-change: height, opacity;
+}
+
+/* Tags / Pills: Pure Black (#000000) with Double Dashed Border */
+.step-pill-outer {
+  display: inline-flex;
+  background: #000000;
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 9999px;
+  padding: 2.5px;
+  transition: border-color 0.25s ease;
+}
+
+.step-pill-inner {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 9999px;
+  padding: 3.5px 14px;
+  display: inline-block;
+  transition: border-color 0.25s ease;
+}
+
+.step-pill-outer:hover,
+.step-pill-outer:hover .step-pill-inner {
+  border-color: #3f3f3f;
+}
+
+/* Footer Link */
+.step-expert-link {
+  text-decoration: none;
+}
+
+.step-help-icon {
+  font-family: var(--font-sans, sans-serif);
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .step-item,
+  .step-marker,
+  .step-seg-fill,
+  .step-timeline-line-fill,
+  .step-ring-progress {
+    transition: none !important;
+  }
+}
+

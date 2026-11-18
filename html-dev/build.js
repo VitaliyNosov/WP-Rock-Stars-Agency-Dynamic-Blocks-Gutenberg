@@ -24,7 +24,8 @@ const SECTIONS = [
   { file: '14-formats.html', id: 'formats', num: '14', title: 'Formats & Pricing' },
   { file: '15-faq.html', id: 'faq', num: '15', title: 'FAQ' },
   { file: '16-articles.html', id: 'articles', num: '16', title: 'Articles Slider' },
-  { file: '17-services-accordion.html', id: 'services-accordion', num: '17', title: 'Services Accordion' }
+  { file: '17-services-accordion.html', id: 'services-accordion', num: '17', title: 'Services Accordion' },
+  { file: '18-process-stepper.html', id: 'process-stepper', num: '18', title: 'Process Stepper' }
 ];
 
 function build() {
