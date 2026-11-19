@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 22: Results Grid &mdash; Preview</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The team behind your healthcare website growth. Plugins, integrations, SEO, redesign, ads and support. One team instead of five freelancers.">
+  <title>Docs Dev Landing — Healthcare Website Growth</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              base: '#000000',
+              surface: '#111111',
+              line: '#2A2A2A',
+              primary: '#F0F0F0',
+              secondary: '#A0A0A0',
+              muted: '#A0A0A0',
+              dim: '#A0A0A0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Core Variables & Base Styles -->
+  <link rel="stylesheet" href="../css/variables.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/base.css?v=20261112_01">
+
+  <!-- Section Stylesheets -->
+  <link rel="stylesheet" href="../css/hero-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/trust-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/problem-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/services-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/dev-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/integrations-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/seo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/geo-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/growth-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/process-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/results-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/formats-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/faq-section.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/articles-slider.css?v=20261112_01">
+  <link rel="stylesheet" href="../css/services-accordion.css?v=20261118_01">
+  <link rel="stylesheet" href="../css/process-stepper.css?v=20261118_01">
+  <link rel="stylesheet" href="../css/growth-cards.css?v=20261119_01">
+  <link rel="stylesheet" href="../css/services-tabs.css?v=20261119_01">
+  <link rel="stylesheet" href="../css/services-grid.css?v=20261119_01">
+  <link rel="stylesheet" href="../css/results-grid.css?v=20261119_01">
+  <link rel="stylesheet" href="../css/process-timeline.css?v=20261119_01">
+  <link rel="stylesheet" href="../css/integrations-cloud.css?v=20261119_01">
+
+</head>
+<body class="bg-[#000000] text-[#F0F0F0] selection:bg-[#F0F0F0] selection:text-black">
+  
+    <!-- Standalone Section Preview Toolbar -->
+    <div style="position: sticky; top: 0; z-index: 999999; background: #111111; border-bottom: 1px dashed #2A2A2A; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: 'Inter', -apple-system, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../index.html" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px; font-weight: 500; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#F0F0F0'" onmouseout="this.style.borderColor='#2A2A2A'">
+          ← All Sections (index.html)
+        </a>
+        <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #000000; border: 1px dashed #2A2A2A; border-radius: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: #A0A0A0; text-transform: uppercase;">
+          PREVIEW MODE &bull; SEC 22
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="21-services-grid.html" style="padding: 6px 12px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px;" title="Previous: Services Grid">← Prev</a>
+        
+        <select onchange="window.location.href=this.value" style="background: #000000; color: #F0F0F0; border: 1px solid #2A2A2A; border-radius: 8px; padding: 6px 12px; font-size: 13px; font-family: inherit; outline: none; cursor: pointer;">
+          <option value="01-hero.html">Section 01: Hero</option><option value="02-trust.html">Section 02: Trust & Proof</option><option value="03-problem.html">Section 03: Problem</option><option value="04-services.html">Section 04: Services</option><option value="05-dev.html">Section 05: Development & Plugins</option><option value="06-integrations.html">Section 06: Integrations</option><option value="07-seo.html">Section 07: SEO & Core Vitals</option><option value="08-geo.html">Section 08: GEO Optimization</option><option value="10-growth.html">Section 10: Growth & Ads</option><option value="12-process.html">Section 12: Process</option><option value="13-results.html">Section 13: Results</option><option value="14-formats.html">Section 14: Formats & Pricing</option><option value="15-faq.html">Section 15: FAQ</option><option value="16-articles.html">Section 16: Articles Slider</option><option value="17-services-accordion.html">Section 17: Services Accordion</option><option value="18-process-stepper.html">Section 18: Process Stepper</option><option value="19-growth-cards.html">Section 19: Growth Cards</option><option value="20-services-tabs.html">Section 20: Services Tabs</option><option value="21-services-grid.html">Section 21: Services Grid</option><option value="22-results-grid.html" selected>Section 22: Results Grid</option><option value="23-process-timeline.html">Section 23: Process Timeline</option><option value="24-integrations-cloud.html">Section 24: Integrations Cloud</option>
+        </select>
+
+        <a href="23-process-timeline.html" style="padding: 6px 12px; background: #000000; border: 1px solid #2A2A2A; border-radius: 8px; color: #F0F0F0; text-decoration: none; font-size: 13px;" title="Next: Process Timeline">Next →</a>
+      </div>
+    </div>
+    
+  <main>
+    <!-- Section 22: Results Impact Metrics Grid (Rock Stars Agency Design System: Signature Double Dashed Borders) -->
+<section id="results-grid" class="results-grid-section bg-[#000000] text-[#F0F0F0]">
+
+  <!-- Section 22 Index Indicator with Double Dashed Border -->
+  <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+    <div class="badge-inner flex flex-col items-center justify-center">
+      <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">22</span>
+      <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">RESULTS</span>
+    </div>
+  </div>
+
+  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+
+      <!-- Left Column: Value Proposition, CTA, and Support Link -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        
+        <div>
+          <!-- Eyebrow -->
+          <span class="text-[#A0A0A0] text-xs font-semibold tracking-[0.16em] uppercase block mb-3">
+            RESULTS
+          </span>
+
+          <!-- Main Title -->
+          <h2 class="results-grid-title text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#F0F0F0] leading-[1.12] tracking-tight mb-4">
+            More patients, faster pages, steady growth
+          </h2>
+
+          <!-- Subtitle -->
+          <p class="results-grid-sub text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-8 max-w-md">
+            What clinics get when one team owns the website, from the first audit to ongoing support.
+          </p>
+
+          <!-- CTA Buttons: Strictly Borderless per Design System -->
+          <div class="flex items-center gap-2 mb-8 lg:mb-0">
+            <a href="#audit" class="results-btn-primary inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold tracking-tight text-black bg-[#F0F0F0] hover:bg-white transition-all hover:-translate-y-0.5">
+              Get a free site audit
+            </a>
+            <a href="#audit" class="results-btn-arrow w-11 h-11 rounded-full bg-[#F0F0F0] text-black flex items-center justify-center hover:bg-white transition-transform hover:scale-105" aria-label="Get a free site audit">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Question Link at Bottom -->
+        <div class="pt-6 border-t border-[#1C1C1C] lg:border-t-0 lg:pt-0 mt-6 lg:mt-12">
+          <a href="#contact" class="inline-flex items-center gap-2 text-xs sm:text-sm text-[#A0A0A0] hover:text-[#F0F0F0] transition-colors group">
+            <span class="w-4 h-4 rounded-full border border-[#333333] flex items-center justify-center text-[10px] text-[#A0A0A0] group-hover:border-[#F0F0F0] group-hover:text-[#F0F0F0] transition-colors">?</span>
+            <span>Have a question? <span class="underline underline-offset-4 font-semibold text-[#F0F0F0]">Speak to our expert</span></span>
+            <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: 2x2 Impact Metric Cards Grid -->
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+
+          <!-- Card 01: Organic appointments -->
+          <div class="res-card-wrap group" data-res-card>
+            <div class="res-card-box">
+              <div class="flex items-start justify-between mb-4">
+                <div class="res-card-metric text-4xl sm:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight" data-count-target="68" data-prefix="+" data-suffix="%">
+                  +68%
+                </div>
+                <div class="res-card-icon-box" aria-hidden="true">
+                  <svg class="w-4 h-4 text-[#A0A0A0] group-hover:text-[#F0F0F0] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="res-card-title text-base sm:text-lg font-bold text-[#F0F0F0] tracking-tight mb-2 transition-colors">
+                Organic appointments
+              </h3>
+              <p class="res-card-desc text-[#A0A0A0] text-xs sm:text-sm leading-relaxed">
+                More patients find and book the clinic through search within 90 days.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 02: Page load time -->
+          <div class="res-card-wrap group" data-res-card>
+            <div class="res-card-box">
+              <div class="flex items-start justify-between mb-4">
+                <div class="res-card-metric text-4xl sm:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight" data-count-target="1.6" data-decimals="1" data-suffix="s">
+                  1.6s
+                </div>
+                <div class="res-card-icon-box" aria-hidden="true">
+                  <svg class="w-4 h-4 text-[#A0A0A0] group-hover:text-[#F0F0F0] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="res-card-title text-base sm:text-lg font-bold text-[#F0F0F0] tracking-tight mb-2 transition-colors">
+                Page load time
+              </h3>
+              <p class="res-card-desc text-[#A0A0A0] text-xs sm:text-sm leading-relaxed">
+                LCP drops from 4.8s to 1.6s, so patients stay on the page and reach the booking form.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 03: AI visibility -->
+          <div class="res-card-wrap group" data-res-card>
+            <div class="res-card-box">
+              <div class="flex items-start justify-between mb-4">
+                <div class="res-card-metric text-4xl sm:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight" data-count-target="72" data-fraction="/100">
+                  72<span class="text-xl sm:text-2xl font-bold text-[#A0A0A0]">/100</span>
+                </div>
+                <div class="res-card-icon-box" aria-hidden="true">
+                  <svg class="w-4 h-4 text-[#A0A0A0] group-hover:text-[#F0F0F0] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="res-card-title text-base sm:text-lg font-bold text-[#F0F0F0] tracking-tight mb-2 transition-colors">
+                AI visibility
+              </h3>
+              <p class="res-card-desc text-[#A0A0A0] text-xs sm:text-sm leading-relaxed">
+                The clinic is cited in answers from AI assistants when patients look for care nearby.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 04: Booking rate -->
+          <div class="res-card-wrap group" data-res-card>
+            <div class="res-card-box">
+              <div class="flex items-start justify-between mb-4">
+                <div class="res-card-metric text-4xl sm:text-[44px] font-extrabold text-[#F0F0F0] tracking-tight" data-count-target="38" data-suffix="%">
+                  38%
+                </div>
+                <div class="res-card-icon-box" aria-hidden="true">
+                  <svg class="w-4 h-4 text-[#A0A0A0] group-hover:text-[#F0F0F0] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="res-card-title text-base sm:text-lg font-bold text-[#F0F0F0] tracking-tight mb-2 transition-colors">
+                Booking rate
+              </h3>
+              <p class="res-card-desc text-[#A0A0A0] text-xs sm:text-sm leading-relaxed">
+                More inquiries turn into real visits after the redesign and booking flow fixes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+  </main>
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/hero-section.js?v=20261117_01"></script>
+  <script src="../js/trust-section.js"></script>
+  <script src="../js/problem-section.js?v=20261024_02"></script>
+  <script src="../js/services-section.js?v=20261024_01"></script>
+  <script src="../js/dev-section.js?v=20261105_23"></script>
+  <script src="../js/integrations-section.js?v=20261024_01"></script>
+  <script src="../js/seo-section.js?v=20261024_01"></script>
+  <script src="../js/geo-section.js?v=20261031_04"></script>
+  <script src="../js/growth-section.js?v=20261024_01"></script>
+  <script src="../js/process-section.js?v=20261025_01"></script>
+  <script src="../js/results-section.js?v=20261105_17"></script>
+  <script src="../js/formats-section.js?v=20261105_18"></script>
+  <script src="../js/faq-section.js?v=20261105_19"></script>
+  <script src="../js/articles-slider.js?v=20261108_04"></script>
+  <script src="../js/services-accordion.js?v=20261118_01"></script>
+  <script src="../js/process-stepper.js?v=20261118_01"></script>
+  <script src="../js/growth-cards.js?v=20261119_01"></script>
+  <script src="../js/services-tabs.js?v=20261119_01"></script>
+  <script src="../js/services-grid.js?v=20261119_01"></script>
+  <script src="../js/results-grid.js?v=20261119_01"></script>
+  <script src="../js/process-timeline.js?v=20261119_01"></script>
+  <script src="../js/integrations-cloud.js?v=20261119_01"></script>
+
+</body>
+</html>

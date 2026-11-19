@@ -1,0 +1,174 @@
+/* Section 23: Process Timeline CSS */
+
+.process-timeline-section {
+  position: relative;
+  background-color: #000000 !important;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .process-timeline-section {
+    padding: 70px 0;
+  }
+}
+
+/* Floating Section Badge Indicator */
+.process-timeline-section .section-badge-indicator {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  border: 1px dashed #2A2A2A;
+  border-radius: 14px;
+  padding: 3.5px;
+  background: transparent;
+  z-index: 20;
+}
+
+.process-timeline-section .section-badge-indicator .badge-inner {
+  border: 1px dashed #2A2A2A;
+  border-radius: 10px;
+  background-color: #000000 !important;
+  padding: 8px 14px;
+}
+
+/* Desktop Horizontal Timeline Track */
+.timeline-track-wrap {
+  width: 100%;
+}
+
+.timeline-node-btn {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  z-index: 10;
+}
+
+.timeline-node-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #000000;
+  border: 2px solid #2A2A2A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.timeline-node-dot::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #404040;
+  transition: all 0.3s ease;
+}
+
+.timeline-node-btn:hover .timeline-node-dot,
+.timeline-mobile-step:hover .timeline-node-dot {
+  border-color: #555555;
+}
+
+.timeline-node-btn.active .timeline-node-dot,
+.timeline-mobile-step.active .timeline-node-dot,
+.timeline-node-dot.active {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.45);
+}
+
+.timeline-node-btn.active .timeline-node-dot::after,
+.timeline-mobile-step.active .timeline-node-dot::after,
+.timeline-node-dot.active::after {
+  background: #FFFFFF;
+  transform: scale(1.35);
+}
+
+/* Signature Double Dashed Border Cards */
+.timeline-step-card-outer {
+  position: relative;
+  border: 1px dashed #2A2A2A;
+  border-radius: 18px;
+  padding: 3.5px;
+  background: transparent;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  height: 100%;
+}
+
+.timeline-step-card-outer:hover {
+  border-color: #404040;
+  transform: translateY(-3px);
+}
+
+.timeline-step-card-outer.active {
+  border-color: #555555;
+}
+
+.timeline-step-card-inner {
+  border: 1px dashed #2A2A2A;
+  border-radius: 14px;
+  background-color: #000000 !important;
+  padding: 24px 20px 28px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-step-card-outer:hover .timeline-step-card-inner {
+  border-color: #404040;
+}
+
+.timeline-step-card-outer.active .timeline-step-card-inner {
+  border-color: #4A4A4A;
+  background-color: #141414 !important;
+}
+
+/* Bottom Detail Action Banner (Desktop) */
+.timeline-banner-outer {
+  position: relative;
+  border: 1px dashed #2A2A2A;
+  border-radius: 20px;
+  padding: 3.5px;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.timeline-banner-inner {
+  border: 1px dashed #2A2A2A;
+  border-radius: 16px;
+  background-color: #000000 !important;
+}
+
+/* Buttons and Badges: Strictly Borderless */
+.timeline-cta-btn {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#timeline-banner-badge {
+  border: none !important;
+}
+
+/* Mobile Layout Alignment */
+.timeline-mobile-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+}
+

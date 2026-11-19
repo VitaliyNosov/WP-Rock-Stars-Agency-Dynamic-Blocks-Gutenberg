@@ -7,6 +7,7 @@ const PORT = 3000;
 const BASE_DIR = __dirname;
 const SECTIONS_DIR = path.join(BASE_DIR, 'sections');
 const TEMPLATE_FILE = path.join(BASE_DIR, 'template.html');
+const BUILD_FILE = path.join(BASE_DIR, 'build.js');
 
 // Initial build on server startup
 build();
@@ -18,7 +19,9 @@ function triggerRebuild(filename) {
   debounceTimer = setTimeout(() => {
     console.log(`[watch] Change detected in ${filename}, rebuilding...`);
     try {
-      build();
+      delete require.cache[require.resolve('./build')];
+      const freshBuild = require('./build');
+      freshBuild.build();
     } catch (err) {
       console.error('[watch] Rebuild error:', err);
     }
@@ -35,6 +38,11 @@ if (fs.existsSync(SECTIONS_DIR)) {
 if (fs.existsSync(TEMPLATE_FILE)) {
   fs.watch(TEMPLATE_FILE, () => {
     triggerRebuild('template.html');
+  });
+}
+if (fs.existsSync(BUILD_FILE)) {
+  fs.watch(BUILD_FILE, () => {
+    triggerRebuild('build.js');
   });
 }
 
@@ -74,7 +82,9 @@ const server = http.createServer((req, res) => {
 
   // Previews index page
   if (pathname === '/previews' || pathname === '/previews/') {
-    const listItems = SECTIONS.map(s => `
+    delete require.cache[require.resolve('./build')];
+    const { SECTIONS: currentSections } = require('./build');
+    const listItems = currentSections.map(s => `
       <li style="margin-bottom: 12px;">
         <a href="/previews/${s.file}" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: #111111; border: 1px dashed #2A2A2A; border-radius: 12px; color: #F0F0F0; text-decoration: none; font-size: 15px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#F0F0F0'" onmouseout="this.style.borderColor='#2A2A2A'">
           <span><b style="color: #A0A0A0; font-family: monospace; margin-right: 12px;">Section ${s.num}</b> ${s.title}</span>

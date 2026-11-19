@@ -1,0 +1,78 @@
+/* Section 21: Services Grid CSS */
+
+.services-grid-section {
+  position: relative;
+  background-color: #000000 !important;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .services-grid-section {
+    padding: 70px 0;
+  }
+}
+
+/* Section Indicator Badge with Double Dashed Border */
+.services-grid-section .section-badge-indicator {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  border: 1px dashed #2A2A2A;
+  border-radius: 14px;
+  padding: 3.5px;
+  background: transparent;
+  z-index: 20;
+}
+
+.services-grid-section .section-badge-indicator .badge-inner {
+  border: 1px dashed #2A2A2A;
+  border-radius: 10px;
+  background-color: #000000 !important;
+  padding: 8px 14px;
+}
+
+/* Signature Double Dashed Border Cards */
+.services-card-outer {
+  position: relative;
+  border: 1px dashed #2A2A2A;
+  border-radius: 20px;
+  padding: 3.5px;
+  background: transparent;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+}
+
+.services-card-outer:hover {
+  border-color: #404040;
+  transform: translateY(-4px);
+}
+
+.services-card-inner {
+  border: 1px dashed #2A2A2A;
+  border-radius: 16px;
+  background-color: #000000 !important;
+  padding: 36px 30px 42px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-card-outer:hover .services-card-inner {
+  border-color: #404040;
+}
+
+/* Icon Box Squircle: Strictly Borderless */
+.services-icon-box {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #141414;
+}
+
+.services-card-outer:hover .services-icon-box {
+  background-color: #1A1A1A;
+}
+

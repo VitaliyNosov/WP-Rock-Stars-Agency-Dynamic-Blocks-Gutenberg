@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 21: Results Impact Metrics Grid
+   Rock Stars Agency Design System: Signature Double Dashed Borders
+   - Backgrounds: Pure Deep Black (#000000)
+   - Cards: Signature Double Dashed Border (#2A2A2A) with 3.5px gap
+   - Action Buttons & Icon Boxes: Strictly Borderless per design system
+   ========================================================================== */
+
+.results-grid-section {
+  position: relative;
+  background-color: var(--color-bg-base, #000000);
+  isolation: isolate;
+  padding-top: clamp(64px, 8vh, 100px);
+  padding-bottom: clamp(64px, 8vh, 100px);
+  border-top: 1px dashed var(--color-border-line, #2A2A2A);
+}
+
+#results-grid .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.results-grid-title {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   CTA Buttons: Strictly Borderless
+   ========================================================================== */
+
+.results-btn-primary {
+  appearance: none;
+  border: none !important;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.results-btn-arrow {
+  appearance: none;
+  border: none !important;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Impact Metric Cards: Signature Double Dashed Border
+   ========================================================================== */
+
+.res-card-wrap {
+  position: relative;
+  background: var(--color-bg-base, #000000);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 20px;
+  padding: 3.5px; /* Signature gap for double dashed border */
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.res-card-box {
+  background: #000000 !important; /* Pure black fill per design */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 16px;
+  padding: clamp(22px, 2.6vw, 32px);
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: border-color 0.25s ease;
+}
+
+/* Hover Effects */
+.res-card-wrap:hover {
+  transform: translateY(-4px);
+  border-color: #3f3f3f;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+}
+
+.res-card-wrap:hover .res-card-box {
+  border-color: #3f3f3f;
+}
+
+.res-card-wrap:hover .res-card-title {
+  color: #FFFFFF;
+}
+
+.res-card-metric {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  line-height: 1;
+}
+
+/* Dark Icon Squircle */
+.res-card-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: var(--color-bg-surface, #141414);
+  border: none !important;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.res-card-wrap:hover .res-card-icon-box {
+  background-color: #1a1a1a;
+  transform: scale(1.06);
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .res-card-wrap,
+  .res-card-icon-box,
+  .results-btn-primary,
+  .results-btn-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

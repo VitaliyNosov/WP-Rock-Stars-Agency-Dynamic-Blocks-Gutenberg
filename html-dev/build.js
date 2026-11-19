@@ -25,7 +25,13 @@ const SECTIONS = [
   { file: '15-faq.html', id: 'faq', num: '15', title: 'FAQ' },
   { file: '16-articles.html', id: 'articles', num: '16', title: 'Articles Slider' },
   { file: '17-services-accordion.html', id: 'services-accordion', num: '17', title: 'Services Accordion' },
-  { file: '18-process-stepper.html', id: 'process-stepper', num: '18', title: 'Process Stepper' }
+  { file: '18-process-stepper.html', id: 'process-stepper', num: '18', title: 'Process Stepper' },
+  { file: '19-growth-cards.html', id: 'growth-cards', num: '19', title: 'Growth Cards' },
+  { file: '20-services-tabs.html', id: 'services-tabs', num: '20', title: 'Services Tabs' },
+  { file: '21-services-grid.html', id: 'services-grid', num: '21', title: 'Services Grid' },
+  { file: '22-results-grid.html', id: 'results-grid', num: '22', title: 'Results Grid' },
+  { file: '23-process-timeline.html', id: 'process-timeline', num: '23', title: 'Process Timeline' },
+  { file: '24-integrations-cloud.html', id: 'integrations-cloud', num: '24', title: 'Integrations Cloud' }
 ];
 
 function build() {

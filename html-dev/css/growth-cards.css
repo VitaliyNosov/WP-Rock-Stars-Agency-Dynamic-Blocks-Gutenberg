@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Section 19: Growth Services Cards Grid
+   Rock Stars Agency Design System: Signature Double Dashed Borders
+   - Backgrounds: Pure Deep Black (#000000)
+   - Borders: Signature Double Dashed (#2A2A2A) with 3.5px gap
+   - Badges: Dark Squircle with Pure White Hexagonal Numeric Markers
+   ========================================================================== */
+
+.growth-cards-section {
+  position: relative;
+  background-color: var(--color-bg-base, #000000);
+  isolation: isolate;
+  padding-top: clamp(64px, 8vh, 100px);
+  padding-bottom: clamp(64px, 8vh, 100px);
+  border-top: 1px dashed var(--color-border-line, #2A2A2A);
+}
+
+#growth-cards .section-badge-indicator {
+  top: clamp(24px, 3.5vw, 44px);
+  left: clamp(20px, 4.5vw, 56px);
+}
+
+.growth-cards-title {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   Cards Structure: Signature Double Dashed Border
+   ========================================================================== */
+
+.growth-card-wrap {
+  position: relative;
+  background: var(--color-bg-base, #000000);
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 20px;
+  padding: 3.5px; /* Signature gap for double dashed border */
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.growth-card-box {
+  background: #000000 !important; /* Pure black fill per design system */
+  border: 1px dashed var(--color-border-line, #2A2A2A);
+  border-radius: 16px;
+  padding: clamp(26px, 3.2vw, 40px);
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: border-color 0.25s ease;
+}
+
+/* Hover States */
+.growth-card-wrap:hover {
+  transform: translateY(-4px);
+  border-color: #3f3f3f;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8);
+}
+
+.growth-card-wrap:hover .growth-card-box {
+  border-color: #3f3f3f;
+}
+
+.growth-card-wrap:hover .growth-card-heading {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Card Number Badge: Dark Squircle with Hexagon Numeric Shield
+   ========================================================================== */
+
+.growth-card-badge-wrap {
+  margin-bottom: 24px;
+}
+
+.growth-card-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--color-bg-surface, #141414);
+  border: none !important;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growth-card-wrap:hover .growth-card-badge {
+  background-color: #1c1c1c;
+  transform: scale(1.05);
+}
+
+.growth-hexagon-marker {
+  width: 22px;
+  height: 25px;
+  background-color: var(--color-text-primary, #F0F0F0);
+  color: var(--color-bg-base, #000000);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  user-select: none;
+  box-shadow: 0 0 10px rgba(240, 240, 240, 0.2);
+}
+
+/* ==========================================================================
+   Typography & Content
+   ========================================================================== */
+
+.growth-card-heading {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  line-height: 1.25;
+}
+
+.growth-card-text {
+  max-width: 500px;
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-card-wrap,
+  .growth-card-badge {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

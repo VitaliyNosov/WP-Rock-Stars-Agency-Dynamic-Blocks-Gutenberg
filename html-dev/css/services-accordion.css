@@ -31,23 +31,14 @@
 }
 
 /* ==========================================================================
-   Accordion Master Frame: Double Dashed Outer Container
+   Accordion Flex Container (Strictly borderless per updated dev spec)
    ========================================================================== */
-
-.acc-outer-frame {
-  background: var(--color-bg-base, #000000);
-  border: 1px dashed var(--color-border-line, #2A2A2A);
-  border-radius: 22px;
-  padding: 4px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
-  box-sizing: border-box;
-}
 
 .acc-container {
   width: 100%;
   box-sizing: border-box;
-  background: #000000;
-  border-radius: 18px;
+  background: transparent;
+  border: none;
 }
 
 /* ==========================================================================
@@ -176,7 +167,7 @@
 
   .acc-item {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     box-sizing: border-box;
     will-change: flex-grow, flex-basis;
@@ -191,7 +182,8 @@
     min-width: 0;
     background: #000000 !important;
     border: 1px dashed var(--color-border-line, #2A2A2A);
-    padding: 4px; /* Signature gap for double dashed border */
+    border-radius: 20px;
+    padding: 3.5px; /* Signature gap for double dashed border */
     transition: border-color 0.25s ease;
   }
 
@@ -214,7 +206,7 @@
   .acc-item[data-state="open"] .acc-panel-inner {
     background: #000000 !important;
     border: 1px dashed var(--color-border-line, #2A2A2A);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 24px 28px 20px 28px;
     height: 100%;
     box-sizing: border-box;
@@ -240,6 +232,7 @@
     max-width: 88px;
     background: transparent;
     border: none;
+    border-radius: 18px;
     padding: 0;
     cursor: pointer;
   }
@@ -261,7 +254,7 @@
   .acc-item[data-state="closed"] .acc-strip-inner {
     background: var(--color-bg-surface, #111111);
     border: none;
-    border-radius: 14px;
+    border-radius: 18px;
     padding: 22px 0;
     height: 100%;
     width: 100%;
@@ -367,7 +360,7 @@
     padding: 0 18px;
     background: var(--color-bg-surface, #111111);
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     box-sizing: border-box;
     transition: background-color 0.2s ease;
   }
@@ -422,7 +415,7 @@
   .acc-item[data-state="open"] {
     background: #000000 !important;
     border: 1px dashed var(--color-border-line, #2A2A2A);
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 3px;
   }
 
@@ -439,7 +432,7 @@
   .acc-item[data-state="open"] .acc-panel-inner {
     background: #000000 !important;
     border: 1px dashed var(--color-border-line, #2A2A2A);
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 20px 16px 18px 16px;
     box-sizing: border-box;
   }

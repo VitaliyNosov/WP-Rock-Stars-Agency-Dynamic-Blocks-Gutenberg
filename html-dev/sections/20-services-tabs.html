@@ -1,0 +1,319 @@
+<!-- Section 20: Services Interactive Tabs (Rock Stars Agency Design System: Signature Double Dashed Borders) -->
+<section id="services-tabs" class="services-tabs-section bg-[#000000] text-[#F0F0F0]">
+
+  <!-- Section 20 Index Indicator with Double Dashed Border -->
+  <div class="section-badge-indicator hidden sm:inline-flex items-center justify-center">
+    <div class="badge-inner flex flex-col items-center justify-center">
+      <span class="text-[#F0F0F0] font-bold text-xs tracking-wider">20</span>
+      <span class="text-[#A0A0A0] font-semibold text-[9px] tracking-widest uppercase mt-0.5">SERVICES</span>
+    </div>
+  </div>
+
+  <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header (Centered) -->
+    <div class="tabs-header text-center max-w-2xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+      <span class="text-[#A0A0A0] text-xs font-semibold tracking-[0.16em] uppercase block mb-3">
+        SERVICES
+      </span>
+      <h2 class="tabs-title text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#F0F0F0] leading-[1.14] tracking-tight mb-4">
+        Everything your clinic website needs
+      </h2>
+      <p class="tabs-sub text-[#A0A0A0] text-sm sm:text-base leading-relaxed">
+        Redesign, integrations, SEO, ads and support from one team, so your website keeps bringing in patients.
+      </p>
+    </div>
+
+    <!-- Tabs Component Layout: Left Buttons & Right Content Card -->
+    <div class="tabs-component-wrapper grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+
+      <!-- Navigation Tabs (Buttons) -->
+      <div class="lg:col-span-4 w-full">
+        <!-- Tablet/Mobile scroll wrap + Desktop vertical stack -->
+        <div class="tabs-nav-list flex lg:flex-col gap-2.5 sm:gap-3 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 no-scrollbar" role="tablist" aria-label="Services tabs">
+          
+          <button type="button" class="tab-btn active" role="tab" id="tab-0-btn" aria-selected="true" aria-controls="tab-0-panel" data-tab-index="0">
+            <span class="tab-btn-text">Website redesign</span>
+          </button>
+
+          <button type="button" class="tab-btn" role="tab" id="tab-1-btn" aria-selected="false" aria-controls="tab-1-panel" data-tab-index="1">
+            <span class="tab-btn-text">Plugins and integrations</span>
+          </button>
+
+          <button type="button" class="tab-btn" role="tab" id="tab-2-btn" aria-selected="false" aria-controls="tab-2-panel" data-tab-index="2">
+            <span class="tab-btn-text">SEO and AI visibility</span>
+          </button>
+
+          <button type="button" class="tab-btn" role="tab" id="tab-3-btn" aria-selected="false" aria-controls="tab-3-panel" data-tab-index="3">
+            <span class="tab-btn-text">Ads and campaigns</span>
+          </button>
+
+          <button type="button" class="tab-btn" role="tab" id="tab-4-btn" aria-selected="false" aria-controls="tab-4-panel" data-tab-index="4">
+            <span class="tab-btn-text">Support and care</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Active Content Card with Signature Double Dashed Border -->
+      <div class="lg:col-span-8 w-full">
+        <div class="tabs-card-wrap">
+          <div class="tabs-card-box">
+
+            <!-- Panel 0: Website redesign (Active by default) -->
+            <div class="tab-panel active" id="tab-0-panel" role="tabpanel" aria-labelledby="tab-0-btn" data-panel-index="0">
+              <div class="tab-panel-inner flex flex-col md:flex-row md:items-start justify-between gap-6 sm:gap-8">
+                
+                <!-- Left Details -->
+                <div class="flex-1 flex flex-col items-start min-w-0">
+                  <div class="tab-icon-badge mb-5" aria-hidden="true">
+                    <svg class="w-5 h-5 text-[#F0F0F0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                  </div>
+                  <h3 class="tab-panel-heading text-2xl sm:text-3xl font-bold text-[#F0F0F0] tracking-tight mb-3">
+                    Website redesign
+                  </h3>
+                  <p class="tab-panel-desc text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-6">
+                    We rebuild your site around how patients search, compare and book, so every page leads to an appointment.
+                  </p>
+                  <div class="tab-pills-row flex flex-wrap gap-2 mb-6">
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Booking flow</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Mobile-first</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Accessibility</span>
+                    </div>
+                  </div>
+                  <a href="#audit" class="tab-learn-link inline-flex items-center gap-1.5 text-sm font-semibold text-[#F0F0F0] hover:text-white underline underline-offset-4 transition-colors group">
+                    <span>Learn more</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <!-- Right Metric Box -->
+                <div class="tab-metric-box shrink-0 w-full md:w-[220px]">
+                  <span class="tab-metric-label text-[#A0A0A0] text-xs font-medium block mb-1">
+                    Booking rate
+                  </span>
+                  <div class="tab-metric-val text-4xl sm:text-5xl font-extrabold text-[#F0F0F0] tracking-tight mb-2">
+                    38%
+                  </div>
+                  <span class="tab-metric-note text-[#A0A0A0] text-xs block">
+                    Inquiry → visit
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Panel 1: Plugins and integrations -->
+            <div class="tab-panel" id="tab-1-panel" role="tabpanel" aria-labelledby="tab-1-btn" data-panel-index="1" style="display: none; opacity: 0;">
+              <div class="tab-panel-inner flex flex-col md:flex-row md:items-start justify-between gap-6 sm:gap-8">
+                
+                <div class="flex-1 flex flex-col items-start min-w-0">
+                  <div class="tab-icon-badge mb-5" aria-hidden="true">
+                    <svg class="w-5 h-5 text-[#F0F0F0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <h3 class="tab-panel-heading text-2xl sm:text-3xl font-bold text-[#F0F0F0] tracking-tight mb-3">
+                    Plugins and integrations
+                  </h3>
+                  <p class="tab-panel-desc text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-6">
+                    Scheduling, patient forms, payments and chat connected to your site without breaking what already works.
+                  </p>
+                  <div class="tab-pills-row flex flex-wrap gap-2 mb-6">
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Scheduling sync</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">EHR and CRM</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Payments</span>
+                    </div>
+                  </div>
+                  <a href="#audit" class="tab-learn-link inline-flex items-center gap-1.5 text-sm font-semibold text-[#F0F0F0] hover:text-white underline underline-offset-4 transition-colors group">
+                    <span>Learn more</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div class="tab-metric-box shrink-0 w-full md:w-[220px]">
+                  <span class="tab-metric-label text-[#A0A0A0] text-xs font-medium block mb-1">
+                    Tools connected
+                  </span>
+                  <div class="tab-metric-val text-4xl sm:text-5xl font-extrabold text-[#F0F0F0] tracking-tight mb-2">
+                    12
+                  </div>
+                  <span class="tab-metric-note text-[#A0A0A0] text-xs block">
+                    Zero downtime setup
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Panel 2: SEO and AI visibility -->
+            <div class="tab-panel" id="tab-2-panel" role="tabpanel" aria-labelledby="tab-2-btn" data-panel-index="2" style="display: none; opacity: 0;">
+              <div class="tab-panel-inner flex flex-col md:flex-row md:items-start justify-between gap-6 sm:gap-8">
+                
+                <div class="flex-1 flex flex-col items-start min-w-0">
+                  <div class="tab-icon-badge mb-5" aria-hidden="true">
+                    <svg class="w-5 h-5 text-[#F0F0F0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                  <h3 class="tab-panel-heading text-2xl sm:text-3xl font-bold text-[#F0F0F0] tracking-tight mb-3">
+                    SEO and AI visibility
+                  </h3>
+                  <p class="tab-panel-desc text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-6">
+                    Local SEO and structured data that put your clinic in search results and in answers from AI assistants.
+                  </p>
+                  <div class="tab-pills-row flex flex-wrap gap-2 mb-6">
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Local SEO</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Schema</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">AI citations</span>
+                    </div>
+                  </div>
+                  <a href="#audit" class="tab-learn-link inline-flex items-center gap-1.5 text-sm font-semibold text-[#F0F0F0] hover:text-white underline underline-offset-4 transition-colors group">
+                    <span>Learn more</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div class="tab-metric-box shrink-0 w-full md:w-[220px]">
+                  <span class="tab-metric-label text-[#A0A0A0] text-xs font-medium block mb-1">
+                    AI visibility
+                  </span>
+                  <div class="tab-metric-val text-4xl sm:text-5xl font-extrabold text-[#F0F0F0] tracking-tight mb-2">
+                    72<span class="text-2xl font-bold text-[#A0A0A0]">/100</span>
+                  </div>
+                  <span class="tab-metric-note text-[#A0A0A0] text-xs block">
+                    Cited in AI answers
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Panel 3: Ads and campaigns -->
+            <div class="tab-panel" id="tab-3-panel" role="tabpanel" aria-labelledby="tab-3-btn" data-panel-index="3" style="display: none; opacity: 0;">
+              <div class="tab-panel-inner flex flex-col md:flex-row md:items-start justify-between gap-6 sm:gap-8">
+                
+                <div class="flex-1 flex flex-col items-start min-w-0">
+                  <div class="tab-icon-badge mb-5" aria-hidden="true">
+                    <svg class="w-5 h-5 text-[#F0F0F0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                  </div>
+                  <h3 class="tab-panel-heading text-2xl sm:text-3xl font-bold text-[#F0F0F0] tracking-tight mb-3">
+                    Ads and campaigns
+                  </h3>
+                  <p class="tab-panel-desc text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-6">
+                    Targeted Google and Meta campaigns reaching patients actively looking for high-value treatments in your area.
+                  </p>
+                  <div class="tab-pills-row flex flex-wrap gap-2 mb-6">
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Google Ads</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Meta Ads</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">ROAS focus</span>
+                    </div>
+                  </div>
+                  <a href="#audit" class="tab-learn-link inline-flex items-center gap-1.5 text-sm font-semibold text-[#F0F0F0] hover:text-white underline underline-offset-4 transition-colors group">
+                    <span>Learn more</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div class="tab-metric-box shrink-0 w-full md:w-[220px]">
+                  <span class="tab-metric-label text-[#A0A0A0] text-xs font-medium block mb-1">
+                    Avg. ROAS
+                  </span>
+                  <div class="tab-metric-val text-4xl sm:text-5xl font-extrabold text-[#F0F0F0] tracking-tight mb-2">
+                    4.2x
+                  </div>
+                  <span class="tab-metric-note text-[#A0A0A0] text-xs block">
+                    Tracked to booked visits
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Panel 4: Support and care -->
+            <div class="tab-panel" id="tab-4-panel" role="tabpanel" aria-labelledby="tab-4-btn" data-panel-index="4" style="display: none; opacity: 0;">
+              <div class="tab-panel-inner flex flex-col md:flex-row md:items-start justify-between gap-6 sm:gap-8">
+                
+                <div class="flex-1 flex flex-col items-start min-w-0">
+                  <div class="tab-icon-badge mb-5" aria-hidden="true">
+                    <svg class="w-5 h-5 text-[#F0F0F0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="tab-panel-heading text-2xl sm:text-3xl font-bold text-[#F0F0F0] tracking-tight mb-3">
+                    Support and care
+                  </h3>
+                  <p class="tab-panel-desc text-[#A0A0A0] text-sm sm:text-base leading-relaxed mb-6">
+                    Continuous uptime monitoring, security updates, speed maintenance and dedicated developer support with 1h SLA.
+                  </p>
+                  <div class="tab-pills-row flex flex-wrap gap-2 mb-6">
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">1h SLA</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Uptime 99.9%</span>
+                    </div>
+                    <div class="tab-pill-outer">
+                      <span class="tab-pill-inner text-xs text-[#F0F0F0] font-medium">Security audits</span>
+                    </div>
+                  </div>
+                  <a href="#audit" class="tab-learn-link inline-flex items-center gap-1.5 text-sm font-semibold text-[#F0F0F0] hover:text-white underline underline-offset-4 transition-colors group">
+                    <span>Learn more</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div class="tab-metric-box shrink-0 w-full md:w-[220px]">
+                  <span class="tab-metric-label text-[#A0A0A0] text-xs font-medium block mb-1">
+                    Response time
+                  </span>
+                  <div class="tab-metric-val text-4xl sm:text-5xl font-extrabold text-[#F0F0F0] tracking-tight mb-2">
+                    &lt; 1h
+                  </div>
+                  <span class="tab-metric-note text-[#A0A0A0] text-xs block">
+                    Direct team chat
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
